@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 07e0ba71608aa95469b2d5c10b57ee43
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pollenSound: {fileID: 8300000, guid: d161c18f7f3b1e74087bee64797633e3, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
