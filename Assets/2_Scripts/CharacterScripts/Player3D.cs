@@ -70,7 +70,7 @@ public class Player3D : MonoBehaviour
     void Movement(){
         if (move == true)
         {
-            movement = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+            movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
 
             Vector3 camF = cam.forward;
             Vector3 camR = cam.right;
@@ -98,7 +98,7 @@ public class Player3D : MonoBehaviour
     {
         if (move == true) 
         {
-            movement = new Vector3(Input.GetAxis("Horizontal_inv"), 0f, Input.GetAxis("Vertical_inv"));
+            movement = new Vector3(Input.GetAxisRaw("Horizontal_inv"), 0f, Input.GetAxisRaw("Vertical_inv"));
 
             Vector3 camF = cam.forward;
             Vector3 camR = cam.right;
