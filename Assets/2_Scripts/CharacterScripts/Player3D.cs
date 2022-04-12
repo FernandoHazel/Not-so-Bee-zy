@@ -12,6 +12,10 @@ public class Player3D : MonoBehaviour
     [SerializeField] AudioSource trapedInHoney;
 
     public CharacterController controller;
+    private InputMaster inputMaster;
+    private TutorialDialogues tutorialDialogues;
+    private ExtraDialogues extraDialogues;
+    private GameManager gm;
     public float speed = 3, gravity = 1f, rotationSpeed = 5;
     public float speedInicial, rotationSpeedInicial;
     public Transform cam;
@@ -41,8 +45,15 @@ public class Player3D : MonoBehaviour
     [SerializeField] GameObject [] skins;
     GameObject localSkin;
     // START
+    private void Awake() {
+        inputMaster = new InputMaster();
+        tutorialDialogues = new TutorialDialogues();
+        extraDialogues = new ExtraDialogues();
+        gm = new GameManager();
+    }
     void Start()
     {
+        
         if (levelData.GetSkinSelected() != 2) 
         {
             AudioManager.Instance.PlaySfxLoop3D(buzzing, transform);
@@ -65,12 +76,18 @@ public class Player3D : MonoBehaviour
         localSkin.transform.parent = gameObject.transform;
 
     }
-
+    private void OnEnable() {
+        inputMaster.Enable();
+    }
+    private void OnDisable() {
+        inputMaster.Disable();
+    }
     //FUNCTIONS
     void Movement(){
         if (move == true)
         {
-            movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+            //movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+            movement = new Vector3(inputMaster.Player.move.ReadValue<Vector2>().x, 0f, inputMaster.Player.move.ReadValue<Vector2>().y);
 
             Vector3 camF = cam.forward;
             Vector3 camR = cam.right;
@@ -83,7 +100,7 @@ public class Player3D : MonoBehaviour
             camR = camR.normalized;
 
             movement.y = movement.y - (gravity * Time.deltaTime);
-            controller.Move((camF * movement.z + camR * movement.x) * speed * Time.deltaTime);
+            controller.Move((camF * movement.z + camR * movement.x) * speed * Time.deltaTime); ////movement.y era movement.z
             controller.Move(new Vector3(0, movement.y, 0) * speed * Time.deltaTime); //gravity applied to movement
             movement.y = 0; // reset y, so the player doesnt look to the floor
 
@@ -98,9 +115,10 @@ public class Player3D : MonoBehaviour
     {
         if (move == true) 
         {
-            movement = new Vector3(Input.GetAxisRaw("Horizontal_inv"), 0f, Input.GetAxisRaw("Vertical_inv"));
+            //movement = new Vector3(Input.GetAxisRaw("Horizontal_inv"), 0f, Input.GetAxisRaw("Vertical_inv"));
+            movement = new Vector3(-inputMaster.Player.move.ReadValue<Vector2>().x, 0f, -inputMaster.Player.move.ReadValue<Vector2>().y);
 
-            Vector3 camF = cam.forward;
+            Vector3 camF = cam.forward; //Puedo invertir estos valores
             Vector3 camR = cam.right;
 
             camF.y = 0;
@@ -380,6 +398,16 @@ public class Player3D : MonoBehaviour
     //UPDATES
     void Update()
     {
+        if (inputMaster.Player.Pause.triggered)
+        {
+            gm.ChangePause();
+        }
+        //avanzamos los diálogos con el botón sur del control
+        if (inputMaster.Menus.Select.ReadValue<float>() == 1)
+        {
+            tutorialDialogues.NextDialogueBool();
+            extraDialogues.NextDialogueBool();
+        }
         gasClock.transform.LookAt(cam);
         //gasGold.transform.LookAt(cam);
         gasGoldBg.transform.LookAt(cam);

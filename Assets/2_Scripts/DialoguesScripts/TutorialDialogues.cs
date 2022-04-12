@@ -3,6 +3,7 @@
 public class TutorialDialogues : MonoBehaviour
 {
     [TextArea] public string[] tutorialDialogues;
+    private InputMaster inputMaster;
     int currentDialogue;
     [SerializeField] GameObject dialogueImage = default;
     [SerializeField] UserInterface ui = default;
@@ -12,6 +13,9 @@ public class TutorialDialogues : MonoBehaviour
 
     bool nextDialogueBool = false;
 
+    private void Awake() {
+        inputMaster = new InputMaster();
+    }
     void Start()
     {
         currentDialogue = 0;
@@ -20,6 +24,11 @@ public class TutorialDialogues : MonoBehaviour
 
     void Update()
     {
+        //avanzamos los diálogos con el botón sur del control
+        if (inputMaster.Menus.Select.triggered)
+        {
+            NextDialogueBool();
+        }
         if (GameManager.gameIsPaused || player.youWon)
         {
             showDialogue = false;

@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Inputs/InputManager.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Inputs/InputMaster.inputactions'
 
 using System;
 using System.Collections;
@@ -6,31 +6,31 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public class @InputManager : IInputActionCollection, IDisposable
+public class @InputMaster : IInputActionCollection, IDisposable
 {
     public InputActionAsset asset { get; }
-    public @InputManager()
+    public @InputMaster()
     {
         asset = InputActionAsset.FromJson(@"{
-    ""name"": ""InputManager"",
+    ""name"": ""InputMaster"",
     ""maps"": [
         {
             ""name"": ""Player"",
             ""id"": ""e9e40f40-3234-4f91-bb2d-002fde52da07"",
             ""actions"": [
                 {
-                    ""name"": ""move"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""6b9341a0-d1d5-4b6d-a815-41121d6661cc"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""9a59a5c8-439b-463c-a0c2-4d3f0bbee5bb"",
                     ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""move"",
+                    ""type"": ""Value"",
+                    ""id"": ""1b5eff83-f548-44c1-a6f5-c3ee43ab85b2"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -49,7 +49,7 @@ public class @InputManager : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""2D Vector"",
-                    ""id"": ""fcd6609f-b06c-4715-81cd-0ff27c8f144d"",
+                    ""id"": ""edfc2053-ff61-4dd5-a7e0-d03892bf36b9"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -60,44 +60,44 @@ public class @InputManager : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""18bfa94d-a45c-4422-bfab-71f690172a53"",
-                    ""path"": ""<Gamepad>/leftStick"",
+                    ""id"": ""5590380c-2ca6-4dbe-91d7-b6a588e67b13"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox control scheme"",
+                    ""groups"": """",
                     ""action"": ""move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""ac3d10e1-1fac-40f6-9796-5869efe0d740"",
-                    ""path"": ""<Gamepad>/leftStick"",
+                    ""id"": ""d88005bd-38a7-4166-82f5-f97943b7fbb7"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox control scheme"",
+                    ""groups"": """",
                     ""action"": ""move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""2b43eaff-2d25-46ea-a850-38aeb8c33362"",
-                    ""path"": ""<Gamepad>/leftStick"",
+                    ""id"": ""2d439a90-bff2-432c-9ea9-e6ae9b46d567"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox control scheme"",
+                    ""groups"": """",
                     ""action"": ""move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""6f9d93bf-b8c8-4b5b-858c-449fc09bc61e"",
-                    ""path"": ""<Gamepad>/leftStick"",
+                    ""id"": ""1c564c9a-39fa-4399-a9d3-a68065fd948c"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox control scheme"",
+                    ""groups"": """",
                     ""action"": ""move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -148,7 +148,7 @@ public class @InputManager : IInputActionCollection, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""2ff27025-1aeb-4799-bd26-7860a9c8bec3"",
-                    ""path"": ""<Gamepad>/leftStick"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Xbox control scheme"",
@@ -159,7 +159,7 @@ public class @InputManager : IInputActionCollection, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""6a386a87-137b-436d-9d8c-83ac1aab7191"",
-                    ""path"": ""<Gamepad>/leftStick"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Xbox control scheme"",
@@ -170,7 +170,7 @@ public class @InputManager : IInputActionCollection, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""57b9bca4-4a85-46a4-b863-d2c16a1d84b2"",
-                    ""path"": ""<Gamepad>/leftStick"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Xbox control scheme"",
@@ -181,7 +181,7 @@ public class @InputManager : IInputActionCollection, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""aa51106c-12b0-494a-a663-8020be94802f"",
-                    ""path"": ""<Gamepad>/leftStick"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Xbox control scheme"",
@@ -193,6 +193,17 @@ public class @InputManager : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""93dea5fc-59cb-49a3-b480-0ef6cb60e6bf"",
                     ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox control scheme"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1147f09c-26c4-4d00-892a-57d4d5452a7a"",
+                    ""path"": ""<XInputController>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Xbox control scheme"",
@@ -230,8 +241,8 @@ public class @InputManager : IInputActionCollection, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_move = m_Player.FindAction("move", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_move = m_Player.FindAction("move", throwIfNotFound: true);
         // Menus
         m_Menus = asset.FindActionMap("Menus", throwIfNotFound: true);
         m_Menus_Move = m_Menus.FindAction("Move", throwIfNotFound: true);
@@ -286,14 +297,14 @@ public class @InputManager : IInputActionCollection, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
-    private readonly InputAction m_Player_move;
     private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_move;
     public struct PlayerActions
     {
-        private @InputManager m_Wrapper;
-        public PlayerActions(@InputManager wrapper) { m_Wrapper = wrapper; }
-        public InputAction @move => m_Wrapper.m_Player_move;
+        private @InputMaster m_Wrapper;
+        public PlayerActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @move => m_Wrapper.m_Player_move;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -303,22 +314,22 @@ public class @InputManager : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                @move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                 @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
+                @move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @move.started += instance.OnMove;
-                @move.performed += instance.OnMove;
-                @move.canceled += instance.OnMove;
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @move.started += instance.OnMove;
+                @move.performed += instance.OnMove;
+                @move.canceled += instance.OnMove;
             }
         }
     }
@@ -332,8 +343,8 @@ public class @InputManager : IInputActionCollection, IDisposable
     private readonly InputAction m_Menus_Back;
     public struct MenusActions
     {
-        private @InputManager m_Wrapper;
-        public MenusActions(@InputManager wrapper) { m_Wrapper = wrapper; }
+        private @InputMaster m_Wrapper;
+        public MenusActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Menus_Move;
         public InputAction @Select => m_Wrapper.m_Menus_Select;
         public InputAction @Back => m_Wrapper.m_Menus_Back;
@@ -383,8 +394,8 @@ public class @InputManager : IInputActionCollection, IDisposable
     }
     public interface IPlayerActions
     {
-        void OnMove(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
     }
     public interface IMenusActions
     {

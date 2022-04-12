@@ -3,6 +3,7 @@ using UnityEngine;
 public class ExtraDialogues : MonoBehaviour
 {
     [TextArea] public string[] extraDialogues;
+    private InputMaster inputMaster;
     int currentDialogue;
     [SerializeField] GameObject dialogueImage = default;
     [SerializeField] UserInterface ui = default;
@@ -12,6 +13,9 @@ public class ExtraDialogues : MonoBehaviour
 
     bool nextDialogueBool = false;
     [SerializeField] bool wantMovement = false;
+    private void Awake() {
+        inputMaster = new InputMaster();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -26,6 +30,7 @@ public class ExtraDialogues : MonoBehaviour
 
     void Update()
     {
+        
         if (GameManager.gameIsPaused || player.youWon)
         {
             showDialogue = false;

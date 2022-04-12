@@ -4,12 +4,21 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    private TutorialDialogues tutorialDialogues;
+    private ExtraDialogues extraDialogues;
+    private InputMaster inputMaster;
     [SerializeField] AudioClip selectSound;
     public static bool gameIsPaused = false;
     
     public string currentScene;
 
     public bool needFade = false;
+
+    private void Awake() {
+        tutorialDialogues = new TutorialDialogues();
+        extraDialogues = new ExtraDialogues();
+        inputMaster = new InputMaster();
+    }
 
     void Start() 
     {
@@ -18,15 +27,27 @@ public class GameManager : MonoBehaviour
         currentScene = "Hello";
         Time.timeScale = 1;
     }
+    private void OnEnable()
+    {
+        inputMaster.Enable();
+    }
+    private void OnDisable()
+    {
+        inputMaster.Disable();
+    }
 
     
     void Update()
     {
+        /*if (inputMaster.Menus.Select.triggered)
+        {
+            Debug.Log($"presionado {inputMaster.Menus.Select.ReadValue<float>()} ");
+        }*/
+
         if (gameIsPaused)
         {
             PauseGame();
         }
-
         else
         {
             Resume();
