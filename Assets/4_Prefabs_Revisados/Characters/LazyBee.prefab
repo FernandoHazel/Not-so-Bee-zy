@@ -19810,7 +19810,7 @@ MonoBehaviour:
   inGas: {fileID: 8300000, guid: dca41d934be2f194787d074298645404, type: 3}
   buzzing: {fileID: 8300000, guid: 9e8c9d266857283499fad82304160636, type: 3}
   trapedInHoney: {fileID: 2139100715}
-  controller: {fileID: 7524631335538743324}
+  controller: {fileID: 0}
   speed: 2.9
   gravity: 60
   rotationSpeed: 8

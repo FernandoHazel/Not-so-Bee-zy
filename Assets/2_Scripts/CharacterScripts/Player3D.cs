@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-//JUGADOR 1
 public class Player3D : MonoBehaviour
 {
     [SerializeField] ParticleSystem grabPollen, grabHC;
@@ -35,16 +34,16 @@ public class Player3D : MonoBehaviour
 
     bool invertedControls = false, slowHoney = false;
 
-    public ParticleSystem honeyParticles;   //This variable is just a main character Honey effect
-    public ParticleSystem gasParticles;    //This variable is just a main character gas effect when poisoned
-
+    public ParticleSystem honeyParticles;   
+    public ParticleSystem gasParticles;
     [SerializeField] Image gasClock = default;
     [SerializeField] Image gasGoldBg;
 
     [SerializeField] LevelData levelData;
     [SerializeField] GameObject [] skins;
     GameObject localSkin;
-    // START
+    
+    private int controlDirection;
     private void Awake() {
         inputMaster = new InputMaster();
         tutorialDialogues = new TutorialDialogues();
@@ -58,6 +57,7 @@ public class Player3D : MonoBehaviour
         {
             AudioManager.Instance.PlaySfxLoop3D(buzzing, transform);
         }
+        controlDirection = 1;
         move = true;
         speedInicial = speed;
         rotationSpeedInicial = rotationSpeed;
@@ -69,7 +69,6 @@ public class Player3D : MonoBehaviour
         honeyParticles.Stop();
         gasParticles.Stop();
         gasClock.fillAmount = 0;
-        //gasGold.enabled = false;
         gasGoldBg.enabled = false;
 
         localSkin = Instantiate(skins[levelData.GetSkinSelected()], transform.position, transform.rotation);
@@ -82,12 +81,12 @@ public class Player3D : MonoBehaviour
     private void OnDisable() {
         inputMaster.Disable();
     }
-    //FUNCTIONS
-    void Movement(){
+    
+    void Movement()
+    {
         if (move == true)
         {
-            //movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-            movement = new Vector3(inputMaster.Player.move.ReadValue<Vector2>().x, 0f, inputMaster.Player.move.ReadValue<Vector2>().y);
+            movement = new Vector3(inputMaster.Player.move.ReadValue<Vector2>().x * controlDirection, 0f, inputMaster.Player.move.ReadValue<Vector2>().y * controlDirection);
 
             Vector3 camF = cam.forward;
             Vector3 camR = cam.right;
@@ -100,6 +99,7 @@ public class Player3D : MonoBehaviour
             camR = camR.normalized;
 
             movement.y = movement.y - (gravity * Time.deltaTime);
+
             controller.Move((camF * movement.z + camR * movement.x) * speed * Time.deltaTime); ////movement.y era movement.z
             controller.Move(new Vector3(0, movement.y, 0) * speed * Time.deltaTime); //gravity applied to movement
             movement.y = 0; // reset y, so the player doesnt look to the floor
@@ -111,48 +111,19 @@ public class Player3D : MonoBehaviour
         }
     }
 
-    void InvertedMovement() 
+    void InvertedEffect()
     {
-        if (move == true) 
-        {
-            //movement = new Vector3(Input.GetAxisRaw("Horizontal_inv"), 0f, Input.GetAxisRaw("Vertical_inv"));
-            movement = new Vector3(-inputMaster.Player.move.ReadValue<Vector2>().x, 0f, -inputMaster.Player.move.ReadValue<Vector2>().y);
-
-            Vector3 camF = cam.forward; //Puedo invertir estos valores
-            Vector3 camR = cam.right;
-
-            camF.y = 0;
-            camR.y = 0;
-
-            camF = camF.normalized;
-            camR = camR.normalized;
-
-            movement.y = movement.y - (gravity * Time.deltaTime);
-
-            controller.Move((camF * movement.z + camR * movement.x) * speed * Time.deltaTime);
-            controller.Move(new Vector3(0, movement.y, 0) * speed * Time.deltaTime); //gravity applied to movement
-
-            movement.y = 0; // reset y, so the player doesnt look to the floor
-
-            if ((movement != Vector3.zero))
-            {
-                PlayerRotation(camF, camR);
-            }
-        }
-    }
-    void InvertedEffect(){
         gasClock.fillAmount -= 1 / invertedControlsTime * Time.deltaTime *.4f;
         invertedControlsTime -= Time.deltaTime;  //We start a count down for the inverted controls
         //When time is over we go back to normal controls and disable gas effect
         if (invertedControlsTime <= 0)
         {
-            invertedControls = false;
+            controlDirection = 1;
             gasParticles.Stop();
-            //gasGold.enabled = false;
             gasGoldBg.enabled = false;
             return;
         }
-        InvertedMovement();
+        controlDirection = -1;
     }
 
     void PlayerRotation(Vector3 camF, Vector3 camR)
@@ -366,22 +337,20 @@ public class Player3D : MonoBehaviour
     {
         AudioManager.Instance.PlaySfxOnce(inGas);
         gasClock.fillAmount = 1;
-        //gasGold.enabled = true;
         gasGoldBg.enabled = true;
         gasParticles.Play();
         yield return new WaitForSeconds(.5f);
-        invertedControls = true;
+        controlDirection = -1;
         invertedControlsTime = 2.5f;
     }
     IEnumerator WaitGasInstantly()
     {
         AudioManager.Instance.PlaySfxOnce(inGas);
         gasClock.fillAmount = 1;
-        //gasGold.enabled = true;
         gasGoldBg.enabled = true;
         gasParticles.Play();
         yield return null;
-        invertedControls = true;
+        controlDirection = -1;
         invertedControlsTime = 2.5f;
     }
 
@@ -409,7 +378,6 @@ public class Player3D : MonoBehaviour
             extraDialogues.NextDialogueBool();
         }
         gasClock.transform.LookAt(cam);
-        //gasGold.transform.LookAt(cam);
         gasGoldBg.transform.LookAt(cam);
 
         if (youWon == true)
@@ -426,6 +394,7 @@ public class Player3D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Movement();
 
         if (youWon == true)
         {
@@ -441,17 +410,6 @@ public class Player3D : MonoBehaviour
         {
             HoneyTrail();
         }
-
-        //We use the normal control system unless the boolean is true, if it is true we invert the controls
-        if (invertedControls)
-        {
-            InvertedEffect();
-        }
-        else{
-            Movement();
-        }
-
-        
     }
 
 }

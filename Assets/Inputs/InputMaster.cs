@@ -223,6 +223,33 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Dialogues"",
+            ""id"": ""c9bf110f-b9ec-451f-923a-065542570842"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""ff04f379-0353-47eb-917a-123f7fa17a61"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2134a35d-91d3-4700-9e97-63337c2d68ee"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -248,6 +275,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Menus_Move = m_Menus.FindAction("Move", throwIfNotFound: true);
         m_Menus_Select = m_Menus.FindAction("Select", throwIfNotFound: true);
         m_Menus_Back = m_Menus.FindAction("Back", throwIfNotFound: true);
+        // Dialogues
+        m_Dialogues = asset.FindActionMap("Dialogues", throwIfNotFound: true);
+        m_Dialogues_Newaction = m_Dialogues.FindAction("New action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -383,6 +413,39 @@ public class @InputMaster : IInputActionCollection, IDisposable
         }
     }
     public MenusActions @Menus => new MenusActions(this);
+
+    // Dialogues
+    private readonly InputActionMap m_Dialogues;
+    private IDialoguesActions m_DialoguesActionsCallbackInterface;
+    private readonly InputAction m_Dialogues_Newaction;
+    public struct DialoguesActions
+    {
+        private @InputMaster m_Wrapper;
+        public DialoguesActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Newaction => m_Wrapper.m_Dialogues_Newaction;
+        public InputActionMap Get() { return m_Wrapper.m_Dialogues; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DialoguesActions set) { return set.Get(); }
+        public void SetCallbacks(IDialoguesActions instance)
+        {
+            if (m_Wrapper.m_DialoguesActionsCallbackInterface != null)
+            {
+                @Newaction.started -= m_Wrapper.m_DialoguesActionsCallbackInterface.OnNewaction;
+                @Newaction.performed -= m_Wrapper.m_DialoguesActionsCallbackInterface.OnNewaction;
+                @Newaction.canceled -= m_Wrapper.m_DialoguesActionsCallbackInterface.OnNewaction;
+            }
+            m_Wrapper.m_DialoguesActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
+            }
+        }
+    }
+    public DialoguesActions @Dialogues => new DialoguesActions(this);
     private int m_XboxcontrolschemeSchemeIndex = -1;
     public InputControlScheme XboxcontrolschemeScheme
     {
@@ -402,5 +465,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
         void OnBack(InputAction.CallbackContext context);
+    }
+    public interface IDialoguesActions
+    {
+        void OnNewaction(InputAction.CallbackContext context);
     }
 }
