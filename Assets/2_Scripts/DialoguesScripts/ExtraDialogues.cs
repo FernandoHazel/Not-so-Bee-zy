@@ -10,10 +10,12 @@ public class ExtraDialogues : MonoBehaviour
     bool showDialogue = false;
     [SerializeField] Player3D player = default;
     [SerializeField] CameraControl CameraControl = default;
+    public static bool inDialogue = false;
 
     bool nextDialogueBool = false;
     [SerializeField] bool wantMovement = false;
-    private void Awake() {
+    private void Awake() 
+    {
         inputMaster = new InputMaster();
     }
     private void OnTriggerEnter(Collider other)
@@ -62,7 +64,8 @@ public class ExtraDialogues : MonoBehaviour
         if (showDialogue)
         {
             Debug.Log("ActiveDialogues");
-            //player.move = false;   //que el jugador no se pueda mover, pusimos su velocidad en 0
+
+            //Stop the player.
             player.speed = 0;
             player.rotationSpeed = 0;
             dialogueImage.SetActive(true);
@@ -75,7 +78,7 @@ public class ExtraDialogues : MonoBehaviour
         }
         else
         {
-            //player.move = true;  //restaurar velocidad del jugador
+            //Allow the player to move again
             player.speed = player.speedInicial;
             player.rotationSpeed = player.rotationSpeedInicial;
             dialogueImage.SetActive(false);

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using EventBus;
 public class UserInterface : MonoBehaviour
 {
     //public PauseAnimationsManager pauseTrigger;
@@ -31,6 +32,19 @@ public class UserInterface : MonoBehaviour
     {
         youWon.SetActive(false);
         youLost.SetActive(false);
+    }
+
+    private void OnEnable() 
+    {
+        //GameEventBus.Subscribe(GameEventType.DIALOGUE, ShowText);
+        //GameEventBus.Subscribe(GameEventType.LOST, YouLost);
+        //GameEventBus.Subscribe(GameEventType.WIN, YouWon);
+    }
+    private void OnDisable() 
+    {
+        //GameEventBus.Unsubscribe(GameEventType.DIALOGUE, FreezePlayer);
+        //GameEventBus.Unsubscribe(GameEventType.LOST, YouLost);
+        //GameEventBus.Unsubscribe(GameEventType.WIN, YouWon);
     }
     public void UpdatePollen(int num, int maxNum)
     {

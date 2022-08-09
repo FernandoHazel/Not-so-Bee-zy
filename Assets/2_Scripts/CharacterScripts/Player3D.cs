@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using EventBus;
 
 
 public class Player3D : MonoBehaviour
@@ -32,7 +33,7 @@ public class Player3D : MonoBehaviour
 
     float invertedControlsTime = 0, honeyTime = 0;
 
-    bool invertedControls = false, slowHoney = false;
+    bool slowHoney = false;
 
     public ParticleSystem honeyParticles;   
     public ParticleSystem gasParticles;
@@ -44,7 +45,9 @@ public class Player3D : MonoBehaviour
     GameObject localSkin;
     
     private int controlDirection;
-    private void Awake() {
+    private void Awake() 
+    {
+        controller = GetComponent<CharacterController>();
         inputMaster = new InputMaster();
         tutorialDialogues = new TutorialDialogues();
         extraDialogues = new ExtraDialogues();
@@ -77,9 +80,15 @@ public class Player3D : MonoBehaviour
     }
     private void OnEnable() {
         inputMaster.Enable();
+        GameEventBus.Subscribe(GameEventType.DIALOGUE, FreezePlayer);
+        GameEventBus.Subscribe(GameEventType.LOST, FreezePlayer);
+         GameEventBus.Subscribe(GameEventType.WIN, FreezePlayer);
     }
     private void OnDisable() {
         inputMaster.Disable();
+        GameEventBus.Unsubscribe(GameEventType.DIALOGUE, FreezePlayer);
+        GameEventBus.Unsubscribe(GameEventType.LOST, FreezePlayer);
+        GameEventBus.Unsubscribe(GameEventType.WIN, FreezePlayer);
     }
     
     void Movement()
@@ -109,6 +118,11 @@ public class Player3D : MonoBehaviour
                 PlayerRotation(camF, camR);
             }
         }
+    }
+
+    void FreezePlayer()
+    {
+        move = false;
     }
 
     void InvertedEffect()
@@ -145,8 +159,6 @@ public class Player3D : MonoBehaviour
 
         slowHoney = false;
         trapedInHoney.Stop();
-
-        invertedControls = false;
 
         speed = speedInicial;
 
@@ -280,7 +292,7 @@ public class Player3D : MonoBehaviour
         //Here we invert the controls, set a timer in 5 and active the main character gas effect
         if (other.gameObject.tag == "Gas")
         {
-            if (invertedControls == true)
+            if (controlDirection == -1)
             {
                 other.gameObject.GetComponent<ParticleSystem>().Stop();
                 other.gameObject.GetComponent<BoxCollider>().enabled = false;
