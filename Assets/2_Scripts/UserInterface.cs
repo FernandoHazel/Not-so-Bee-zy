@@ -37,14 +37,14 @@ public class UserInterface : MonoBehaviour
     private void OnEnable() 
     {
         //GameEventBus.Subscribe(GameEventType.DIALOGUE, ShowText);
-        //GameEventBus.Subscribe(GameEventType.LOST, YouLost);
-        //GameEventBus.Subscribe(GameEventType.WIN, YouWon);
+        GameEventBus.Subscribe(GameEventType.LOST, YouLost);
+        GameEventBus.Subscribe(GameEventType.WIN, YouWon);
     }
     private void OnDisable() 
     {
-        //GameEventBus.Unsubscribe(GameEventType.DIALOGUE, FreezePlayer);
-        //GameEventBus.Unsubscribe(GameEventType.LOST, YouLost);
-        //GameEventBus.Unsubscribe(GameEventType.WIN, YouWon);
+        //GameEventBus.Unsubscribe(GameEventType.DIALOGUE, ShowText);
+        GameEventBus.Unsubscribe(GameEventType.LOST, YouLost);
+        GameEventBus.Unsubscribe(GameEventType.WIN, YouWon);
     }
     public void UpdatePollen(int num, int maxNum)
     {
@@ -74,11 +74,6 @@ public class UserInterface : MonoBehaviour
     public void YouLost() 
     {
         youLost.SetActive(true);
-    }
-
-    public void YouLostFalse() 
-    {
-        youLost.SetActive(false);
     }
 
     private void DisplayTimer(float time)

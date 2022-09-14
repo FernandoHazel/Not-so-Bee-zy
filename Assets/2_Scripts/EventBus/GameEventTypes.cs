@@ -2,6 +2,6 @@ namespace EventBus
 {
     public enum GameEventType
     {
-        DIALOGUE, LOST, WIN
+        DIALOGUE, NORMALGAME, LOST, WIN
     }
 }

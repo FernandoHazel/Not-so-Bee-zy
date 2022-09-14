@@ -1,4 +1,5 @@
 using UnityEngine;
+using EventBus;
 
 public class ExtraDialogues : MonoBehaviour
 {
@@ -66,8 +67,9 @@ public class ExtraDialogues : MonoBehaviour
             Debug.Log("ActiveDialogues");
 
             //Stop the player.
-            player.speed = 0;
-            player.rotationSpeed = 0;
+            GameEventBus.Publish(GameEventType.DIALOGUE);
+            /* player.speed = 0;
+            player.rotationSpeed = 0; */
             dialogueImage.SetActive(true);
             ui.ShowExtraText(extraDialogues[currentDialogue]);
             if (nextDialogueBool == true)
@@ -79,8 +81,9 @@ public class ExtraDialogues : MonoBehaviour
         else
         {
             //Allow the player to move again
-            player.speed = player.speedInicial;
-            player.rotationSpeed = player.rotationSpeedInicial;
+            /* player.speed = player.speedInicial;
+            player.rotationSpeed = player.rotationSpeedInicial; */
+            GameEventBus.Publish(GameEventType.NORMALGAME);
             dialogueImage.SetActive(false);
             ui.pauseButton.interactable = true;
             gameObject.GetComponent<BoxCollider>().enabled = false;

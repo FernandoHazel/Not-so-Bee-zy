@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using EventBus;
+using UnityEngine.InputSystem;
 
 
 public class Player3D : MonoBehaviour
@@ -27,11 +28,13 @@ public class Player3D : MonoBehaviour
 
     public UserInterface UserInterfaceScript;
     public bool youLost = false, youWon = false;
+    bool inverted = false;
 
     public CameraControl cameraControl;
     public Door doorScript;
 
-    float invertedControlsTime = 0, honeyTime = 0;
+    [SerializeField] float invertedControlsTime = 3;
+    [SerializeField] float honeyTime = 3;
 
     bool slowHoney = false;
 
@@ -82,24 +85,26 @@ public class Player3D : MonoBehaviour
         inputMaster.Enable();
         GameEventBus.Subscribe(GameEventType.DIALOGUE, FreezePlayer);
         GameEventBus.Subscribe(GameEventType.LOST, FreezePlayer);
-         GameEventBus.Subscribe(GameEventType.WIN, FreezePlayer);
+        GameEventBus.Subscribe(GameEventType.WIN, FreezePlayer);
+        GameEventBus.Subscribe(GameEventType.NORMALGAME, ReturnToGame);
     }
     private void OnDisable() {
         inputMaster.Disable();
         GameEventBus.Unsubscribe(GameEventType.DIALOGUE, FreezePlayer);
         GameEventBus.Unsubscribe(GameEventType.LOST, FreezePlayer);
         GameEventBus.Unsubscribe(GameEventType.WIN, FreezePlayer);
+        GameEventBus.Unsubscribe(GameEventType.NORMALGAME, ReturnToGame);
     }
-    
     void Movement()
     {
         if (move == true)
         {
-            movement = new Vector3(inputMaster.Player.move.ReadValue<Vector2>().x * controlDirection, 0f, inputMaster.Player.move.ReadValue<Vector2>().y * controlDirection);
+            //Get the input and invert the direction if the player is poisoned.
+            movement = new Vector3(inputMaster.Player.move.ReadValue<Vector2>().x * controlDirection, 0f, inputMaster.Player.move.ReadValue<Vector2>().y * controlDirection).normalized;
 
+            //Set the camera position and rotation.
             Vector3 camF = cam.forward;
             Vector3 camR = cam.right;
-
 
             camF.y = 0;
             camR.y = 0;
@@ -109,8 +114,10 @@ public class Player3D : MonoBehaviour
 
             movement.y = movement.y - (gravity * Time.deltaTime);
 
-            controller.Move((camF * movement.z + camR * movement.x) * speed * Time.deltaTime); ////movement.y era movement.z
-            controller.Move(new Vector3(0, movement.y, 0) * speed * Time.deltaTime); //gravity applied to movement
+            //Move the player.
+            controller.Move((camF * movement.z + camR * movement.x) * speed * Time.deltaTime);
+            controller.Move(new Vector3(0, movement.y, 0) * speed * Time.deltaTime);
+
             movement.y = 0; // reset y, so the player doesnt look to the floor
 
             if ((movement != Vector3.zero))
@@ -125,6 +132,11 @@ public class Player3D : MonoBehaviour
         move = false;
     }
 
+    void ReturnToGame()
+    {
+        move = true;
+    }
+
     void InvertedEffect()
     {
         gasClock.fillAmount -= 1 / invertedControlsTime * Time.deltaTime *.4f;
@@ -135,9 +147,10 @@ public class Player3D : MonoBehaviour
             controlDirection = 1;
             gasParticles.Stop();
             gasGoldBg.enabled = false;
+            inverted = false;
+            invertedControlsTime = 3;
             return;
         }
-        controlDirection = -1;
     }
 
     void PlayerRotation(Vector3 camF, Vector3 camR)
@@ -185,16 +198,11 @@ public class Player3D : MonoBehaviour
 
         doorScript.CloseDoor();
 
-        UserInterfaceScript.YouLost();
+        GameEventBus.Publish(GameEventType.LOST);
 
         transform.parent = null;
         youLost = true;
         cameraControl.currentView = cameraControl.views[0];
-    }
-
-    void Ganaste() 
-    {
-        UserInterfaceScript.YouWon();
     }
 
     void GrabPollen(GameObject go) 
@@ -243,6 +251,15 @@ public class Player3D : MonoBehaviour
     //TRIGGERS
     private void OnTriggerEnter(Collider other)
     {
+        //Here we invert the controls, set a timer in 5 and active the main character gas effect
+        if (other.gameObject.tag == "Gas")
+        {
+            inverted = true;
+            controlDirection = -1;
+            other.gameObject.GetComponent<ParticleSystem>().Stop();
+            other.gameObject.GetComponent<BoxCollider>().enabled = false;
+            StartCoroutine(WaitGas());
+        }
 
         if (other.gameObject.tag == "Pollen")
         {
@@ -269,7 +286,7 @@ public class Player3D : MonoBehaviour
         if (other.gameObject.tag == "Checkpoint")
         {
             AudioManager.Instance.PlaySfxOnce3D(levelCompletedSound,transform);
-            Ganaste();
+            GameEventBus.Publish(GameEventType.WIN);
             youWon = true;
         }
 
@@ -288,23 +305,6 @@ public class Player3D : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-
-        //Here we invert the controls, set a timer in 5 and active the main character gas effect
-        if (other.gameObject.tag == "Gas")
-        {
-            if (controlDirection == -1)
-            {
-                other.gameObject.GetComponent<ParticleSystem>().Stop();
-                other.gameObject.GetComponent<BoxCollider>().enabled = false;
-                StartCoroutine(WaitGasInstantly());
-            }
-            else
-            {
-                other.gameObject.GetComponent<ParticleSystem>().Stop();
-                other.gameObject.GetComponent<BoxCollider>().enabled = false;
-                StartCoroutine(WaitGas());
-            }
-        }
 
         if (other.gameObject.tag == "Honey")
         {
@@ -352,16 +352,6 @@ public class Player3D : MonoBehaviour
         gasGoldBg.enabled = true;
         gasParticles.Play();
         yield return new WaitForSeconds(.5f);
-        controlDirection = -1;
-        invertedControlsTime = 2.5f;
-    }
-    IEnumerator WaitGasInstantly()
-    {
-        AudioManager.Instance.PlaySfxOnce(inGas);
-        gasClock.fillAmount = 1;
-        gasGoldBg.enabled = true;
-        gasParticles.Play();
-        yield return null;
         controlDirection = -1;
         invertedControlsTime = 2.5f;
     }
@@ -421,6 +411,11 @@ public class Player3D : MonoBehaviour
         if (slowHoney)
         {
             HoneyTrail();
+        }
+
+        if (inverted)
+        {
+            InvertedEffect();
         }
     }
 
