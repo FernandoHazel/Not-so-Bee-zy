@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance;
+    public static AudioManager audioManager;
     //[SerializeField] private AudioSource []audioChannelLoop;
     [SerializeField] private AudioSource[] audioChannelLoop3D;
     [SerializeField] private AudioSource[] audioChannelOnce3D;
@@ -13,9 +13,14 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource[] audioChannelOnce;
     private void Awake()
     {
-        if (Instance == null)
+        //Singleton for this class
+        if (audioManager != null && audioManager != this)
         {
-            Instance = this;
+            Destroy(this);
+        }
+        else
+        {
+            audioManager = this;
         }
     }
     public void PlaySfxLoop(AudioClip clip) 

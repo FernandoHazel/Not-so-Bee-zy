@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using EventBus;
-using UnityEngine.InputSystem;
 
 
 public class Player3D : MonoBehaviour
@@ -16,7 +15,6 @@ public class Player3D : MonoBehaviour
     private InputMaster inputMaster;
     private TutorialDialogues tutorialDialogues;
     private ExtraDialogues extraDialogues;
-    private GameManager gm;
     public float speed = 3, gravity = 1f, rotationSpeed = 5;
     public float speedInicial, rotationSpeedInicial;
     public Transform cam;
@@ -48,20 +46,20 @@ public class Player3D : MonoBehaviour
     GameObject localSkin;
     
     private int controlDirection;
+
     private void Awake() 
     {
         controller = GetComponent<CharacterController>();
         inputMaster = new InputMaster();
         tutorialDialogues = new TutorialDialogues();
         extraDialogues = new ExtraDialogues();
-        gm = new GameManager();
     }
     void Start()
     {
         
         if (levelData.GetSkinSelected() != 2) 
         {
-            AudioManager.Instance.PlaySfxLoop3D(buzzing, transform);
+            AudioManager.audioManager.PlaySfxLoop3D(buzzing, transform);
         }
         controlDirection = 1;
         move = true;
@@ -95,6 +93,7 @@ public class Player3D : MonoBehaviour
         GameEventBus.Unsubscribe(GameEventType.WIN, FreezePlayer);
         GameEventBus.Unsubscribe(GameEventType.NORMALGAME, ReturnToGame);
     }
+
     void Movement()
     {
         if (move == true)
@@ -129,7 +128,7 @@ public class Player3D : MonoBehaviour
 
     void FreezePlayer()
     {
-        move = false;
+        move = false; 
     }
 
     void ReturnToGame()
@@ -215,7 +214,7 @@ public class Player3D : MonoBehaviour
         {
             doorScript.OpenDoor();
         }
-        AudioManager.Instance.PlaySfxOnce(pollenSound);
+        AudioManager.audioManager.PlaySfxOnce(pollenSound);
     }
 
     void GrabHoneyComb(GameObject go)
@@ -224,14 +223,14 @@ public class Player3D : MonoBehaviour
         honeyComb++;
         go.SetActive(false);
         honeyCombList.Add(go);
-        AudioManager.Instance.PlaySfxOnce(honeyCombClip);
+        AudioManager.audioManager.PlaySfxOnce(honeyCombClip);
     }
 
     void GrabHoneyCombTransparent(GameObject go) 
     {
         go.SetActive(false);
         honeyCombList.Add(go);
-        AudioManager.Instance.PlaySfxOnce(greyHoneyCombClip);
+        AudioManager.audioManager.PlaySfxOnce(greyHoneyCombClip);
     }
 
     void HoneyTrail()
@@ -285,7 +284,7 @@ public class Player3D : MonoBehaviour
 
         if (other.gameObject.tag == "Checkpoint")
         {
-            AudioManager.Instance.PlaySfxOnce3D(levelCompletedSound,transform);
+            AudioManager.audioManager.PlaySfxOnce3D(levelCompletedSound,transform);
             GameEventBus.Publish(GameEventType.WIN);
             youWon = true;
         }
@@ -295,7 +294,7 @@ public class Player3D : MonoBehaviour
         {
             if (youWon == false)
             {
-                AudioManager.Instance.PlaySfxOnce(dieSound);
+                AudioManager.audioManager.PlaySfxOnce(dieSound);
                 Die();
             }
         }
@@ -347,7 +346,7 @@ public class Player3D : MonoBehaviour
     //COROUTINES
     IEnumerator WaitGas()
     {
-        AudioManager.Instance.PlaySfxOnce(inGas);
+        AudioManager.audioManager.PlaySfxOnce(inGas);
         gasClock.fillAmount = 1;
         gasGoldBg.enabled = true;
         gasParticles.Play();
@@ -369,16 +368,6 @@ public class Player3D : MonoBehaviour
     //UPDATES
     void Update()
     {
-        if (inputMaster.Player.Pause.triggered)
-        {
-            gm.ChangePause();
-        }
-        //avanzamos los diálogos con el botón sur del control
-        if (inputMaster.Menus.Select.ReadValue<float>() == 1)
-        {
-            tutorialDialogues.NextDialogueBool();
-            extraDialogues.NextDialogueBool();
-        }
         gasClock.transform.LookAt(cam);
         gasGoldBg.transform.LookAt(cam);
 
@@ -389,8 +378,8 @@ public class Player3D : MonoBehaviour
 
         if (youLost == true)
         {
-                UserInterfaceScript.timer = 0;
-                return;
+            UserInterfaceScript.timer = 0;
+            return;
         }
     }
 

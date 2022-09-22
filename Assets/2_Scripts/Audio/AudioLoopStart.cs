@@ -7,7 +7,7 @@ public class AudioLoopStart : MonoBehaviour
     [SerializeField] private AudioClip audioToLoop;
     void Start()
     {
-        AudioManager.Instance.PlaySfxLoop3D(audioToLoop, gameObject.transform);
+        AudioManager.audioManager.PlaySfxLoop3D(audioToLoop, gameObject.transform);
     }
 
 }

@@ -61,7 +61,7 @@ public class SkinSelector : MonoBehaviour
 
     public void NextSkin()
     {
-        AudioManager.Instance.PlaySfxOnce(nextSound);
+        AudioManager.audioManager.PlaySfxOnce(nextSound);
         leftButton.interactable = true;
         if (currentSkin >= maxSkins)
         {
@@ -82,7 +82,7 @@ public class SkinSelector : MonoBehaviour
 
     public void PreviousSkin()
     {
-        AudioManager.Instance.PlaySfxOnce(previousSound);
+        AudioManager.audioManager.PlaySfxOnce(previousSound);
         rightButton.interactable = true;
         if (currentSkin <= 0)
         {
@@ -103,7 +103,7 @@ public class SkinSelector : MonoBehaviour
 
     public void BuySkin() 
     {
-        AudioManager.Instance.PlaySfxOnce(buySound);
+        AudioManager.audioManager.PlaySfxOnce(buySound);
         levelData.SpendHoneycombsGlobal(skinsCost[currentSkin]);
         levelData.SetSkinUnlocked(currentSkin);
         levelData.SetSkinSelected(currentSkin);
@@ -113,7 +113,7 @@ public class SkinSelector : MonoBehaviour
 
     public void SelectSkin() 
     {
-        AudioManager.Instance.PlaySfxOnce(selectSound);
+        AudioManager.audioManager.PlaySfxOnce(selectSound);
         levelData.SetSkinSelected(currentSkin);
         levelData.SaveData();
     }

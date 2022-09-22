@@ -35,7 +35,7 @@ public class CreditsSelector : MonoBehaviour
     }
     public void NextSkin()
     {
-        AudioManager.Instance.PlaySfxOnce(nextSound);
+        AudioManager.audioManager.PlaySfxOnce(nextSound);
         leftButton.interactable = true;
         if (currentCredit>= maxCredit)
         {
@@ -52,7 +52,7 @@ public class CreditsSelector : MonoBehaviour
     }
     public void PreviousSkin()
     {
-        AudioManager.Instance.PlaySfxOnce(previousSound);
+        AudioManager.audioManager.PlaySfxOnce(previousSound);
         rightButton.interactable = true;
         if ((currentCredit) <= 0 )
         {

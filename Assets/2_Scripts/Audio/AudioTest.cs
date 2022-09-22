@@ -8,7 +8,7 @@ public class AudioTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioManager.Instance.PlaySfxLoop3D(testAudio01,gameObject.transform);
+        AudioManager.audioManager.PlaySfxLoop3D(testAudio01,gameObject.transform);
     }
 
     // Update is called once per frame

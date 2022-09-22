@@ -24,7 +24,7 @@ public class UserInterface : MonoBehaviour
 
     public float timer;
 
-    bool cuenta=true;
+    bool cuenta = false;
 
     [SerializeField] public Button pauseButton;
 
@@ -36,19 +36,30 @@ public class UserInterface : MonoBehaviour
 
     private void OnEnable() 
     {
-        //GameEventBus.Subscribe(GameEventType.DIALOGUE, ShowText);
+        GameEventBus.Subscribe(GameEventType.DIALOGUE, StopTimer);
         GameEventBus.Subscribe(GameEventType.LOST, YouLost);
         GameEventBus.Subscribe(GameEventType.WIN, YouWon);
+        GameEventBus.Subscribe(GameEventType.NORMALGAME, StartTimer);
     }
     private void OnDisable() 
     {
-        //GameEventBus.Unsubscribe(GameEventType.DIALOGUE, ShowText);
+        GameEventBus.Unsubscribe(GameEventType.DIALOGUE, StopTimer);
         GameEventBus.Unsubscribe(GameEventType.LOST, YouLost);
         GameEventBus.Unsubscribe(GameEventType.WIN, YouWon);
+        GameEventBus.Unsubscribe(GameEventType.NORMALGAME, StartTimer);
     }
     public void UpdatePollen(int num, int maxNum)
     {
         pollen.text = "Pollen: " + num + "/" + maxNum;
+    }
+
+    private void StartTimer()
+    {
+        cuenta = true;
+    }
+    private void StopTimer()
+    {
+        cuenta = false;
     }
 
     public void UpdateHoneyComb(int num)

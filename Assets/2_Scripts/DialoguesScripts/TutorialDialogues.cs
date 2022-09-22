@@ -1,112 +1,77 @@
 ﻿using UnityEngine;
+using EventBus;
 
 public class TutorialDialogues : MonoBehaviour
 {
     [TextArea] public string[] tutorialDialogues;
     private InputMaster inputMaster;
     int currentDialogue;
-    [SerializeField] GameObject dialogueImage = default;
+    [SerializeField] GameObject dialogueImage;
     [SerializeField] UserInterface ui = default;
     bool showDialogue = true;
-    [SerializeField] Player3D player = default;
     [SerializeField] CameraControl CameraControl = default;
-
-    bool nextDialogueBool = false;
 
     private void Awake() {
         inputMaster = new InputMaster();
     }
+    private void OnEnable()
+    {
+        inputMaster.Enable();
+    }
+    private void OnDisable()
+    {
+        inputMaster.Disable();
+    }
     void Start()
     {
-        currentDialogue = 0;
+        //Start the tutorial dialogues
+        GameEventBus.Publish(GameEventType.DIALOGUE);
         ui.pauseButton.interactable = false;
+        currentDialogue = 0;
+        showDialogue = true;
+        dialogueImage.SetActive(true);
+        ui.ShowExtraText(tutorialDialogues[currentDialogue]);
     }
 
     void Update()
     {
-        //avanzamos los diálogos con el botón sur del control
-        if (inputMaster.Menus.Select.triggered)
+        //Next dialogue.
+        if (inputMaster.Player.Action.triggered && showDialogue)
         {
-            NextDialogueBool();
-        }
-        if (GameManager.gameIsPaused || player.youWon)
-        {
-            showDialogue = false;
+            Debug.Log("Action button pressed");
+            NextTutorialDialogue();
         }
 
-        else 
-        {
-            showDialogue = true;
-        }
-        StopDialogue();
-        ActiveDialogues();
-        MoveCamera();
-    }
-
-    void StopDialogue()
-    {
-        if (showDialogue == false)
-        {
-            return;
-        }
-
-        else 
-        {
-            //when the first dialogues ends
-            if (currentDialogue == 5)
-            {
-                showDialogue = false;
-            }
-            //When the player collects all the pollen
-            if (player.pollen == player.maxPollen)
-            {
-                showDialogue = true;
-            }
-            //when the second dialogue ends
-            if (currentDialogue >= 7)
-            {
-                showDialogue = false;
-                currentDialogue = 7;
-            }
-        }
-    }
-
-    void MoveCamera()
-    {
+        //In this dialogue we perform a little zoom in
         if (currentDialogue == 6)
         {
             CameraControl.currentView = CameraControl.views[1]; 
         }
     }
-    //Active the dialogues and stop the game or resumes it
-    public void ActiveDialogues()
+
+    //We create this separate method because we call it 
+    //by input or by button depending on the the platform
+    public void NextTutorialDialogue()
     {
-        if(showDialogue)
+        //If we run out of dialogues disable them and return to normal game
+        if(currentDialogue >= tutorialDialogues.Length - 1) 
         {
-            //player.move = false;   //que el jugador no se pueda mover, pusimos su velocidad en 0
-            player.speed = 0;
-            player.rotationSpeed = 0;
-            dialogueImage.SetActive(true);
-            ui.ShowText(tutorialDialogues[currentDialogue]);
-            if (nextDialogueBool == true)
-            {
-                nextDialogueBool = false;
-                currentDialogue++;
-            }
+            showDialogue = false;
+            Debug.Log("stop dialogue");
+
+            //Allow the player to move again.
+            GameEventBus.Publish(GameEventType.NORMALGAME);
+            dialogueImage.SetActive(false);
+            ui.pauseButton.interactable = true;
+            this.enabled = false;
         }
         else
         {
-            //player.move = true;  //restaurar velocidad del jugador
-            player.speed = player.speedInicial;
-            player.rotationSpeed = player.rotationSpeedInicial;
-            ui.pauseButton.interactable = true;
-            dialogueImage.SetActive(false);
-            this.enabled = false;
-        }
-    }
+            //Advance to the next dialogue.
+            currentDialogue++;
+            ui.ShowExtraText(tutorialDialogues[currentDialogue]);
 
-    public void NextDialogueBool() 
-    {
-        nextDialogueBool = true;
+            Debug.Log("Next");
+        }
     }
 }

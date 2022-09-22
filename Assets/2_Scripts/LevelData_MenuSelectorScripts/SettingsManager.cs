@@ -13,7 +13,7 @@ public class SettingsManager : MonoBehaviour
 
     public void ResetData() 
     {
-        AudioManager.Instance.PlaySfxOnce(selectSound);
+        AudioManager.audioManager.PlaySfxOnce(selectSound);
         levelData.ResetData();
         levelData.LoadData();
         levelData.SaveData();

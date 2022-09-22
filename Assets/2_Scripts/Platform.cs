@@ -111,6 +111,6 @@ public class Platform : MonoBehaviour
     IEnumerator WaitToPlay() 
     {
         yield return new WaitForSeconds(.9f);
-        AudioManager.Instance.PlaySfxOnce3D(woosh, transform);
+        AudioManager.audioManager.PlaySfxOnce3D(woosh, transform);
     }
 }

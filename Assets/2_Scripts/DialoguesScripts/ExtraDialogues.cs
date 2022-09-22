@@ -9,93 +9,75 @@ public class ExtraDialogues : MonoBehaviour
     [SerializeField] GameObject dialogueImage = default;
     [SerializeField] UserInterface ui = default;
     bool showDialogue = false;
-    [SerializeField] Player3D player = default;
     [SerializeField] CameraControl CameraControl = default;
-    public static bool inDialogue = false;
 
-    bool nextDialogueBool = false;
-    [SerializeField] bool wantMovement = false;
+    bool wantMovement = false;
     private void Awake() 
     {
         inputMaster = new InputMaster();
     }
+    private void OnEnable()
+    {
+        inputMaster.Enable();
+    }
+    private void OnDisable()
+    {
+        inputMaster.Disable();
+    }
     private void OnTriggerEnter(Collider other)
     {
+        //If the player enters the collider we activate the first one
         if (other.tag == "Player")
         {
+            GameEventBus.Publish(GameEventType.DIALOGUE);
             ui.pauseButton.interactable = false;
             currentDialogue = 0;
             showDialogue = true;
-            ActiveDialogues();
-            currentDialogue++;
+            dialogueImage.SetActive(true);
+            ui.ShowExtraText(extraDialogues[currentDialogue]);
         }
     }
 
     void Update()
     {
-        
-        if (GameManager.gameIsPaused || player.youWon)
+        //Next dialogue.
+        if (inputMaster.Player.Action.triggered && showDialogue)
         {
-            showDialogue = false;
+            Debug.Log("Action button pressed");
+            NextDialogue();
         }
 
-        else if (currentDialogue == 2 && wantMovement == true) 
+        //In this dialogue we perform a little zoom in
+        if (currentDialogue == 2 && wantMovement == true)
         {
             CameraControl.currentView = CameraControl.views[14];
         }
     }
 
-    void StopDialogue()
+    //We create this separate method because we call it 
+    //by input or by button depending on the the platform
+    public void NextDialogue()
     {
-        if (showDialogue == false)
-        {
-            return;
-        }
-        else if (currentDialogue >= extraDialogues.Length) 
+        //If we run out of dialogues disable them and return to normal game
+        if(currentDialogue >= extraDialogues.Length - 1) 
         {
             showDialogue = false;
-            Debug.Log("stopdialogue");
-        }
+            Debug.Log("stop dialogue");
 
-    }
-
-    //Active the dialogues and stop the game or resumes it
-    public void ActiveDialogues()
-    {
-        if (showDialogue)
-        {
-            Debug.Log("ActiveDialogues");
-
-            //Stop the player.
-            GameEventBus.Publish(GameEventType.DIALOGUE);
-            /* player.speed = 0;
-            player.rotationSpeed = 0; */
-            dialogueImage.SetActive(true);
-            ui.ShowExtraText(extraDialogues[currentDialogue]);
-            if (nextDialogueBool == true)
-            {
-                nextDialogueBool = false;
-                currentDialogue++;
-            }
-        }
-        else
-        {
-            //Allow the player to move again
-            /* player.speed = player.speedInicial;
-            player.rotationSpeed = player.rotationSpeedInicial; */
+            //Allow the player to move again.
             GameEventBus.Publish(GameEventType.NORMALGAME);
             dialogueImage.SetActive(false);
             ui.pauseButton.interactable = true;
             gameObject.GetComponent<BoxCollider>().enabled = false;
             this.enabled = false;
         }
-    }
+        else
+        {
+            //Advance to the next dialogue.
+            currentDialogue++;
+            ui.ShowExtraText(extraDialogues[currentDialogue]);
 
-    public void NextDialogueBool()
-    {
-        nextDialogueBool = true;
-        StopDialogue();
-        ActiveDialogues();
-        Debug.Log("ActiveDialogues");
+            Debug.Log("Next");
+        }
     }
 }

@@ -59,7 +59,7 @@ public class LevelSelector : MonoBehaviour
     }
     public void NextLevel() 
     {
-        AudioManager.Instance.PlaySfxOnce(nextSound);
+        AudioManager.audioManager.PlaySfxOnce(nextSound);
         leftButton.interactable = true;
         if (currentSelectedLevel >= maxLevels)
         {
@@ -80,7 +80,7 @@ public class LevelSelector : MonoBehaviour
 
     public void PreviousLevel()
     {
-        AudioManager.Instance.PlaySfxOnce(previousSound);
+        AudioManager.audioManager.PlaySfxOnce(previousSound);
         rightButton.interactable = true;
         if (currentSelectedLevel <=0)
         {
@@ -120,7 +120,7 @@ public class LevelSelector : MonoBehaviour
     IEnumerator DelayedLoad(string SceneToLoad)
     {
 
-        AudioManager.Instance.PlaySfxOnce(selectSound);
+        AudioManager.audioManager.PlaySfxOnce(selectSound);
 
         yield return new WaitForSeconds(selectSound.length);
 
