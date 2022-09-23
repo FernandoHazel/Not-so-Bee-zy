@@ -36,16 +36,18 @@ public class UserInterface : MonoBehaviour
 
     private void OnEnable() 
     {
-        GameEventBus.Subscribe(GameEventType.DIALOGUE, StopTimer);
+        GameEventBus.Subscribe(GameEventType.PAUSE, StopTimer);
         GameEventBus.Subscribe(GameEventType.LOST, YouLost);
         GameEventBus.Subscribe(GameEventType.WIN, YouWon);
+        GameEventBus.Subscribe(GameEventType.FINISHDIALOGUE, StartTimer);
         GameEventBus.Subscribe(GameEventType.NORMALGAME, StartTimer);
     }
     private void OnDisable() 
     {
-        GameEventBus.Unsubscribe(GameEventType.DIALOGUE, StopTimer);
+        GameEventBus.Unsubscribe(GameEventType.PAUSE, StopTimer);
         GameEventBus.Unsubscribe(GameEventType.LOST, YouLost);
         GameEventBus.Unsubscribe(GameEventType.WIN, YouWon);
+        GameEventBus.Unsubscribe(GameEventType.FINISHDIALOGUE, StartTimer);
         GameEventBus.Unsubscribe(GameEventType.NORMALGAME, StartTimer);
     }
     public void UpdatePollen(int num, int maxNum)

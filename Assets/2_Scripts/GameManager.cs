@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private InputMaster inputMaster;
     [SerializeField] AudioClip selectSound;
     public static bool gameIsPaused = false;
+    bool canPause = false; // this bool is to avoid to pause the game during dialogues
     
     public string currentScene;
     public bool needFade = false;
@@ -44,26 +45,37 @@ public class GameManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        //inputMaster.Enable();
+        inputMaster.Enable();
         GameEventBus.Subscribe(GameEventType.NORMALGAME, PlayerMap);
         GameEventBus.Subscribe(GameEventType.MENU, MenusMap);
+        GameEventBus.Subscribe(GameEventType.FINISHDIALOGUE, FinishDialogue);
     }
     private void OnDisable()
     {
-        //inputMaster.Disable();
+        inputMaster.Disable();
         GameEventBus.Unsubscribe(GameEventType.NORMALGAME, PlayerMap);
         GameEventBus.Unsubscribe(GameEventType.MENU, MenusMap);
+        GameEventBus.Unsubscribe(GameEventType.FINISHDIALOGUE, FinishDialogue);
+    }
+
+    void FinishDialogue()
+    {
+        canPause = true;
     }
 
     //Switch action maps.
     private void PlayerMap()
     {
         playerInput.SwitchCurrentActionMap("Player");
+        /* playerInput.actions.FindActionMap("Player").Enable();
+        playerInput.actions.FindActionMap("Menus").Disable(); */
         Debug.Log("In Player action map");
     }
     private void MenusMap()
     {
         playerInput.SwitchCurrentActionMap("Menus");
+        /* playerInput.actions.FindActionMap("Menus").Enable();
+        playerInput.actions.FindActionMap("Player").Disable(); */
         Debug.Log("In Menus action map");
     }
 
@@ -71,7 +83,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //Pause.
-        if (inputMaster.Player.Pause.triggered)
+        if (inputMaster.Player.Pause.triggered && canPause)
         {
             Debug.Log("Pause button pressed");
 
@@ -83,6 +95,7 @@ public class GameManager : MonoBehaviour
             {
                 //Change action map to menu
                 GameEventBus.Publish(GameEventType.MENU);
+                GameEventBus.Publish(GameEventType.PAUSE);
                 Time.timeScale = 0;
             }
             else
@@ -91,6 +104,38 @@ public class GameManager : MonoBehaviour
                 GameEventBus.Publish(GameEventType.NORMALGAME);
                 Time.timeScale = 1;
             }
+        }
+
+        
+    }
+
+
+    //This separate methods for the pause are accessed by click or tap in the UI button.
+    public void ResumeGame()
+    {
+        //Change action map to Player
+        GameEventBus.Publish(GameEventType.NORMALGAME);
+        Time.timeScale = 1;
+    }
+
+    public void ChangePause()
+    {
+        AudioManager.audioManager.PlaySfxOnce(selectSound);
+        gameIsPaused = !gameIsPaused;
+
+        //Pause or resume game.
+        if (gameIsPaused)
+        {
+            //Change action map to menu
+            GameEventBus.Publish(GameEventType.MENU);
+            GameEventBus.Publish(GameEventType.PAUSE);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            //Change action map to Player
+            GameEventBus.Publish(GameEventType.NORMALGAME);
+            Time.timeScale = 1;
         }
     }
 
@@ -102,6 +147,11 @@ public class GameManager : MonoBehaviour
     public void LoadSceneSimple(string SceneToLoad)
     {
         SceneManager.LoadScene(SceneToLoad);
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void LoadScene01(string SceneToLoad)

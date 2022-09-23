@@ -66,6 +66,7 @@ public class ExtraDialogues : MonoBehaviour
 
             //Allow the player to move again.
             GameEventBus.Publish(GameEventType.NORMALGAME);
+            GameEventBus.Publish(GameEventType.FINISHDIALOGUE);
             dialogueImage.SetActive(false);
             ui.pauseButton.interactable = true;
             gameObject.GetComponent<BoxCollider>().enabled = false;
