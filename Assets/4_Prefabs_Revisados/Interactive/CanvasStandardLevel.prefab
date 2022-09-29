@@ -1259,7 +1259,6 @@ GameObject:
   - component: {fileID: 7007078238229747943}
   - component: {fileID: 1471827695803662376}
   - component: {fileID: 5980752383214147266}
-  - component: {fileID: 1785800182643968060}
   m_Layer: 5
   m_Name: RetryButtonB
   m_TagString: Untagged
@@ -1338,18 +1337,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 8078641532526367981}
+    m_SelectOnDown: {fileID: 456600030971008488}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
     m_HighlightedColor: {r: 0.98039216, g: 0.94244355, b: 0.34901962, a: 1}
-    m_PressedColor: {r: 1, g: 0.9561808, b: 0, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 1, g: 0.6156863, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.7411765, b: 0.003921569, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1369,10 +1368,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1785800182643968060}
+      - m_Target: {fileID: 7515943107347906018}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene01
-        m_Mode: 5
+        m_MethodName: Retry
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1381,21 +1380,6 @@ MonoBehaviour:
           m_StringArgument: Tutorial
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1785800182643968060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2713985276692925741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 696ce0fcd00e4dd4a89cdfa503b35389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectSound: {fileID: 8300000, guid: bd703219eeac9bb40b18fd4bfc539580, type: 3}
-  currentScene: 
-  needFade: 0
 --- !u!1 &2868041098758814338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,9 +1412,9 @@ RectTransform:
   m_Children:
   - {fileID: 2735313123452579625}
   - {fileID: 8011429907264764309}
-  - {fileID: 9204407798830565163}
-  - {fileID: 1115075696246933230}
   - {fileID: 7521862170083894518}
+  - {fileID: 1115075696246933230}
+  - {fileID: 9204407798830565163}
   - {fileID: 1009621918440702870}
   m_Father: {fileID: 7217945645277597582}
   m_RootOrder: 2
@@ -1490,7 +1474,6 @@ GameObject:
   - component: {fileID: 5998113540492479018}
   - component: {fileID: 5862914421771463440}
   - component: {fileID: 4436627682432208476}
-  - component: {fileID: 5720575204012689729}
   m_Layer: 5
   m_Name: RetryButtonB
   m_TagString: Untagged
@@ -1511,7 +1494,7 @@ RectTransform:
   m_Children:
   - {fileID: 1356548175828263418}
   m_Father: {fileID: 9154026180664511535}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1569,18 +1552,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnDown: {fileID: 5550161154356779239}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
     m_HighlightedColor: {r: 0.98039216, g: 0.94244355, b: 0.34901962, a: 1}
-    m_PressedColor: {r: 1, g: 0.9561808, b: 0, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 1, g: 0.6154237, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.78035855, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1600,10 +1583,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5720575204012689729}
+      - m_Target: {fileID: 7515943107347906018}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene01
-        m_Mode: 5
+        m_MethodName: Retry
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1612,21 +1595,6 @@ MonoBehaviour:
           m_StringArgument: Tutorial
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5720575204012689729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3080939280622159439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 696ce0fcd00e4dd4a89cdfa503b35389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectSound: {fileID: 8300000, guid: bd703219eeac9bb40b18fd4bfc539580, type: 3}
-  currentScene: 
-  needFade: 0
 --- !u!1 &3138155346532721740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,7 +2103,6 @@ GameObject:
   - component: {fileID: 440663366390051196}
   - component: {fileID: 2419536473310505052}
   - component: {fileID: 456600030971008488}
-  - component: {fileID: 2595307071668566547}
   m_Layer: 5
   m_Name: MainMenuButton
   m_TagString: Untagged
@@ -2156,7 +2123,7 @@ RectTransform:
   m_Children:
   - {fileID: 9158401456397917643}
   m_Father: {fileID: 4557330183160468197}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2214,9 +2181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 5980752383214147266}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -2224,8 +2191,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
     m_HighlightedColor: {r: 0.98039216, g: 0.94244355, b: 0.34901962, a: 1}
-    m_PressedColor: {r: 1, g: 0.9561808, b: 0, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 1, g: 0.6156863, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.7411765, b: 0.003921569, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2245,9 +2212,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2595307071668566547}
+      - m_Target: {fileID: 7515943107347906018}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene01
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2257,21 +2224,6 @@ MonoBehaviour:
           m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2595307071668566547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4521394711228653865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 696ce0fcd00e4dd4a89cdfa503b35389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectSound: {fileID: 8300000, guid: bd703219eeac9bb40b18fd4bfc539580, type: 3}
-  currentScene: 
-  needFade: 0
 --- !u!1 &5237847123076597916
 GameObject:
   m_ObjectHideFlags: 0
@@ -2653,8 +2605,8 @@ RectTransform:
   m_Children:
   - {fileID: 6800387360817643665}
   - {fileID: 8125497056362976573}
-  - {fileID: 8061177112713483471}
   - {fileID: 2797880621430795564}
+  - {fileID: 8061177112713483471}
   - {fileID: 1024005828551895665}
   m_Father: {fileID: 7217945645277597582}
   m_RootOrder: 3
@@ -2924,7 +2876,6 @@ GameObject:
   - component: {fileID: 5819151495408646165}
   - component: {fileID: 4773506413248483695}
   - component: {fileID: 8078641532526367981}
-  - component: {fileID: 7515998906230957984}
   m_Layer: 5
   m_Name: NextLevelButton
   m_TagString: Untagged
@@ -2945,7 +2896,7 @@ RectTransform:
   m_Children:
   - {fileID: 5340522987886187608}
   m_Father: {fileID: 4557330183160468197}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3003,18 +2954,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnDown: {fileID: 5980752383214147266}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
     m_HighlightedColor: {r: 0.98039216, g: 0.94244355, b: 0.34901962, a: 1}
-    m_PressedColor: {r: 1, g: 0.9561808, b: 0, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 1, g: 0.61737454, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.74075294, b: 0.0039215684, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3034,9 +2985,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7515998906230957984}
+      - m_Target: {fileID: 7515943107347906018}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene01
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3046,21 +2997,6 @@ MonoBehaviour:
           m_StringArgument: Nivel Oficial 1
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7515998906230957984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6566334624691123692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 696ce0fcd00e4dd4a89cdfa503b35389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectSound: {fileID: 8300000, guid: bd703219eeac9bb40b18fd4bfc539580, type: 3}
-  currentScene: 
-  needFade: 0
 --- !u!1 &6587244147012780099
 GameObject:
   m_ObjectHideFlags: 0
@@ -3359,7 +3295,6 @@ GameObject:
   - component: {fileID: 9161589712327303422}
   - component: {fileID: 757228641904224067}
   - component: {fileID: 5550161154356779239}
-  - component: {fileID: 7510043009983558632}
   m_Layer: 5
   m_Name: MainMenuButton
   m_TagString: Untagged
@@ -3380,7 +3315,7 @@ RectTransform:
   m_Children:
   - {fileID: 1313574439533696930}
   m_Father: {fileID: 9154026180664511535}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3438,9 +3373,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 4436627682432208476}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -3448,8 +3383,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
     m_HighlightedColor: {r: 0.98039216, g: 0.94244355, b: 0.34901962, a: 1}
-    m_PressedColor: {r: 1, g: 0.9561808, b: 0, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 1, g: 0.6156863, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.78039217, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3469,9 +3404,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7510043009983558632}
+      - m_Target: {fileID: 7515943107347906018}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene01
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3481,21 +3416,6 @@ MonoBehaviour:
           m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7510043009983558632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6677782462359196763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 696ce0fcd00e4dd4a89cdfa503b35389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectSound: {fileID: 8300000, guid: bd703219eeac9bb40b18fd4bfc539580, type: 3}
-  currentScene: 
-  needFade: 0
 --- !u!1 &7036016901811369637
 GameObject:
   m_ObjectHideFlags: 0
@@ -3636,6 +3556,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resumeButton: {fileID: 1695888303631952069}
+  nextLevelButton: {fileID: 6566334624691123692}
+  retryButton: {fileID: 3080939280622159439}
 --- !u!1 &7217945643416043866
 GameObject:
   m_ObjectHideFlags: 0

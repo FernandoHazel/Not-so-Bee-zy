@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 100;
         QualitySettings.vSyncCount = 1;
         currentScene = "Hello";
-        Time.timeScale = 1;
+        
     }
     private void OnEnable()
     {
@@ -113,9 +113,7 @@ public class GameManager : MonoBehaviour
     //This separate methods for the pause are accessed by click or tap in the UI button.
     public void ResumeGame()
     {
-        //Change action map to Player
-        GameEventBus.Publish(GameEventType.NORMALGAME);
-        Time.timeScale = 1;
+        ChangePause();
     }
 
     public void ChangePause()
@@ -151,6 +149,10 @@ public class GameManager : MonoBehaviour
 
     public void Retry()
     {
+        //Without this, if we retry from a win or lost menu the game will pause the next time the scene loads
+        if(gameIsPaused)
+            ChangePause();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

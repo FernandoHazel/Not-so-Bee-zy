@@ -85,6 +85,10 @@ public class LevelSelector : MonoBehaviour
         if (currentSelectedLevel <=0)
         {
             leftButton.interactable = false;
+
+            //Change te gamepad selection to another button
+            //
+            
             return;
         }
         else 
@@ -102,6 +106,16 @@ public class LevelSelector : MonoBehaviour
     public void StartButton(string SceneToLoad) 
     {
         StartCoroutine(DelayedLoad(SceneToLoad));
+    }
+
+    public void GoToScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+    public void QuitGame()
+    {
+        Debug.Log("Exited game");
+        Application.Quit();
     }
     void UpdateLock()
     {
