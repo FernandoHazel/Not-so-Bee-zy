@@ -21,14 +21,12 @@ public class GamepadMenuManager : MonoBehaviour
     
     private void OnEnable()
     {
-        GameEventBus.Subscribe(GameEventType.NORMALGAME, ClearSelection);
         GameEventBus.Subscribe(GameEventType.PAUSE, PauseMenu);
         GameEventBus.Subscribe(GameEventType.WIN, YouWonMenu);
         GameEventBus.Subscribe(GameEventType.LOST, YouLostMenu);
     }
     private void OnDisable()
     {
-        GameEventBus.Unsubscribe(GameEventType.NORMALGAME, ClearSelection);
         GameEventBus.Unsubscribe(GameEventType.PAUSE, PauseMenu);
         GameEventBus.Unsubscribe(GameEventType.WIN, YouWonMenu);
         GameEventBus.Unsubscribe(GameEventType.LOST, YouLostMenu);
@@ -50,9 +48,4 @@ public class GamepadMenuManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(retryButton);
     }
 
-    void ClearSelection()
-    {
-        //Clear selected button
-        EventSystem.current.SetSelectedGameObject(null);
-    }
 }

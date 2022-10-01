@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using EventBus;
 
 public class SkinSelector : MonoBehaviour
 {
@@ -47,16 +48,6 @@ public class SkinSelector : MonoBehaviour
     {
         CheckStatus();
         CheckIfMarcel();
-
-        if (currentSkin == 0)
-        {
-            leftButton.interactable = false;
-        }
-
-        if (currentSkin >= maxSkins)
-        {
-            rightButton.interactable = false;
-        }
     }
 
     public void NextSkin()
@@ -65,6 +56,9 @@ public class SkinSelector : MonoBehaviour
         leftButton.interactable = true;
         if (currentSkin >= maxSkins)
         {
+            //Change to the default button
+            GameEventBus.Publish(GameEventType.UNITERACTABLE);
+
             rightButton.interactable = false;
             return;
         }
@@ -86,6 +80,9 @@ public class SkinSelector : MonoBehaviour
         rightButton.interactable = true;
         if (currentSkin <= 0)
         {
+            //Change to the default button
+            GameEventBus.Publish(GameEventType.UNITERACTABLE);
+            
             leftButton.interactable = false;
             return;
         }

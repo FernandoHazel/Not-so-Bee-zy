@@ -139,11 +139,17 @@ public class GameManager : MonoBehaviour
 
     public void LoadScene(string SceneToLoad)
     {
+        if(gameIsPaused)
+            ChangePause();
+
         StartCoroutine(DelayedLoad(SceneToLoad));
     }
 
     public void LoadSceneSimple(string SceneToLoad)
     {
+        if(gameIsPaused)
+            ChangePause();
+
         SceneManager.LoadScene(SceneToLoad);
     }
 
@@ -156,14 +162,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void LoadScene01(string SceneToLoad)
-    {
-        AudioManager.audioManager.PlaySfxOnce(selectSound);
-        needFade = true;
-        SceneManager.LoadScene(SceneToLoad);
-        gameIsPaused = false;
-        currentScene = SceneToLoad;
-    }
     public void ExitGame()
     {
         Debug.Log("Exited game");

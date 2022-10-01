@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using EventBus;
 
 public class LevelSelector : MonoBehaviour
 {
@@ -43,26 +44,15 @@ public class LevelSelector : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-        if (currentSelectedLevel == 0) 
-        {
-            leftButton.interactable = false;
-        }
-
-        if (currentSelectedLevel >= maxLevels)
-        {
-            rightButton.interactable = false;
-        }
-
-    }
     public void NextLevel() 
     {
         AudioManager.audioManager.PlaySfxOnce(nextSound);
         leftButton.interactable = true;
         if (currentSelectedLevel >= maxLevels)
         {
+            //Change button selection to another button.
+            GameEventBus.Publish(GameEventType.UNITERACTABLE);
+
             rightButton.interactable = false;
             return;
         }
@@ -82,13 +72,12 @@ public class LevelSelector : MonoBehaviour
     {
         AudioManager.audioManager.PlaySfxOnce(previousSound);
         rightButton.interactable = true;
-        if (currentSelectedLevel <=0)
+        if (currentSelectedLevel <= 0)
         {
-            leftButton.interactable = false;
-
             //Change te gamepad selection to another button
-            //
-            
+            GameEventBus.Publish(GameEventType.UNITERACTABLE);
+
+            leftButton.interactable = false;
             return;
         }
         else 

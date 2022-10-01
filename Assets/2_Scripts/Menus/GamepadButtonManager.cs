@@ -9,6 +9,13 @@ public class GamepadButtonManager : MonoBehaviour
     [SerializeField]
     GameObject Button;
 
+    private void OnEnable() {
+        GameEventBus.Subscribe(GameEventType.UNITERACTABLE, SelectButton);
+    }
+
+    private void OnDisable() {
+        GameEventBus.Unsubscribe(GameEventType.UNITERACTABLE, SelectButton);
+    }
     private void Start() {
         SelectButton();
     }
@@ -17,12 +24,6 @@ public class GamepadButtonManager : MonoBehaviour
     {
         //Set a selected button
         EventSystem.current.SetSelectedGameObject(Button);
-    }
-
-    void ClearSelection()
-    {
-        //Clear selected button
-        EventSystem.current.SetSelectedGameObject(null);
     }
 }
 
