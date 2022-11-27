@@ -196,6 +196,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -338,6 +339,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -702,6 +704,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1791,12 +1794,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1205138135}
+      objectReference: {fileID: 0}
     - target: {fileID: 7217945645305045767, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangePause
       objectReference: {fileID: 0}
+    - target: {fileID: 7515943107347906018, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: gameMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 283a8eabf06cce446a7eeaa63e5afa4f, type: 3}
+    - target: {fileID: 7515943107347906018, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: pauseMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: bd16c7b45ca5f39428da2a47abd3700f, type: 3}
     - target: {fileID: 7733601909586469916, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2448,6 +2461,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2584,6 +2598,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2807,7 +2822,7 @@ Transform:
   m_LocalScale: {x: 3.9968, y: 0.31994, z: 1.8628339}
   m_Children: []
   m_Father: {fileID: 649547899}
-  m_RootOrder: 28
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -29.939, z: 0}
 --- !u!65 &324366231
 BoxCollider:
@@ -2833,6 +2848,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3311,6 +3327,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3580,7 +3597,7 @@ MonoBehaviour:
   - 'it looks expensive...
 
     maybe we can borrow it hehe'
-  dialogueImage: {fileID: 1698376321}
+  dialogueImage: {fileID: 0}
   ui: {fileID: 1384192568}
   player: {fileID: 744846784}
   CameraControl: {fileID: 453164347}
@@ -5446,6 +5463,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -5513,6 +5531,7 @@ Transform:
   m_Children:
   - {fileID: 398292442}
   - {fileID: 830648518}
+  - {fileID: 324366230}
   - {fileID: 561094656}
   - {fileID: 932477552}
   - {fileID: 1440991036}
@@ -5539,9 +5558,9 @@ Transform:
   - {fileID: 3413437118663062338}
   - {fileID: 540252737}
   - {fileID: 1773832848}
-  - {fileID: 324366230}
   - {fileID: 77652907}
   - {fileID: 209413973}
+  - {fileID: 2044363948}
   - {fileID: 1201075711}
   - {fileID: 924868855}
   - {fileID: 248049534}
@@ -5568,7 +5587,6 @@ Transform:
   - {fileID: 1918408894}
   - {fileID: 2139816104}
   - {fileID: 1484651937}
-  - {fileID: 2044363948}
   - {fileID: 1193778815}
   - {fileID: 559549571}
   - {fileID: 1568765543}
@@ -5583,8 +5601,8 @@ Transform:
   - {fileID: 1185048234}
   - {fileID: 931820810}
   - {fileID: 1831184743}
-  - {fileID: 711953404}
   - {fileID: 936987646}
+  - {fileID: 711953404}
   - {fileID: 1194190809}
   - {fileID: 1888297370}
   - {fileID: 1566761810}
@@ -6092,6 +6110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectSound: {fileID: 0}
+  gameMusic: {fileID: 0}
+  pauseMusic: {fileID: 0}
   currentScene: 
   needFade: 0
 --- !u!4 &712505011
@@ -6206,6 +6226,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -7090,9 +7111,7 @@ MonoBehaviour:
     stay alert'
   dialogueImage: {fileID: 561631649}
   ui: {fileID: 1384192568}
-  player: {fileID: 744846784}
   CameraControl: {fileID: 453164347}
-  wantMovement: 0
 --- !u!65 &837253244
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7218,6 +7237,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -8256,7 +8276,7 @@ Transform:
   m_LocalScale: {x: 0.8875109, y: 2.255966, z: 6.024058}
   m_Children: []
   m_Father: {fileID: 649547899}
-  m_RootOrder: 73
+  m_RootOrder: 72
   m_LocalEulerAnglesHint: {x: 0, y: 208.564, z: 0}
 --- !u!65 &936987647
 BoxCollider:
@@ -8751,6 +8771,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -8958,6 +8979,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -10300,18 +10322,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 757184738}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1205138135 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9025611619453597243, guid: 5ab88da3666f35946a08c068ae6d38b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 203983240}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 696ce0fcd00e4dd4a89cdfa503b35389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1207525636
 GameObject:
   m_ObjectHideFlags: 0
@@ -10711,6 +10721,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -11318,6 +11329,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -11568,6 +11580,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -13060,6 +13073,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -13437,6 +13451,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -13834,12 +13849,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2174282347350322561, guid: 6f5ada08f12d0354bbb3a0f387109131,
     type: 3}
   m_PrefabInstance: {fileID: 1182636261}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1698376321 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2045755321058193473, guid: 5ab88da3666f35946a08c068ae6d38b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 203983240}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1699655306
 PrefabInstance:
@@ -14288,6 +14297,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -14774,6 +14784,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16212,7 +16223,7 @@ Transform:
   m_LocalScale: {x: 1, y: 5.519381, z: 3.2338598}
   m_Children: []
   m_Father: {fileID: 649547899}
-  m_RootOrder: 57
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: -29.947, z: 0}
 --- !u!65 &2044363949
 BoxCollider:
@@ -16630,6 +16641,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -16781,6 +16793,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -17235,6 +17248,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -17872,6 +17886,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -17942,6 +17957,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -18261,6 +18277,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

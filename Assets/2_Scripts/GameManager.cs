@@ -6,11 +6,13 @@ using EventBus;
 
 public class GameManager : MonoBehaviour
 {
-    //Singleton for this class
     public static GameManager gm;
     private InputMaster inputMaster;
     public static bool gameIsPaused = false;
     bool canPause = false; // this bool is to avoid to pause the game during dialogues
+    [SerializeField] private AudioClip selectSound;
+    [SerializeField] private AudioClip gameMusic;
+    [SerializeField] private AudioClip pauseMusic;
     
     public string currentScene;
     public bool needFade = false;
@@ -26,7 +28,7 @@ public class GameManager : MonoBehaviour
         //Application.targetFrameRate = 100;
         //QualitySettings.vSyncCount = 1;
         currentScene = "";
-        
+        AudioManager.audioManager.PlaySfxLoop(gameMusic);
     }
     private void OnEnable()
     {
@@ -52,16 +54,10 @@ public class GameManager : MonoBehaviour
     private void PlayerMap()
     {
         playerInput.SwitchCurrentActionMap("Player");
-        /* playerInput.actions.FindActionMap("Player").Enable();
-        playerInput.actions.FindActionMap("Menus").Disable(); */
-        Debug.Log("In Player action map");
     }
     private void MenusMap()
     {
         playerInput.SwitchCurrentActionMap("Menus");
-        /* playerInput.actions.FindActionMap("Menus").Enable();
-        playerInput.actions.FindActionMap("Player").Disable(); */
-        Debug.Log("In Menus action map");
     }
 
     
@@ -70,23 +66,7 @@ public class GameManager : MonoBehaviour
         //Pause.
         if (inputMaster.Player.Pause.triggered && canPause)
         {
-            Debug.Log("Pause button pressed");
-            gameIsPaused = !gameIsPaused;
-
-            //Pause or resume game.
-            if (gameIsPaused)
-            {
-                //Change action map to menu
-                GameEventBus.Publish(GameEventType.MENU);
-                GameEventBus.Publish(GameEventType.PAUSE);
-                Time.timeScale = 0;
-            }
-            else
-            {
-                //Change action map to Player
-                GameEventBus.Publish(GameEventType.NORMALGAME);
-                Time.timeScale = 1;
-            }
+            ChangePause();
         }
 
         
@@ -96,6 +76,9 @@ public class GameManager : MonoBehaviour
     //This separate methods for the pause are accessed by click or tap in the UI button.
     public void ResumeGame()
     {
+        AudioManager.audioManager.ClearLoopChannels();
+        AudioManager.audioManager.PlaySfxOnce(selectSound);
+        AudioManager.audioManager.PlaySfxLoop(gameMusic);
         ChangePause();
     }
 
@@ -106,6 +89,8 @@ public class GameManager : MonoBehaviour
         //Pause or resume game.
         if (gameIsPaused)
         {
+            AudioManager.audioManager.ClearLoopChannels();
+            AudioManager.audioManager.PlaySfxLoop(pauseMusic);
             //Change action map to menu
             GameEventBus.Publish(GameEventType.MENU);
             GameEventBus.Publish(GameEventType.PAUSE);
@@ -113,6 +98,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            AudioManager.audioManager.ClearLoopChannels();
+            AudioManager.audioManager.PlaySfxOnce(selectSound);
+            AudioManager.audioManager.PlaySfxLoop(gameMusic);
             //Change action map to Player
             GameEventBus.Publish(GameEventType.NORMALGAME);
             Time.timeScale = 1;
@@ -127,21 +115,13 @@ public class GameManager : MonoBehaviour
         StartCoroutine(DelayedLoad(SceneToLoad));
     }
 
-    public void LoadSceneSimple(string SceneToLoad)
-    {
-        if(gameIsPaused)
-            ChangePause();
-
-        SceneManager.LoadScene(SceneToLoad);
-    }
-
     public void Retry()
     {
         //Without this, if we retry from a win or lost menu the game will pause the next time the scene loads
         if(gameIsPaused)
             ChangePause();
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
+        StartCoroutine(DelayedLoad(SceneManager.GetActiveScene().name));
     }
 
     public void ExitGame()
@@ -152,7 +132,8 @@ public class GameManager : MonoBehaviour
 
     IEnumerator DelayedLoad(string SceneToLoad) 
     {
-        yield return new WaitForSeconds(1);
+        AudioManager.audioManager.PlaySfxOnce(selectSound);
+        yield return new WaitForSeconds(selectSound.length);
         needFade = true;
         SceneManager.LoadScene(SceneToLoad);
         gameIsPaused = false;

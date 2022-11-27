@@ -96,6 +96,6 @@ public class FinalDialogues : MonoBehaviour
     {
         yield return new WaitForSeconds(7.5f);
         gm.needFade = true;
-        gm.LoadSceneSimple("MainMenu");
+        gm.LoadScene("MainMenu");
     }
 }

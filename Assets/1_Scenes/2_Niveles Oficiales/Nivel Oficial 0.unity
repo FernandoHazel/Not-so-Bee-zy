@@ -2694,6 +2694,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadSceneSimple
       objectReference: {fileID: 0}
+    - target: {fileID: 7515943107347906018, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: gameMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 730b5a22edd04fe4c859eac811336716, type: 3}
+    - target: {fileID: 7515943107347906018, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: pauseMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: f1c35abfe2de5f542ac517a292020827, type: 3}
     - target: {fileID: 7733601909586469916, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

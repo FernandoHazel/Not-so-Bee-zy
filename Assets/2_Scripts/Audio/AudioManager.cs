@@ -11,19 +11,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioSource[] audioChannelLoop;
     [SerializeField] private AudioSource[] audioChannelOnce;
-    private void Awake()
-    {
-        //Singleton for this class
-        /* if (audioManager != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            audioManager = this;
-        }
-
-        DontDestroyOnLoad(gameObject); */
+    private void Awake() {
+        audioManager = this;
     }
     public void PlaySfxLoop(AudioClip clip) 
     {
@@ -35,6 +24,14 @@ public class AudioManager : MonoBehaviour
                 channel.Play();
                 break;
             }
+        }
+    }
+
+    public void ClearLoopChannels()
+    {
+        foreach (var channel in audioChannelLoop) 
+        {
+            channel.clip = null;
         }
     }
     public void PlaySfxOnce(AudioClip clip)

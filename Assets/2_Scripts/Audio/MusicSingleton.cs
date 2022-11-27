@@ -16,16 +16,12 @@ public class MusicSingleton : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
-
         else 
         {
             Destroy(this.gameObject);
         }
-    }
 
-    private void Update()
-    {
-        if (SceneManager.GetActiveScene().name != "MainMenu" && SceneManager.GetActiveScene().name != "Store" && SceneManager.GetActiveScene().name != "Tutorial" && SceneManager.GetActiveScene().name != "Settings" && SceneManager.GetActiveScene().name != "Credits") 
+        if (SceneManager.GetActiveScene().name != "MainMenu" && SceneManager.GetActiveScene().name != "Store" && SceneManager.GetActiveScene().name != "Nivel Oficial 0" && SceneManager.GetActiveScene().name != "Settings" && SceneManager.GetActiveScene().name != "Credits") 
         {
             Destroy(this.gameObject);
         }

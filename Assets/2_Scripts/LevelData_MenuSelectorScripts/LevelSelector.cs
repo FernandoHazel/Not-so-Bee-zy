@@ -99,7 +99,7 @@ public class LevelSelector : MonoBehaviour
 
     public void GoToScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(DelayedLoad(sceneName));
     }
     public void QuitGame()
     {
@@ -122,19 +122,17 @@ public class LevelSelector : MonoBehaviour
 
     IEnumerator DelayedLoad(string SceneToLoad)
     {
-
         AudioManager.audioManager.PlaySfxOnce(selectSound);
-
         yield return new WaitForSeconds(selectSound.length);
 
-        if (currentSelectedLevel == 0)
-        {
-            SceneManager.LoadScene("Tutorial"); //luego cambiamos el nombre de la escena a "Nivel Oficial 0" para que funcione todo con una linea
-        }
-
-        else
+        if (SceneToLoad == "Nivel Oficial ")
         {
             SceneManager.LoadScene(SceneToLoad + currentSelectedLevel);
         }
+        else
+        {
+            SceneManager.LoadScene(SceneToLoad);
+        }
+        
     }
 }
