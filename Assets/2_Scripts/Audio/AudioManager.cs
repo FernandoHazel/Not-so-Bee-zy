@@ -14,14 +14,16 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         //Singleton for this class
-        if (audioManager != null && audioManager != this)
+        /* if (audioManager != null)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
         {
             audioManager = this;
         }
+
+        DontDestroyOnLoad(gameObject); */
     }
     public void PlaySfxLoop(AudioClip clip) 
     {

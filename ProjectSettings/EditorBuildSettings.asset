@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/1_Scenes/1_Menus/Store.unity
     guid: 9ec75810fbdee3e48a85e53c0af31de9
   - enabled: 1
-    path: Assets/1_Scenes/1_Menus/Settings.unity
-    guid: 0587cedd371c2a148821a5450b957139
-  - enabled: 1
     path: Assets/1_Scenes/1_Menus/Credits.unity
     guid: 507bfb7c3f0bf2b49b9ea8efdd759664
   - enabled: 1
@@ -38,7 +35,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/1_Scenes/2_Niveles Oficiales/Nivel Oficial 7.unity
     guid: 43e2b205fdbdab645a5cd6d1f34e6400
-  - enabled: 0
-    path: Assets/1_Scenes/3_NivelesParaTests/NivelPrototipo.unity
-    guid: 59e7677fe992d364c80a1bd6e8fcdf66
   m_configObjects: {}

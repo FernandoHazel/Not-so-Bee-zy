@@ -8,10 +8,7 @@ public class GameManager : MonoBehaviour
 {
     //Singleton for this class
     public static GameManager gm;
-    private TutorialDialogues tutorialDialogues;
-    private ExtraDialogues extraDialogues;
     private InputMaster inputMaster;
-    [SerializeField] AudioClip selectSound;
     public static bool gameIsPaused = false;
     bool canPause = false; // this bool is to avoid to pause the game during dialogues
     
@@ -20,27 +17,15 @@ public class GameManager : MonoBehaviour
     private PlayerInput playerInput;
 
     private void Awake() {
-        //Singleton for this class
-        if (gm != null && gm != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            gm = this;
-        }
-
-        tutorialDialogues = new TutorialDialogues();
-        extraDialogues = new ExtraDialogues();
         inputMaster = new InputMaster();
         playerInput = GetComponent<PlayerInput>();
     }
 
     void Start() 
     {
-        Application.targetFrameRate = 100;
-        QualitySettings.vSyncCount = 1;
-        currentScene = "Hello";
+        //Application.targetFrameRate = 100;
+        //QualitySettings.vSyncCount = 1;
+        currentScene = "";
         
     }
     private void OnEnable()
@@ -86,8 +71,6 @@ public class GameManager : MonoBehaviour
         if (inputMaster.Player.Pause.triggered && canPause)
         {
             Debug.Log("Pause button pressed");
-
-            AudioManager.audioManager.PlaySfxOnce(selectSound);
             gameIsPaused = !gameIsPaused;
 
             //Pause or resume game.
@@ -118,7 +101,6 @@ public class GameManager : MonoBehaviour
 
     public void ChangePause()
     {
-        AudioManager.audioManager.PlaySfxOnce(selectSound);
         gameIsPaused = !gameIsPaused;
 
         //Pause or resume game.
@@ -164,14 +146,13 @@ public class GameManager : MonoBehaviour
 
     public void ExitGame()
     {
-        Debug.Log("Exited game");
+        Debug.Log("Quit game");
         Application.Quit();
     }
 
     IEnumerator DelayedLoad(string SceneToLoad) 
     {
-        AudioManager.audioManager.PlaySfxOnce(selectSound);
-        yield return new WaitForSeconds(selectSound.length);
+        yield return new WaitForSeconds(1);
         needFade = true;
         SceneManager.LoadScene(SceneToLoad);
         gameIsPaused = false;
