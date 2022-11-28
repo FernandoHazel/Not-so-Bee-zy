@@ -36,9 +36,6 @@ EditorBuildSettings:
     path: Assets/1_Scenes/2_Niveles Oficiales/Nivel Oficial 5.unity
     guid: 6e415d8f01b8333498b1aa626e08760b
   - enabled: 1
-    path: Assets/1_Scenes/2_Niveles Oficiales/Nivel Oficial 6.unity
-    guid: 2af80a1260f45b8418e1e773dee7f91d
-  - enabled: 1
     path: Assets/1_Scenes/2_Niveles Oficiales/Nivel Oficial 7.unity
     guid: 43e2b205fdbdab645a5cd6d1f34e6400
   m_configObjects: {}

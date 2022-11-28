@@ -159,10 +159,10 @@ RectTransform:
   m_Father: {fileID: 1146045890}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 746, y: 452}
-  m_SizeDelta: {x: 260, y: 104.4}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 696, y: 402}
+  m_SizeDelta: {x: 260, y: 104.399994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &210543671
 MonoBehaviour:
@@ -192,6 +192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectSound: {fileID: 8300000, guid: bd703219eeac9bb40b18fd4bfc539580, type: 3}
+  gameMusic: {fileID: 0}
+  pauseMusic: {fileID: 0}
   currentScene: 
   needFade: 0
 --- !u!114 &210543673

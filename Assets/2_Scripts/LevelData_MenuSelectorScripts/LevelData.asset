@@ -14,32 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelInfo:
   - unlocked: 1
-    recordTime: 0
+    recordTime: 21.803553
     specificHoneycombs: 
-  - unlocked: 0
-    recordTime: 0
-    specificHoneycombs: 000000
-  - unlocked: 0
-    recordTime: 0
-    specificHoneycombs: 000000
-  - unlocked: 0
-    recordTime: 0
-    specificHoneycombs: 000000
-  - unlocked: 0
-    recordTime: 0
-    specificHoneycombs: 000000
-  - unlocked: 0
-    recordTime: 0
-    specificHoneycombs: 000000
-  - unlocked: 0
-    recordTime: 0
-    specificHoneycombs: 000000
-  currentLevelGlobal: 0
-  honeycombsGlobal: 16
+  - unlocked: 1
+    recordTime: 80.91793
+    specificHoneycombs: 010101
+  - unlocked: 1
+    recordTime: 74.63945
+    specificHoneycombs: 010101
+  - unlocked: 1
+    recordTime: 106.71725
+    specificHoneycombs: 010001
+  - unlocked: 1
+    recordTime: 140.56877
+    specificHoneycombs: 000100
+  - unlocked: 1
+    recordTime: 165.09691
+    specificHoneycombs: 000101
+  currentLevelGlobal: 6
+  honeycombsGlobal: 11
   skinInfo:
   - skinUnlocked: 1
-  - skinUnlocked: 1
   - skinUnlocked: 0
   - skinUnlocked: 0
   - skinUnlocked: 0
-  skinSelected: 1
+  - skinUnlocked: 0
+  skinSelected: 0

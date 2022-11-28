@@ -4651,7 +4651,6 @@ MonoBehaviour:
   - 'Maybe you can exchange it for
 
     something in the menu store.'
-  - maybe you can exchange it for something in the menu store.
   dialogueImage: {fileID: 1166616946}
   ui: {fileID: 7217945644929354021}
   player: {fileID: 1894676096}
