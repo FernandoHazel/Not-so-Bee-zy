@@ -1,17 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using EventBus;
+using TMPro;
 public class UserInterface : MonoBehaviour
 {
     //public PauseAnimationsManager pauseTrigger;
     public GameObject dialogeImage;
-    public TMPro.TextMeshProUGUI lazyText;
-    public TMPro.TextMeshProUGUI pollen;
+    public TextMeshProUGUI lazyText;
+    public TextMeshProUGUI pollen;
 
     public GameObject extraImage;
-    public TMPro.TextMeshProUGUI extraLazyText;
+    public TextMeshProUGUI extraLazyText;
     public GameObject extraImage01;
-    public TMPro.TextMeshProUGUI extraLazyText01;
+    public TextMeshProUGUI extraLazyText01;
 
     public GameObject youWon;
     public GameObject youLost;
@@ -67,7 +68,6 @@ public class UserInterface : MonoBehaviour
     public void UpdateHoneyComb(int num)
     {
         honeyCombs[num].color = new Color32(255, 255, 255, 255);
-        Debug.Log("updateHoneycomb");
     }
 
     public void ResetHoneyComb()

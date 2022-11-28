@@ -31,12 +31,15 @@ MonoBehaviour:
   - unlocked: 0
     recordTime: 0
     specificHoneycombs: 000000
+  - unlocked: 0
+    recordTime: 0
+    specificHoneycombs: 000000
   currentLevelGlobal: 0
-  honeycombsGlobal: 0
+  honeycombsGlobal: 16
   skinInfo:
+  - skinUnlocked: 1
+  - skinUnlocked: 1
   - skinUnlocked: 0
   - skinUnlocked: 0
   - skinUnlocked: 0
-  - skinUnlocked: 0
-  - skinUnlocked: 0
-  skinSelected: 0
+  skinSelected: 1

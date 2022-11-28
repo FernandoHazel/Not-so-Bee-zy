@@ -629,6 +629,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectSound: {fileID: 8300000, guid: bd703219eeac9bb40b18fd4bfc539580, type: 3}
+  gameMusic: {fileID: 0}
+  pauseMusic: {fileID: 0}
   currentScene: 
   needFade: 0
 --- !u!114 &6758009390206060759
@@ -1480,7 +1482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2797880621430795564
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1561,9 +1563,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
-    m_HighlightedColor: {r: 0.98039216, g: 0.94244355, b: 0.34901962, a: 1}
-    m_PressedColor: {r: 1, g: 0.6154237, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0.78035855, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.6745098, g: 1, b: 0, a: 1}
+    m_PressedColor: {r: 0.6745098, g: 1, b: 0, a: 1}
+    m_SelectedColor: {r: 0.6745098, g: 1, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3382,9 +3384,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
-    m_HighlightedColor: {r: 0.98039216, g: 0.94244355, b: 0.34901962, a: 1}
-    m_PressedColor: {r: 1, g: 0.6156863, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0.78039217, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.6745098, g: 1, b: 0, a: 1}
+    m_PressedColor: {r: 0.6745098, g: 1, b: 0, a: 1}
+    m_SelectedColor: {r: 0.6745098, g: 1, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -4834,7 +4836,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7515943107347906018}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadSceneSimple
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

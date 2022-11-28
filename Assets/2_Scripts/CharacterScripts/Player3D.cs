@@ -133,7 +133,6 @@ public class Player3D : MonoBehaviour
 
     void ReturnToGame()
     {
-        Debug.Log("Normal game");
         move = true;
     }
 

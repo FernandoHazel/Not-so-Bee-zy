@@ -19,7 +19,7 @@ public class SkinSelector : MonoBehaviour
     public GameObject[] skinsUi;
     public int[] skinsCost;
 
-    [SerializeField] LevelData levelData; //el scriptableobject que guarda la info
+    [SerializeField] LevelData levelData;
     [SerializeField] TMPro.TextMeshProUGUI honeycombsGlobal;
 
     void Start()
@@ -100,6 +100,7 @@ public class SkinSelector : MonoBehaviour
 
     public void BuySkin() 
     {
+        GameEventBus.Publish(GameEventType.UNITERACTABLE);
         AudioManager.audioManager.PlaySfxOnce(buySound);
         levelData.SpendHoneycombsGlobal(skinsCost[currentSkin]);
         levelData.SetSkinUnlocked(currentSkin);
@@ -110,6 +111,7 @@ public class SkinSelector : MonoBehaviour
 
     public void SelectSkin() 
     {
+        GameEventBus.Publish(GameEventType.UNITERACTABLE);
         AudioManager.audioManager.PlaySfxOnce(selectSound);
         levelData.SetSkinSelected(currentSkin);
         levelData.SaveData();

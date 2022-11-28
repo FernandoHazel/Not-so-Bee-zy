@@ -1,9 +1,11 @@
 
 using UnityEngine;
 using System.Collections;
+using EventBus;
 
 public class FinalDialogues : MonoBehaviour
 {
+    private InputMaster inputMaster;
     [TextArea] public string[] extraDialogues;
     int currentDialogue;
     [SerializeField] GameObject dialogueImage = default;
@@ -16,20 +18,48 @@ public class FinalDialogues : MonoBehaviour
     [SerializeField] bool wantMovement = false;
 
     [SerializeField] GameManager gm;
-    private void OnTriggerEnter(Collider other)
+
+    private void Awake() 
+    {
+        inputMaster = new InputMaster();
+    }
+    private void OnEnable()
+    {
+        inputMaster.Enable();
+    }
+    private void OnDisable()
+    {
+        inputMaster.Disable();
+    }
+
+    private void Start() {
+        //GameEventBus.Publish(GameEventType.DIALOGUE);
+        ui.pauseButton.interactable = false;
+        currentDialogue = 0;
+        showDialogue = true;
+        ActiveDialogues();
+    }
+    
+    /* private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            GameEventBus.Publish(GameEventType.DIALOGUE);
             ui.pauseButton.interactable = false;
             currentDialogue = 0;
             showDialogue = true;
             ActiveDialogues();
             currentDialogue++;
         }
-    }
+    } */
 
     void Update()
     {
+        if (inputMaster.Player.Action.triggered && showDialogue)
+        {
+            NextDialogueBool();
+        }
+
         if (GameManager.gameIsPaused || player.youWon)
         {
             showDialogue = false;
@@ -50,7 +80,6 @@ public class FinalDialogues : MonoBehaviour
         else if (currentDialogue >= extraDialogues.Length)
         {
             showDialogue = false;
-            Debug.Log("stopdialogue");
         }
 
     }
@@ -60,10 +89,7 @@ public class FinalDialogues : MonoBehaviour
     {
         if (showDialogue)
         {
-            Debug.Log("ActiveDialogues");
-            //player.move = false;   //que el jugador no se pueda mover, pusimos su velocidad en 0
-            player.speed = 0;
-            player.rotationSpeed = 0;
+            GameEventBus.Publish(GameEventType.DIALOGUE);
             dialogueImage.SetActive(true);
             ui.ShowExtraText(extraDialogues[currentDialogue]);
             if (nextDialogueBool == true)
@@ -74,9 +100,8 @@ public class FinalDialogues : MonoBehaviour
         }
         else
         {
-            //player.move = true;  //restaurar velocidad del jugador
-            player.speed = player.speedInicial;
-            player.rotationSpeed = player.rotationSpeedInicial;
+            GameEventBus.Publish(GameEventType.NORMALGAME);
+            GameEventBus.Publish(GameEventType.FINISHDIALOGUE);
             dialogueImage.SetActive(false);
             ui.pauseButton.interactable = true;
             gameObject.GetComponent<BoxCollider>().enabled = false;
@@ -89,12 +114,11 @@ public class FinalDialogues : MonoBehaviour
         nextDialogueBool = true;
         StopDialogue();
         ActiveDialogues();
-        Debug.Log("ActiveDialogues");
     }
 
     IEnumerator FinalFade() 
     {
-        yield return new WaitForSeconds(7.5f);
+        yield return new WaitForSeconds(20f);
         gm.needFade = true;
         gm.LoadScene("MainMenu");
     }

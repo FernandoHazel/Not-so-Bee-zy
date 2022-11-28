@@ -1,8 +1,10 @@
 using UnityEngine;
+using EventBus;
 
 public class ExtraDialogues01 : MonoBehaviour
 {
     [TextArea] public string[] extraDialogues;
+    private InputMaster inputMaster;
     int currentDialogue;
     [SerializeField] GameObject dialogueImage = default;
     [SerializeField] UserInterface ui = default;
@@ -12,6 +14,19 @@ public class ExtraDialogues01 : MonoBehaviour
 
     bool nextDialogueBool = false;
     [SerializeField] bool wantMovement = false;
+
+    private void Awake() 
+    {
+        inputMaster = new InputMaster();
+    }
+    private void OnEnable()
+    {
+        inputMaster.Enable();
+    }
+    private void OnDisable()
+    {
+        inputMaster.Disable();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,6 +42,11 @@ public class ExtraDialogues01 : MonoBehaviour
 
     void Update()
     {
+        if (inputMaster.Player.Action.triggered && showDialogue)
+        {
+            NextDialogueBool();
+        }
+        
         if (GameManager.gameIsPaused || player.youWon)
         {
             showDialogue = false;
@@ -56,9 +76,7 @@ public class ExtraDialogues01 : MonoBehaviour
     {
         if (showDialogue)
         {
-            //player.move = false;   //que el jugador no se pueda mover, pusimos su velocidad en 0
-            player.speed = 0;
-            player.rotationSpeed = 0;
+            GameEventBus.Publish(GameEventType.DIALOGUE);
             dialogueImage.SetActive(true);
             ui.ShowExtraText01(extraDialogues[currentDialogue]);
             if (nextDialogueBool == true)
@@ -69,9 +87,8 @@ public class ExtraDialogues01 : MonoBehaviour
         }
         else
         {
-            //player.move = true;  //restaurar velocidad del jugador
-            player.speed = player.speedInicial;
-            player.rotationSpeed = player.rotationSpeedInicial;
+            GameEventBus.Publish(GameEventType.NORMALGAME);
+            GameEventBus.Publish(GameEventType.FINISHDIALOGUE);
             dialogueImage.SetActive(false);
             ui.pauseButton.interactable = true;
             gameObject.GetComponent<BoxCollider>().enabled = false;

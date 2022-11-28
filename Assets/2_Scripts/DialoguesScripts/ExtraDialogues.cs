@@ -43,7 +43,6 @@ public class ExtraDialogues : MonoBehaviour
         //Next dialogue.
         if (inputMaster.Player.Action.triggered && showDialogue)
         {
-            Debug.Log("Action button pressed");
             NextDialogue();
         }
 
@@ -62,7 +61,6 @@ public class ExtraDialogues : MonoBehaviour
         if(currentDialogue >= extraDialogues.Length - 1) 
         {
             showDialogue = false;
-            Debug.Log("stop dialogue");
 
             //Allow the player to move again.
             GameEventBus.Publish(GameEventType.NORMALGAME);
@@ -77,8 +75,6 @@ public class ExtraDialogues : MonoBehaviour
             //Advance to the next dialogue.
             currentDialogue++;
             ui.ShowExtraText(extraDialogues[currentDialogue]);
-
-            Debug.Log("Next");
         }
     }
 }

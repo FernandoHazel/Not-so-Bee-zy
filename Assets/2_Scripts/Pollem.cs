@@ -11,7 +11,6 @@ public class Pollem : MonoBehaviour
         if (other.gameObject.tag == "Player")
             {
                 //grabPollen.Play();
-                Debug.Log("Grab");
             }
     }
 

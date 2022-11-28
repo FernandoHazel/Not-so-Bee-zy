@@ -120,6 +120,12 @@ public class LevelSelector : MonoBehaviour
         }
     }
 
+    public void NewGame(string sceneName)
+    {
+        levelData.ResetData();
+        StartCoroutine(DelayedLoad(sceneName));
+    }
+
     IEnumerator DelayedLoad(string SceneToLoad)
     {
         AudioManager.audioManager.PlaySfxOnce(selectSound);

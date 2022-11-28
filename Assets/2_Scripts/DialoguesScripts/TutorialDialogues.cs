@@ -38,7 +38,6 @@ public class TutorialDialogues : MonoBehaviour
         //Next dialogue.
         if (inputMaster.Player.Action.triggered && showDialogue)
         {
-            Debug.Log("Action button pressed");
             NextTutorialDialogue();
         }
 
@@ -57,7 +56,6 @@ public class TutorialDialogues : MonoBehaviour
         if(currentDialogue >= tutorialDialogues.Length - 1) 
         {
             showDialogue = false;
-            Debug.Log("stop dialogue");
 
             //Allow the player to move again.
             GameEventBus.Publish(GameEventType.NORMALGAME);
@@ -71,8 +69,6 @@ public class TutorialDialogues : MonoBehaviour
             //Advance to the next dialogue.
             currentDialogue++;
             ui.ShowExtraText(tutorialDialogues[currentDialogue]);
-
-            Debug.Log("Next");
         }
     }
 }

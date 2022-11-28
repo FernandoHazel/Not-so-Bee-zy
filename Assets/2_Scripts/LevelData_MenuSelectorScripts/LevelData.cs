@@ -172,7 +172,6 @@ public class LevelData : ScriptableObject
 
     public void ResetData() 
     {
-
         PlayerPrefs.DeleteAll();
     }
 
