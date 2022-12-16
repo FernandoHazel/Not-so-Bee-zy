@@ -814,13 +814,11 @@ MonoBehaviour:
 '
   - 'Let''s steal their pollen!
 
-    Use the stick to move.'
-  - 'But don''t rush. It almost looks
+    Use the WASD keys to move'
+  - "You can also conect a \ncontroller if you want."
+  - 'Go over there after you
 
-    like you want to work in this game.'
-  - 'Go over there!
-
-    Let''s keep stealing!'
+    have collected all the pollem!'
   dialogueImage: {fileID: 990351172}
   ui: {fileID: 7217945644281006305}
   CameraControl: {fileID: 963194229}

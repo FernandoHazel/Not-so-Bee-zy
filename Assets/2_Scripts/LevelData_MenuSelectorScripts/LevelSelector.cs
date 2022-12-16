@@ -9,7 +9,7 @@ public class LevelSelector : MonoBehaviour
     [SerializeField] AudioClip selectSound, nextSound, previousSound;
     int currentSelectedLevel, maxLevels, honeycombCounter;
     [SerializeField] Button startButton, rightButton, leftButton;
-    [SerializeField] GameObject levelLock;
+    [SerializeField] GameObject levelLock, warningPanel, levelViewer;
     public GameObject [] levels;
     TMPro.TextMeshProUGUI timerText;
     [SerializeField] LevelData levelData; //el scriptableobject que guarda la info
@@ -124,6 +124,18 @@ public class LevelSelector : MonoBehaviour
     {
         levelData.ResetData();
         StartCoroutine(DelayedLoad(sceneName));
+    }
+
+    public void ShowWarning()
+    {
+        warningPanel.SetActive(true);
+        levelViewer.SetActive(false);
+    }
+
+    public void HideWarning()
+    {
+        warningPanel.SetActive(false);
+        levelViewer.SetActive(true);
     }
 
     IEnumerator DelayedLoad(string SceneToLoad)

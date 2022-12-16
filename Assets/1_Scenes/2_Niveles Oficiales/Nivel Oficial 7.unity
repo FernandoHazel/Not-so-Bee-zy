@@ -427,12 +427,6 @@ MonoBehaviour:
   - 'and to think it was only
 
     one spaceship trip away...'
-  - This game was developed during the February-July 2021 video game semester of
-    Tec de Monterrey GDL.
-  - if you liked it remember that it will soon be available on mobile devices with
-    much more content
-  - more levels, more unlockables and of course more silly jokes
-  - If you found any bug or have feedback please fell free to send an email to fernandohazel1@gmail.com
   - 'Thank you for playing
 
     Not so beezy!'
@@ -1975,7 +1969,12 @@ PrefabInstance:
     - target: {fileID: 2020413668343620903, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 62.1817
+      value: 795
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020413668343620903, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -144.18
       objectReference: {fileID: 0}
     - target: {fileID: 2462778941210965199, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
@@ -1991,6 +1990,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 177
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961333107961083001, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 161908668}
+    - target: {fileID: 2961333107961083001, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextDialogueBool
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961333107961083001, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FinalDialogues, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961333107961083001, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861532162988615974, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1225.9541
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861532162988615974, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1093
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861532162988615974, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -9.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861532162988615974, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 59.828
       objectReference: {fileID: 0}
     - target: {fileID: 6096252656064988782, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
