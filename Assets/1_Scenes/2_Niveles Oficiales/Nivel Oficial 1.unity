@@ -4651,6 +4651,8 @@ MonoBehaviour:
   - 'Maybe you can exchange it for
 
     something in the menu store.'
+  - "Collecting them is completely optional, \nthey are not necessary to pass the
+    level"
   dialogueImage: {fileID: 1166616946}
   ui: {fileID: 7217945644929354021}
   player: {fileID: 1894676096}

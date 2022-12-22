@@ -7,6 +7,7 @@ using EventBus;
 
 public class Player3D : MonoBehaviour
 {
+    public static bool inDialogue;
     [SerializeField] ParticleSystem grabPollen, grabHC;
     [SerializeField] AudioClip pollenSound, honeyCombClip, greyHoneyCombClip, levelCompletedSound, dieSound, inGas,buzzing;
     [SerializeField] AudioSource trapedInHoney;
@@ -128,6 +129,7 @@ public class Player3D : MonoBehaviour
 
     void FreezePlayer()
     {
+        inDialogue = true;
         move = false; 
     }
 
@@ -188,7 +190,7 @@ public class Player3D : MonoBehaviour
 
 
         controller.enabled = false;
-        transform.position = posInicial;
+        //transform.position = posInicial;
         controller.enabled = true;
         pollen = 0;
         honeyComb = 0;
@@ -251,7 +253,7 @@ public class Player3D : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Here we invert the controls, set a timer in 5 and active the main character gas effect
-        if (other.gameObject.tag == "Gas")
+        if (other.gameObject.tag == "Gas" && inverted == false)
         {
             inverted = true;
             controlDirection = -1;
@@ -295,6 +297,7 @@ public class Player3D : MonoBehaviour
             if (youWon == false)
             {
                 AudioManager.audioManager.PlaySfxOnce(dieSound);
+                UserInterfaceScript.timer = 0;
                 Die();
             }
         }
@@ -378,14 +381,18 @@ public class Player3D : MonoBehaviour
 
         if (youLost == true)
         {
-            UserInterfaceScript.timer = 0;
+            
             return;
         }
     }
 
     private void FixedUpdate()
     {
-        Movement();
+        if (!inDialogue)
+        {
+            Movement();
+        }
+        
 
         if (youWon == true)
         {

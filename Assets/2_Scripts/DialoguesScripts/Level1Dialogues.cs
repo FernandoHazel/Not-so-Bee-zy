@@ -29,6 +29,7 @@ public class Level1Dialogues : MonoBehaviour
     void Start()
     {
         GameEventBus.Publish(GameEventType.DIALOGUE);
+        Player3D.inDialogue = true;
         currentDialogue = 0;
         ui.pauseButton.interactable = false;
     }
@@ -49,8 +50,8 @@ public class Level1Dialogues : MonoBehaviour
         {
             showDialogue = true;
         }
-        StopDialogue();
-        ActiveDialogues();
+        
+        
         MoveCamera();
     }
 
@@ -72,9 +73,10 @@ public class Level1Dialogues : MonoBehaviour
 
     void StopDialogue()
     {
-        if (currentDialogue >= 4)
+        if (currentDialogue >= FirstLevelDialogues.Length)
         {
             showDialogue = false;
+            Player3D.inDialogue = false;
             return;
         }
     }
@@ -112,5 +114,7 @@ public class Level1Dialogues : MonoBehaviour
     {
         //if(gameObject.activeInHierarchy == true)
         nextDialogueBool = true;
+        StopDialogue();
+        ActiveDialogues();
     }
 }

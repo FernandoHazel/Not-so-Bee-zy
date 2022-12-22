@@ -26,6 +26,7 @@ public class TutorialDialogues : MonoBehaviour
     {
         //Start the tutorial dialogues
         GameEventBus.Publish(GameEventType.DIALOGUE);
+        Player3D.inDialogue = true;
         ui.pauseButton.interactable = false;
         currentDialogue = 0;
         showDialogue = true;
@@ -56,6 +57,7 @@ public class TutorialDialogues : MonoBehaviour
         if(currentDialogue >= tutorialDialogues.Length - 1) 
         {
             showDialogue = false;
+            Player3D.inDialogue = false;
 
             //Allow the player to move again.
             GameEventBus.Publish(GameEventType.NORMALGAME);

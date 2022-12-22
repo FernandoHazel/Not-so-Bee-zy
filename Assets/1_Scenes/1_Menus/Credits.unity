@@ -217,9 +217,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
-    m_HighlightedColor: {r: 0.98039216, g: 0.94244355, b: 0.34901962, a: 1}
-    m_PressedColor: {r: 0.06499696, g: 1, b: 0, a: 1}
+    m_NormalColor: {r: 0.5235849, g: 0.8071408, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.34901962, g: 0.901277, b: 0.98039216, a: 1}
+    m_PressedColor: {r: 0, g: 0.67544794, b: 1, a: 1}
     m_SelectedColor: {r: 1, g: 0.6632471, b: 0.0047169924, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ef40cf70cb617ed44999acc51b62b18b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 025bb5212fdca50429b360d400d27e0f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -706,6 +706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Button: {fileID: 210543669}
+  secondaryButton: {fileID: 0}
 --- !u!1 &658192953
 GameObject:
   m_ObjectHideFlags: 0

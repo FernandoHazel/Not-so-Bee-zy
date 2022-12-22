@@ -75,6 +75,7 @@ public class FinalDialogues : MonoBehaviour
     {
         if (showDialogue == false)
         {
+            Player3D.inDialogue = false;
             return;
         }
         else if (currentDialogue >= extraDialogues.Length)
@@ -90,6 +91,7 @@ public class FinalDialogues : MonoBehaviour
         if (showDialogue)
         {
             GameEventBus.Publish(GameEventType.DIALOGUE);
+            Player3D.inDialogue = true;
             dialogueImage.SetActive(true);
             ui.ShowExtraText(extraDialogues[currentDialogue]);
             if (nextDialogueBool == true)

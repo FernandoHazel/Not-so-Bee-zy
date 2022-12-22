@@ -2677,7 +2677,7 @@ MonoBehaviour:
   - {fileID: 418762776}
   - {fileID: 1939909791}
   - {fileID: 776248502}
-  skinsCost: 0000000004000000060000000400000004000000
+  skinsCost: 0000000004000000050000000300000003000000
   levelData: {fileID: 11400000, guid: 097eabeb69cd6f5478b0d10eb237195f, type: 2}
   honeycombsGlobal: {fileID: 1105195798}
 --- !u!1 &969736450
@@ -6281,6 +6281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Button: {fileID: 474184761}
+  secondaryButton: {fileID: 0}
 --- !u!1 &2135656396
 GameObject:
   m_ObjectHideFlags: 0
