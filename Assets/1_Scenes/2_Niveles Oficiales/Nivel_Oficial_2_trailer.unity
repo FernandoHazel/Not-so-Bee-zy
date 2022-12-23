@@ -4492,7 +4492,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 1
+  m_RenderPostProcessing: 0
   m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -4509,7 +4509,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393002641}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.45296368, g: 0.6768365, b: 0.8207547, a: 1}
@@ -7136,13 +7136,13 @@ MonoBehaviour:
   m_LookaheadIgnoreY: 0
   m_HorizontalDamping: 0.5
   m_VerticalDamping: 0.5
-  m_ScreenX: 0.6190001
+  m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0.04
   m_DeadZoneHeight: 0.066
   m_SoftZoneWidth: 0.791
   m_SoftZoneHeight: 0.8
-  m_BiasX: 0.00000047875216
+  m_BiasX: 0.00000047620222
   m_BiasY: 0
   m_CenterOnActivate: 1
 --- !u!1001 &642774091
@@ -8465,6 +8465,7 @@ GameObject:
   - component: {fileID: 769096889}
   - component: {fileID: 769096888}
   - component: {fileID: 769096890}
+  - component: {fileID: 769096891}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -8490,7 +8491,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 0
-  m_LookAt: {fileID: 479260570}
+  m_LookAt: {fileID: 198868703}
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
@@ -8517,8 +8518,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769096887}
-  m_LocalRotation: {x: 0.183505, y: 0.014652563, z: -0.0027355808, w: 0.9829058}
-  m_LocalPosition: {x: -20.55669, y: 3.4312248, z: 6.7879705}
+  m_LocalRotation: {x: 0.043301005, y: -0.8216309, z: 0.062983155, w: 0.56487244}
+  m_LocalPosition: {x: 8.57, y: 3.71, z: 6.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 641372456}
@@ -8542,6 +8543,25 @@ PlayableDirector:
   m_SceneBindings: []
   m_ExposedReferences:
     m_References: []
+--- !u!95 &769096891
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769096887}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &769802691
 GameObject:
   m_ObjectHideFlags: 0
@@ -12155,7 +12175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1059825714
 Transform:
   m_ObjectHideFlags: 0
@@ -14195,7 +14215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1221587268
 Transform:
   m_ObjectHideFlags: 0
@@ -15286,7 +15306,7 @@ PrefabInstance:
     - target: {fileID: 7217945645277597577, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217945645277597581, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
@@ -17535,8 +17555,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448062111}
-  m_LocalRotation: {x: 0.183505, y: 0.014652563, z: -0.0027355808, w: 0.9829058}
-  m_LocalPosition: {x: -20.55669, y: 3.4312248, z: 6.7879705}
+  m_LocalRotation: {x: 0.043301005, y: -0.8216309, z: 0.062983155, w: 0.56487244}
+  m_LocalPosition: {x: 8.57, y: 3.71, z: 6.6000004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1059825714}
@@ -17676,6 +17696,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -3411278675358940278, guid: fee46d8a99ec7fe4193628e8e306641b, type: 2}
     value: {fileID: 1448062113}
+  - key: {fileID: -8850300836930132890, guid: fee46d8a99ec7fe4193628e8e306641b, type: 2}
+    value: {fileID: 769096891}
   m_ExposedReferences:
     m_References:
     - c3e94d15aacf0004b9183e7c4997cabe: {fileID: 769096888}
