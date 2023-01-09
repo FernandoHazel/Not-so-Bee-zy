@@ -5,6 +5,7 @@ using EventBus;
 
 public class MoveUp : MonoBehaviour
 {
+    [SerializeField] private float creditsSpeed;
     private float speed;
 
     private void OnEnable() {
@@ -24,6 +25,6 @@ public class MoveUp : MonoBehaviour
 
     private void ChangeSpeed()
     {
-        speed = 250;
+        speed = creditsSpeed;
     }
 }
