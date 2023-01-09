@@ -22,8 +22,12 @@ public class SkinSelector : MonoBehaviour
     [SerializeField] LevelData levelData;
     [SerializeField] TMPro.TextMeshProUGUI honeycombsGlobal;
 
+    private Vector3 defaultPosition;
+
     void Start()
     {
+        defaultPosition = skinViewer.transform.position;
+
         maxSkins = skinsUi.Length - 1;
         levelData.LoadData();
         levelData.SetSkinUnlocked(0);
@@ -162,12 +166,12 @@ public class SkinSelector : MonoBehaviour
 
         if (currentSkin == 2)
         {
-            skinViewer.transform.position = new Vector3(0.54f,1.19f , -7.9f);
+            skinViewer.transform.position = defaultPosition + new Vector3(0, 0.2f ,0);
         }
 
         else 
         {
-            skinViewer.transform.position = new Vector3(0.54f,1f,-7.9f);
+            skinViewer.transform.position = defaultPosition;
         }
 
     }
