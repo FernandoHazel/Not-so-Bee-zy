@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioClip selectSound;
     [SerializeField] private AudioClip gameMusic;
     [SerializeField] private AudioClip pauseMusic;
+
     
     public string currentScene;
     public bool needFade = false;
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
         GameEventBus.Unsubscribe(GameEventType.NORMALGAME, PlayerMap);
         GameEventBus.Unsubscribe(GameEventType.MENU, MenusMap);
         GameEventBus.Unsubscribe(GameEventType.FINISHDIALOGUE, FinishDialogue);
+
     }
 
     void FinishDialogue()

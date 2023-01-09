@@ -8,12 +8,6 @@ public class UserInterface : MonoBehaviour
     public GameObject dialogeImage;
     public TextMeshProUGUI lazyText;
     public TextMeshProUGUI pollen;
-
-    public GameObject extraImage;
-    public TextMeshProUGUI extraLazyText;
-    public GameObject extraImage01;
-    public TextMeshProUGUI extraLazyText01;
-
     public GameObject youWon;
     public GameObject youLost;
     public Image [] honeyCombs;
@@ -28,6 +22,7 @@ public class UserInterface : MonoBehaviour
     bool cuenta = false;
 
     [SerializeField] public Button pauseButton;
+    [SerializeField] private GameObject joystick;
 
     private void Start()
     {
@@ -40,16 +35,18 @@ public class UserInterface : MonoBehaviour
         GameEventBus.Subscribe(GameEventType.PAUSE, StopTimer);
         GameEventBus.Subscribe(GameEventType.LOST, YouLost);
         GameEventBus.Subscribe(GameEventType.WIN, YouWon);
-        GameEventBus.Subscribe(GameEventType.FINISHDIALOGUE, StartTimer);
+        GameEventBus.Subscribe(GameEventType.FINISHDIALOGUE, ShutDownText);
         GameEventBus.Subscribe(GameEventType.NORMALGAME, StartTimer);
+        GameEventBus.Subscribe(GameEventType.DIALOGUE, DisableJoystick);
     }
     private void OnDisable() 
     {
         GameEventBus.Unsubscribe(GameEventType.PAUSE, StopTimer);
         GameEventBus.Unsubscribe(GameEventType.LOST, YouLost);
         GameEventBus.Unsubscribe(GameEventType.WIN, YouWon);
-        GameEventBus.Unsubscribe(GameEventType.FINISHDIALOGUE, StartTimer);
+        GameEventBus.Unsubscribe(GameEventType.FINISHDIALOGUE, ShutDownText);
         GameEventBus.Unsubscribe(GameEventType.NORMALGAME, StartTimer);
+        GameEventBus.Unsubscribe(GameEventType.DIALOGUE, DisableJoystick);
     }
     public void UpdatePollen(int num, int maxNum)
     {
@@ -116,22 +113,19 @@ public class UserInterface : MonoBehaviour
         }
     }
     public void ShowText(string Text)  //Muestra el recuadro y el texto que le mandemos
-    { 
+    {
         dialogeImage.SetActive(true);
         lazyText.text = Text;
+        pauseButton.interactable = false;
     }
-    public void ShowExtraText(string Text)  //Muestra el recuadro y el texto que le mandemos
+    void DisableJoystick()
     {
-        extraImage.SetActive(true);
-        extraLazyText.text = Text;
-    }
-    public void ShowExtraText01(string Text)  //Muestra el recuadro y el texto que le mandemos
-    {
-        extraImage01.SetActive(true);
-        extraLazyText01.text = Text;
+        joystick.SetActive(false);
     }
     public void ShutDownText()
     {
         dialogeImage.SetActive(false);
+        pauseButton.interactable = true;
+        joystick.SetActive(true);
     }
 }

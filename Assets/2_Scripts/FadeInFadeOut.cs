@@ -8,10 +8,6 @@ public class FadeInFadeOut : MonoBehaviour
 
     private void Start()
     {
-        gameObject.transform.GetChild(0).gameObject.SetActive(true);
-    }
-    private void Update()
-    {
         if (gm.needFade == true) 
         {
             animator.SetTrigger("FadeOut");

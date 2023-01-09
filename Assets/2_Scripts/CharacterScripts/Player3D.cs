@@ -14,8 +14,6 @@ public class Player3D : MonoBehaviour
 
     public CharacterController controller;
     private InputMaster inputMaster;
-    private TutorialDialogues tutorialDialogues;
-    private ExtraDialogues extraDialogues;
     public float speed = 3, gravity = 1f, rotationSpeed = 5;
     public float speedInicial, rotationSpeedInicial;
     public Transform cam;
@@ -52,8 +50,6 @@ public class Player3D : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         inputMaster = new InputMaster();
-        tutorialDialogues = new TutorialDialogues();
-        extraDialogues = new ExtraDialogues();
     }
     void Start()
     {
@@ -130,7 +126,7 @@ public class Player3D : MonoBehaviour
     void FreezePlayer()
     {
         inDialogue = true;
-        move = false; 
+        move = false;
     }
 
     void ReturnToGame()
@@ -252,6 +248,11 @@ public class Player3D : MonoBehaviour
     //TRIGGERS
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Floor")
+        {
+            cameraControl.currentView = cameraControl.views[(int)other.gameObject.GetComponent<FloorCam>().floorNumber];
+        }
+        
         //Here we invert the controls, set a timer in 5 and active the main character gas effect
         if (other.gameObject.tag == "Gas" && inverted == false)
         {
@@ -327,11 +328,6 @@ public class Player3D : MonoBehaviour
                 move = false;
                 transform.parent = other.gameObject.transform;
             }
-        }
-
-        if (other.gameObject.tag == "Floor")
-        {
-            cameraControl.currentView = cameraControl.views[(int)other.gameObject.GetComponent<FloorCam>().floorNumber];
         }
 
     }
