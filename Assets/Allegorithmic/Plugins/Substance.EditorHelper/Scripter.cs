@@ -12,15 +12,6 @@ namespace Substance.EditorHelper
 {
     public class Scripter
     {
-        public static void Hello()
-        {
-            Debug.Log("Scripter's Hello");
-
-#if UNITY_2019_3_OR_NEWER
-            Debug.Log("UNITY_2019_3_OR_NEWER");
-#endif
-        }
-
         public static class UnityPipeline
         {
             // The active project context is in the 'Edit->Project Settings->Graphics->Scriptable Render Pipeline Settings' field.

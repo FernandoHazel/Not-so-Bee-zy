@@ -36,7 +36,6 @@ public class LevelData : ScriptableObject
     public void SetSkinSelected(int newSelection) 
     {
         skinSelected = newSelection;
-        Debug.Log(newSelection);
     }
     public bool GetSkinUnlocked(int index) //saber si un skin esta unlocked o no
     {

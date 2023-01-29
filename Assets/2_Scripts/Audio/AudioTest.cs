@@ -10,10 +10,4 @@ public class AudioTest : MonoBehaviour
     {
         AudioManager.audioManager.PlaySfxLoop3D(testAudio01,gameObject.transform);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

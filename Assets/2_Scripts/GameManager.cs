@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioClip selectSound;
     [SerializeField] private AudioClip gameMusic;
     [SerializeField] private AudioClip pauseMusic;
+    //We are using a Huawei Y9 screen resolution as defoult
+    [Tooltip("This is the defoult screen resolution")]
+    [SerializeField] private Vector2 defoultScreen = new Vector2(1080, 2340);
 
     
     public string currentScene;
@@ -22,6 +25,8 @@ public class GameManager : MonoBehaviour
     private void Awake() {
         inputMaster = new InputMaster();
         playerInput = GetComponent<PlayerInput>();
+        Application.targetFrameRate = 30;
+        Screen.SetResolution(1440, 3200, false);
     }
 
     void Start() 
@@ -126,7 +131,6 @@ public class GameManager : MonoBehaviour
 
     public void ExitGame()
     {
-        Debug.Log("Quit game");
         Application.Quit();
     }
 
