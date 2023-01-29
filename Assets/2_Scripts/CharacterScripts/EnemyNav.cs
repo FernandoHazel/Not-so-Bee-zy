@@ -186,7 +186,6 @@ public class EnemyNav : MonoBehaviour
     {
 
         direccion = player.position - transform.position;
-        Debug.DrawRay(transform.position, direccion, Color.green, 0.1f);
 
         Ray rayito = new Ray(transform.position, direccion);
         RaycastHit infoDelRayito;
