@@ -811,7 +811,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80482670}
   m_LocalRotation: {x: 0.21331978, y: 0.0038096015, z: -0.0009052373, w: 0.97697455}
-  m_LocalPosition: {x: 35.674988, y: 29.13926, z: -85.52821}
+  m_LocalPosition: {x: 35.67, y: 29.62, z: -86.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1939234566}
@@ -1496,7 +1496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &195060817
 Transform:
   m_ObjectHideFlags: 0
@@ -2044,7 +2044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214969101}
   m_LocalRotation: {x: 0.15827616, y: 0.0014354287, z: 0.0053516044, w: 0.9873793}
-  m_LocalPosition: {x: 36.274982, y: 34.06926, z: -67.68821}
+  m_LocalPosition: {x: 36.23, y: 37.65, z: -73.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1939234566}
@@ -3404,6 +3404,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeeBotNav (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8780774348707936043, guid: d5e7dcc0f5f528b469db3479da1a09bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e7dcc0f5f528b469db3479da1a09bd, type: 3}
 --- !u!4 &364152863 stripped
@@ -3855,7 +3860,7 @@ PrefabInstance:
     - target: {fileID: 8780774348707936043, guid: d5e7dcc0f5f528b469db3479da1a09bd,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e7dcc0f5f528b469db3479da1a09bd, type: 3}
@@ -4165,7 +4170,7 @@ PrefabInstance:
     - target: {fileID: 8780774348707936043, guid: d5e7dcc0f5f528b469db3479da1a09bd,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e7dcc0f5f528b469db3479da1a09bd, type: 3}
@@ -7803,6 +7808,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeeBotNav (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8780774348707936043, guid: d5e7dcc0f5f528b469db3479da1a09bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e7dcc0f5f528b469db3479da1a09bd, type: 3}
 --- !u!1001 &880415807
@@ -8176,7 +8186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933702386}
   m_LocalRotation: {x: 0.21776603, y: -0.028896619, z: -0.0021762343, w: 0.9755708}
-  m_LocalPosition: {x: 14.514985, y: 28.279259, z: -74.71821}
+  m_LocalPosition: {x: 15.18, y: 35.85, z: -84.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1939234566}
@@ -9592,7 +9602,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138321033}
   m_LocalRotation: {x: 0.23157012, y: -0.003809243, z: -0.00180119, w: 0.97280914}
-  m_LocalPosition: {x: 6.094985, y: 27.429258, z: -74.56821}
+  m_LocalPosition: {x: 6.2, y: 35.4, z: -86.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1939234566}
@@ -10370,7 +10380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229596007}
   m_LocalRotation: {x: 0.11330292, y: -0.0035659354, z: -0.0022447684, w: 0.9935516}
-  m_LocalPosition: {x: 6.56, y: 27.9, z: -64.83}
+  m_LocalPosition: {x: 6.7, y: 36.7, z: -83.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1939234566}
@@ -12316,6 +12326,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeeBotNav (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8780774348707936043, guid: d5e7dcc0f5f528b469db3479da1a09bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e7dcc0f5f528b469db3479da1a09bd, type: 3}
 --- !u!1 &1487807748
@@ -12721,7 +12736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507214867}
   m_LocalRotation: {x: 0.19614238, y: 0.024016153, z: 0.008110373, w: 0.98024774}
-  m_LocalPosition: {x: 41.754982, y: 31.13926, z: -81.54821}
+  m_LocalPosition: {x: 41.59, y: 33.09, z: -84.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1939234566}
@@ -13225,7 +13240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593722881}
   m_LocalRotation: {x: 0.19101375, y: 0.25020173, z: -0.041157797, w: 0.9482716}
-  m_LocalPosition: {x: 15.534984, y: 25.709259, z: -75.79821}
+  m_LocalPosition: {x: 10.33, y: 31.65, z: -84.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1939234566}
@@ -13489,7 +13504,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646640648}
   m_LocalRotation: {x: 0.13228247, y: -0.48398483, z: 0.062731475, w: 0.8627426}
-  m_LocalPosition: {x: 59.07499, y: 30.919258, z: -64.08821}
+  m_LocalPosition: {x: 61.53, y: 33.21, z: -65.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1939234566}
@@ -13763,7 +13778,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689642901}
   m_LocalRotation: {x: 0.21673182, y: -0.1203349, z: 0.024983238, w: 0.96846414}
-  m_LocalPosition: {x: 28.114985, y: 28.839258, z: -81.24821}
+  m_LocalPosition: {x: 29.38, y: 32.81, z: -86.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1939234566}
@@ -14455,6 +14470,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeeBotNav (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8780774348707936043, guid: d5e7dcc0f5f528b469db3479da1a09bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e7dcc0f5f528b469db3479da1a09bd, type: 3}
 --- !u!1 &1751128424
@@ -14983,6 +15003,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeeBotNav
       objectReference: {fileID: 0}
+    - target: {fileID: 8780774348707936043, guid: d5e7dcc0f5f528b469db3479da1a09bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5e7dcc0f5f528b469db3479da1a09bd, type: 3}
 --- !u!1 &1844649216
@@ -15134,7 +15159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907910338}
   m_LocalRotation: {x: 0.15933987, y: 0.001952311, z: -0.00329553, w: 0.9872164}
-  m_LocalPosition: {x: 29.004982, y: 33.989258, z: -71.68821}
+  m_LocalPosition: {x: 29.01, y: 37.66, z: -75.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1939234566}
@@ -15665,7 +15690,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980404579}
   m_LocalRotation: {x: 0.20147583, y: -0.0037519517, z: -0.0019177424, w: 0.97948444}
-  m_LocalPosition: {x: 0.31498456, y: 30.819258, z: -73.49821}
+  m_LocalPosition: {x: 0.4, y: 38.4, z: -82.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1939234566}
@@ -16088,7 +16113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026694564}
   m_LocalRotation: {x: 0.21848734, y: 0.47358695, z: -0.12313417, w: 0.8442848}
-  m_LocalPosition: {x: 13.134986, y: 26.659258, z: -70.91821}
+  m_LocalPosition: {x: 3.64, y: 35.34, z: -76.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1939234566}
@@ -16308,7 +16333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2077562475
 Transform:
   m_ObjectHideFlags: 0
@@ -18268,7 +18293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &9123569332366372930
 PrefabInstance:
   m_ObjectHideFlags: 0
