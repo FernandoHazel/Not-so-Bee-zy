@@ -3300,7 +3300,7 @@ PrefabInstance:
     - target: {fileID: 3711927703558358241, guid: dc5039055191ff945b4ae3dcf678737c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.018
+      value: -4.14
       objectReference: {fileID: 0}
     - target: {fileID: 3711927703558358241, guid: dc5039055191ff945b4ae3dcf678737c,
         type: 3}
@@ -3310,7 +3310,7 @@ PrefabInstance:
     - target: {fileID: 3711927703558358241, guid: dc5039055191ff945b4ae3dcf678737c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.17
+      value: -4.13
       objectReference: {fileID: 0}
     - target: {fileID: 3711927703558358241, guid: dc5039055191ff945b4ae3dcf678737c,
         type: 3}
@@ -4523,7 +4523,7 @@ Camera:
   m_Depth: 1.33
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 3863
+    m_Bits: 263
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -7888,7 +7888,7 @@ PrefabInstance:
     - target: {fileID: 4373912212809029373, guid: fe4f641dbb049a24eaaea8729ca7f47b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe4f641dbb049a24eaaea8729ca7f47b, type: 3}
