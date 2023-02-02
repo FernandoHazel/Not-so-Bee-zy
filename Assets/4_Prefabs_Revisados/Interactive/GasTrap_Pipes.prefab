@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Gas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5540863671425375277
 Transform:
@@ -4850,7 +4850,7 @@ GameObject:
   m_TagString: Gas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5540863671468974138
 Transform:
@@ -9697,7 +9697,7 @@ GameObject:
   m_TagString: Gas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5540863671491437226
 Transform:
@@ -14530,7 +14530,7 @@ GameObject:
   m_TagString: Gas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6460300758380357580
 Transform:
