@@ -8,11 +8,15 @@ using EventBus;
 public class Player3D : MonoBehaviour
 {
     public static bool inDialogue;
+    WaitForSeconds waitGasWFS = new WaitForSeconds(.5f);
+    WaitForSeconds waitHoneyWFS = new WaitForSeconds(.1f);
+
     [SerializeField] ParticleSystem grabPollen, grabHC;
     [SerializeField] AudioClip pollenSound, honeyCombClip, greyHoneyCombClip, levelCompletedSound, dieSound, inGas,buzzing;
     [SerializeField] AudioSource trapedInHoney;
 
     public CharacterController controller;
+    [SerializeField] private GameObject playerPrefab;
     private InputMaster inputMaster;
     public float speed = 3, gravity = 1f, rotationSpeed = 5;
     public float speedInicial, rotationSpeedInicial;
@@ -35,10 +39,11 @@ public class Player3D : MonoBehaviour
 
     bool slowHoney = false;
 
-    public ParticleSystem honeyParticles;   
-    public ParticleSystem gasParticles;
+    public GameObject honeyParticles;   
+    public GameObject gasParticles;
     [SerializeField] Image gasClock = default;
     [SerializeField] Image gasGoldBg;
+    [SerializeField] GameObject gasClockCanvas;
 
     [SerializeField] LevelData levelData;
     [SerializeField] GameObject [] skins;
@@ -67,8 +72,8 @@ public class Player3D : MonoBehaviour
         UserInterfaceScript.UpdatePollen(pollen,maxPollen);
         UserInterfaceScript.ResetHoneyComb();
 
-        honeyParticles.Stop();
-        gasParticles.Stop();
+        honeyParticles.GetComponent<ParticleSystem>().Stop();
+        gasParticles.GetComponent<ParticleSystem>().Stop();
         gasClock.fillAmount = 0;
         gasGoldBg.enabled = false;
 
@@ -142,17 +147,20 @@ public class Player3D : MonoBehaviour
         if (invertedControlsTime <= 0)
         {
             controlDirection = 1;
-            gasParticles.Stop();
             gasGoldBg.enabled = false;
             inverted = false;
             invertedControlsTime = 3;
+            gasParticles.GetComponent<ParticleSystem>().Stop();
+            gasClockCanvas.transform.SetParent(playerPrefab.transform);
+            gasParticles.transform.SetParent(playerPrefab.transform);
+
             return;
         }
     }
 
     void PlayerRotation(Vector3 camF, Vector3 camR)
     {
-
+        
         Vector3 relativePos = (camF * movement.z + camR * movement.x);
         Quaternion rotation = Quaternion.LookRotation(relativePos);
         Quaternion current = transform.localRotation;
@@ -163,8 +171,8 @@ public class Player3D : MonoBehaviour
     {
 
         //ESTO TIENE QUE SER EN ALGUN MOMENTO RESTART LA ESCENA, EN VEZ DE RESETEAR CADA ELEMENTO...TAL VEZ PRIMERO UN MENU DE PERDISTE, LUEGO RESTART ESCENA
-        gasParticles.Stop();
-        honeyParticles.Stop();
+        gasParticles.GetComponent<ParticleSystem>().Stop();
+        honeyParticles.GetComponent<ParticleSystem>().Stop();
         gasClock.fillAmount = 0;
 
         slowHoney = false;
@@ -240,7 +248,8 @@ public class Player3D : MonoBehaviour
             trapedInHoney.Stop();
             speed = speedInicial;
             slowHoney = false;
-            honeyParticles.Stop();
+            honeyParticles.GetComponent<ParticleSystem>().Stop();
+            honeyParticles.transform.SetParent(playerPrefab.transform);
             return;
         }
     }
@@ -248,28 +257,37 @@ public class Player3D : MonoBehaviour
     //TRIGGERS
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Floor")
+        if (other.gameObject.CompareTag("Floor"))
         {
             cameraControl.currentView = cameraControl.views[(int)other.gameObject.GetComponent<FloorCam>().floorNumber];
         }
         
         //Here we invert the controls, set a timer in 5 and active the main character gas effect
-        if (other.gameObject.tag == "Gas" && inverted == false)
+        if (other.gameObject.CompareTag("Gas") && inverted == false)
         {
+            //Emparentamos temporalmente el objeto del reloj y las partículas de humo
+            gasClockCanvas.transform.SetParent(transform);
+            gasParticles.transform.SetParent(transform);
+            gasClockCanvas.transform.localPosition = new Vector3(0,.5f,0);
+            gasParticles.transform.localPosition = new Vector3(0,0,0);
+
+            //Invertimos los controles
             inverted = true;
             controlDirection = -1;
+
+            //Desactivamos la trampa de humo
             other.gameObject.GetComponent<ParticleSystem>().Stop();
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
             StartCoroutine(WaitGas());
         }
 
-        if (other.gameObject.tag == "Pollen")
+        if (other.gameObject.CompareTag("Pollen"))
         {
             GrabPollen(other.gameObject);
             UserInterfaceScript.UpdatePollen(pollen, maxPollen);
         }
 
-        if (other.gameObject.tag == "HoneyComb")
+        if (other.gameObject.CompareTag("HoneyComb"))
         {
             if (other.gameObject.GetComponent<HoneyComb>().CheckHoneyhomb() == true)
             {
@@ -285,7 +303,7 @@ public class Player3D : MonoBehaviour
 
         }
 
-        if (other.gameObject.tag == "Checkpoint")
+        if (other.gameObject.CompareTag("Checkpoint"))
         {
             AudioManager.audioManager.PlaySfxOnce3D(levelCompletedSound,transform);
             GameEventBus.Publish(GameEventType.WIN);
@@ -293,7 +311,7 @@ public class Player3D : MonoBehaviour
         }
 
 
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.CompareTag("Enemy"))
         {
             if (youWon == false)
             {
@@ -309,15 +327,17 @@ public class Player3D : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        if (other.gameObject.tag == "Honey")
+        if (other.gameObject.CompareTag("Honey"))
         {
             if (slowHoney == false)
             {
+                honeyParticles.transform.SetParent(transform);
+                honeyParticles.transform.localPosition = new Vector3(0,-0.3f,0);
                 StartCoroutine(WaitHoney());
             }
         }
 
-        if (other.gameObject.tag == "Platformer")
+        if (other.gameObject.CompareTag("Platformer"))
         {
             if (other.gameObject.GetComponent<Platform>().tiempoDeEsperaInterno >0)
             {
@@ -335,7 +355,7 @@ public class Player3D : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
 
-        if (other.gameObject.tag == "Platformer")
+        if (other.gameObject.CompareTag("Platformer"))
         {
             move = true;
             transform.parent = null;
@@ -348,28 +368,25 @@ public class Player3D : MonoBehaviour
         AudioManager.audioManager.PlaySfxOnce(inGas);
         gasClock.fillAmount = 1;
         gasGoldBg.enabled = true;
-        gasParticles.Play();
-        yield return new WaitForSeconds(.5f);
+        gasParticles.GetComponent<ParticleSystem>().Play();
+        yield return waitGasWFS;
         controlDirection = -1;
         invertedControlsTime = 2.5f;
     }
 
     IEnumerator WaitHoney()
     {
-        yield return new WaitForSeconds(.1f);
+        yield return waitHoneyWFS;
         slowHoney = true;
         honeyTime = 1.2f;
         speed = 1.3f;
         trapedInHoney.Play();
-        honeyParticles.Play();
+        honeyParticles.GetComponent<ParticleSystem>().Play();
     }
 
     //UPDATES
     void Update()
     {
-        gasClock.transform.LookAt(cam);
-        gasGoldBg.transform.LookAt(cam);
-
         if (youWon == true)
         {
             return;
@@ -411,4 +428,13 @@ public class Player3D : MonoBehaviour
         }
     }
 
+    private void LateUpdate() 
+    {
+        //Si estamos invertidos hacemos que el círculo siga a la cámara
+        if(inverted)
+        {
+            gasClock.transform.LookAt(cam);
+            gasGoldBg.transform.LookAt(cam);
+        }
+    }
 }
