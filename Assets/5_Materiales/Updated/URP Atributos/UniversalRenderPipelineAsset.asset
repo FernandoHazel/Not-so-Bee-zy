@@ -24,8 +24,8 @@ MonoBehaviour:
   m_OpaqueDownsampling: 3
   m_SupportsTerrainHoles: 1
   m_SupportsHDR: 0
-  m_MSAA: 2
-  m_RenderScale: 0.31
+  m_MSAA: 1
+  m_RenderScale: 0.4
   m_MainLightRenderingMode: 1
   m_MainLightShadowsSupported: 1
   m_MainLightShadowmapResolution: 256

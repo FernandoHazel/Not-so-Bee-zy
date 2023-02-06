@@ -297,7 +297,7 @@ public class Player3D : MonoBehaviour
 
         if (other.gameObject.CompareTag("Checkpoint"))
         {
-            AudioManager.audioManager.PlaySfxOnce3D(levelCompletedSound,transform);
+            AudioManager.audioManager.PlaySfxOnce(levelCompletedSound);
             GameEventBus.Publish(GameEventType.WIN);
             youWon = true;
         }
