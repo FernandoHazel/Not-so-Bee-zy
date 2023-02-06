@@ -98,8 +98,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 31cf4a3e69258ef4486efa0109929036,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 1bfb981ffa7cb56429e7d9457a13da26,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -846,6 +848,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePollen
       objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
 --- !u!4 &82974052 stripped
@@ -1108,7 +1115,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1334,6 +1341,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tulip_2 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
       propertyPath: m_RootOrder
@@ -1408,6 +1420,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
@@ -1920,6 +1937,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_03
       objectReference: {fileID: 0}
+    - target: {fileID: 6941765000743290380, guid: c60edd51c065ceb46b345849a03bc106,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c60edd51c065ceb46b345849a03bc106, type: 3}
 --- !u!4 &198868703 stripped
@@ -2263,7 +2285,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &241334641
 Transform:
@@ -2300,6 +2322,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
@@ -2505,6 +2532,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GamePollen (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
@@ -2825,6 +2857,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tulip_2 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
@@ -3348,6 +3385,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: grabHoney
+      value: 
+      objectReference: {fileID: 816442804}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: levelDataGm
+      value: 
+      objectReference: {fileID: 1619437746}
     - target: {fileID: 8483566281489896099, guid: dc5039055191ff945b4ae3dcf678737c,
         type: 3}
       propertyPath: m_Name
@@ -3831,7 +3878,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &343364384
 Transform:
@@ -4102,7 +4149,7 @@ PrefabInstance:
     - target: {fileID: 1108252928428339362, guid: adc453635e0925046844fcd1605c026a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1264198472571905065, guid: adc453635e0925046844fcd1605c026a,
         type: 3}
@@ -4399,6 +4446,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tulip_2 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
       propertyPath: m_RootOrder
@@ -4584,7 +4636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393002641}
   m_LocalRotation: {x: 0.006342687, y: 0.9857316, z: -0.16757607, w: -0.014536617}
-  m_LocalPosition: {x: -2.46, y: 14.13, z: 2.77}
+  m_LocalPosition: {x: -2.2249846, y: 16.61074, z: 9.838207}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1616948814}
@@ -4951,6 +5003,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GamePollen (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
@@ -5442,6 +5499,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tulip_2 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
@@ -6253,6 +6315,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tulip_2 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
       propertyPath: m_RootOrder
@@ -6628,6 +6695,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tulip_2 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
       propertyPath: m_RootOrder
@@ -6702,6 +6774,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tulip_2 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
@@ -7355,6 +7432,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: grabHoney
+      value: 
+      objectReference: {fileID: 816442804}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: levelDataGm
+      value: 
+      objectReference: {fileID: 1619437746}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: honeycombIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8483566281489896099, guid: dc5039055191ff945b4ae3dcf678737c,
         type: 3}
       propertyPath: m_Name
@@ -7541,6 +7633,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7405846476849542632, guid: c6308cb7062fac34e8e50600086b12a1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7405846476849834440, guid: c6308cb7062fac34e8e50600086b12a1,
         type: 3}
@@ -7875,7 +7972,7 @@ PrefabInstance:
     - target: {fileID: 4373912212809029373, guid: fe4f641dbb049a24eaaea8729ca7f47b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe4f641dbb049a24eaaea8729ca7f47b, type: 3}
@@ -8020,6 +8117,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GamePollen (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
@@ -8894,6 +8996,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tulip_2 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
       propertyPath: m_RootOrder
@@ -9138,6 +9245,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12e944443e2b7e4e9429fdd3467bdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!198 &816442804 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8459430827140768535, guid: d879933391199f544b1de58241d7d4ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 816442801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &822850433
 GameObject:
   m_ObjectHideFlags: 0
@@ -9772,6 +9885,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePollen (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
 --- !u!4 &857926938 stripped
@@ -9804,7 +9922,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871657556}
   m_LocalRotation: {x: 0.006342687, y: 0.9857316, z: -0.16757607, w: -0.014536617}
-  m_LocalPosition: {x: -1.6250155, y: 36.88926, z: -51.14821}
+  m_LocalPosition: {x: -1.39, y: 39.37, z: -44.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5312475248064112633}
@@ -10020,6 +10138,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GamePollen (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
@@ -10407,6 +10530,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
       propertyPath: m_RootOrder
@@ -10706,6 +10834,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tulip_2 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
@@ -11265,7 +11398,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &996974548
 Transform:
@@ -11723,7 +11856,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1019894437
 Transform:
@@ -11757,7 +11890,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1023508270
 Transform:
@@ -12742,6 +12875,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tulip_2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
       propertyPath: m_RootOrder
@@ -13306,7 +13444,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1142031970
 Transform:
@@ -13411,6 +13549,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tulip_2 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
@@ -14073,6 +14216,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePollen (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
 --- !u!4 &1213918700 stripped
@@ -14288,7 +14436,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1225869646
 Transform:
@@ -14511,7 +14659,7 @@ GameObject:
   m_TagString: Platformer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1251139718
 Transform:
@@ -14708,6 +14856,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GamePollen (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
@@ -15282,7 +15435,7 @@ PrefabInstance:
     - target: {fileID: 7217945644989208502, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -199.72388
+      value: -199.72363
       objectReference: {fileID: 0}
     - target: {fileID: 7217945645277597577, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
@@ -15533,7 +15686,7 @@ PrefabInstance:
     - target: {fileID: 2222111361404534124, guid: 88f2fd29f58b9734683512546acec310,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2222111361405018444, guid: 88f2fd29f58b9734683512546acec310,
         type: 3}
@@ -15756,6 +15909,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: grabHoney
+      value: 
+      objectReference: {fileID: 816442804}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: levelDataGm
+      value: 
+      objectReference: {fileID: 1619437746}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: honeycombIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8483566281489896099, guid: dc5039055191ff945b4ae3dcf678737c,
         type: 3}
       propertyPath: m_Name
@@ -15930,6 +16098,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Branch_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493958779012619316, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
@@ -16835,7 +17008,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1416148500
 Transform:
@@ -17551,7 +17724,7 @@ PrefabInstance:
     - target: {fileID: 2646214014166202506, guid: b3a895c4d52036e4a96580314012abba,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8824330737904911416, guid: b3a895c4d52036e4a96580314012abba,
         type: 3}
@@ -18113,6 +18286,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Branch_01 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1493958779012619316, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
       propertyPath: m_RootOrder
@@ -18298,6 +18476,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783306491908617939, guid: f02116c209ecd9e488fc4d2cd8996133,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133,
         type: 3}
@@ -18547,6 +18730,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_04 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783306491908617939, guid: f02116c209ecd9e488fc4d2cd8996133,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133,
         type: 3}
@@ -18944,6 +19132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
       propertyPath: m_RootOrder
@@ -19148,6 +19341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GamePollen (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
@@ -19747,7 +19945,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1625614120
 Transform:
@@ -20006,6 +20204,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bush_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874,
         type: 3}
       propertyPath: m_RootOrder
@@ -20231,6 +20434,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tulip_2 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
       propertyPath: m_RootOrder
@@ -20350,7 +20558,7 @@ PrefabInstance:
     - target: {fileID: 1108252928428339362, guid: adc453635e0925046844fcd1605c026a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1264198472571905065, guid: adc453635e0925046844fcd1605c026a,
         type: 3}
@@ -20515,6 +20723,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783306491908617939, guid: f02116c209ecd9e488fc4d2cd8996133,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133,
         type: 3}
@@ -20899,7 +21112,7 @@ GameObject:
   m_TagString: Platformer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1723930672
 Transform:
@@ -21282,6 +21495,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_01
       objectReference: {fileID: 0}
+    - target: {fileID: 7405846476849542632, guid: c6308cb7062fac34e8e50600086b12a1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7405846476849834440, guid: c6308cb7062fac34e8e50600086b12a1,
         type: 3}
       propertyPath: m_RootOrder
@@ -21356,6 +21574,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tulip_2 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
@@ -21536,6 +21759,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Branch_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493958779012120596, guid: b9de24523a11d714db3851b5f0f9d527,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493958779012619316, guid: b9de24523a11d714db3851b5f0f9d527,
         type: 3}
@@ -21756,6 +21984,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bush_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239969156481229051, guid: b71b0f8d2f881c743a85228f3030d1cb,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
@@ -22929,6 +23162,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tulip_2 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
       propertyPath: m_RootOrder
@@ -23673,6 +23911,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePollen (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
 --- !u!4 &1953432633 stripped
@@ -23763,6 +24006,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1225869646}
     m_Modifications:
+    - target: {fileID: 1711834248311028123, guid: 78521fdcae63c1946868dd728b7d7198,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1711834248785314742, guid: 78521fdcae63c1946868dd728b7d7198,
         type: 3}
       propertyPath: m_RootOrder
@@ -23822,6 +24070,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Checkpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599634755654347339, guid: 78521fdcae63c1946868dd728b7d7198,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78521fdcae63c1946868dd728b7d7198, type: 3}
@@ -23988,7 +24241,7 @@ PrefabInstance:
     - target: {fileID: 9167931645177385329, guid: db1d1a385bbf2904b8a960d4cc0b2813,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db1d1a385bbf2904b8a960d4cc0b2813, type: 3}
@@ -24936,6 +25189,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_04 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8783306491908617939, guid: f02116c209ecd9e488fc4d2cd8996133,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133,
         type: 3}
       propertyPath: m_RootOrder
@@ -25493,6 +25751,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tulip_2 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
       propertyPath: m_RootOrder
@@ -25867,6 +26130,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tulip_2 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765385654916415224, guid: 5f7008120b1704443ba8591b29fc5e81,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7375095653945969899, guid: 5f7008120b1704443ba8591b29fc5e81,
         type: 3}
@@ -26708,7 +26976,7 @@ PrefabInstance:
     - target: {fileID: 2646214014166202506, guid: b3a895c4d52036e4a96580314012abba,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8824330737904911416, guid: b3a895c4d52036e4a96580314012abba,
         type: 3}
@@ -26880,7 +27148,7 @@ PrefabInstance:
     - target: {fileID: 1108252928428339362, guid: adc453635e0925046844fcd1605c026a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1264198472571905065, guid: adc453635e0925046844fcd1605c026a,
         type: 3}

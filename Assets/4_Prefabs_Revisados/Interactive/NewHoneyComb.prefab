@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9031781424095914380}
   - component: {fileID: 6768401830932960913}
+  - component: {fileID: 1134520928485571120}
+  - component: {fileID: 7376968317153076481}
   m_Layer: 2
   m_Name: NewHoneyComb
   m_TagString: HoneyComb
@@ -31,7 +33,7 @@ Transform:
   - {fileID: 3166930846788956460}
   - {fileID: 5307188432514512342}
   - {fileID: 8865240127212747000}
-  - {fileID: 8169542225439680974}
+  - {fileID: 6526438540369941288}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54,6 +56,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1134520928485571120
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407711008265575327}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05, y: 0.05, z: 0.05}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7376968317153076481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407711008265575327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f21d50203eba60429c441e37ad3ef27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabHoney: {fileID: 0}
+  honeycombIndex: 0
+  levelData: {fileID: 11400000, guid: 097eabeb69cd6f5478b0d10eb237195f, type: 2}
+  levelDataGm: {fileID: 0}
+  honeycombMaterial: {fileID: 2100000, guid: 7cf6a75d95c302f43a45ec49fa73a632, type: 2}
+  honeycombMaterialTransparent: {fileID: 2100000, guid: 4a5814caa5154e942a5562300052a6f1,
+    type: 2}
 --- !u!1 &7798985306962170784
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +334,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &8158841024470813086
+--- !u!1 &8942497730871943929
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -308,43 +342,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8169542225439680974}
-  - component: {fileID: 1534758268935196365}
-  m_Layer: 0
+  - component: {fileID: 6526438540369941288}
+  - component: {fileID: 3606832245946477123}
+  m_Layer: 2
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: HoneyComb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8169542225439680974
+--- !u!4 &6526438540369941288
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8158841024470813086}
+  m_GameObject: {fileID: 8942497730871943929}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.4851198, y: 3.4851198, z: 3.4851198}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9031781424095914380}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!108 &1534758268935196365
+--- !u!108 &3606832245946477123
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8158841024470813086}
+  m_GameObject: {fileID: 8942497730871943929}
   m_Enabled: 1
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.1
-  m_Range: 0.0950979
+  m_Color: {r: 1, g: 0.65336907, b: 0, a: 1}
+  m_Intensity: 0.25
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -380,7 +414,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294963663
+    m_Bits: 4294963405
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0

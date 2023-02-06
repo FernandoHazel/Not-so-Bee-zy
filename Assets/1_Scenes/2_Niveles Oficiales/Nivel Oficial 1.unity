@@ -98,8 +98,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 6e1a778001803f545b626556a8957348,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 1bfb981ffa7cb56429e7d9457a13da26,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -409,6 +411,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GamePollen (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
@@ -953,7 +960,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -992,7 +999,7 @@ Light:
     serializedVersion: 2
     m_Bits: 1
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1479,6 +1486,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePollen (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
 --- !u!4 &174358368 stripped
@@ -1595,6 +1607,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GamePollen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
@@ -2843,6 +2860,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePollen (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
 --- !u!4 &365127491 stripped
@@ -3084,6 +3106,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3869059002370710208, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: grabHoney
+      value: 
+      objectReference: {fileID: 796753444}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: levelDataGm
+      value: 
+      objectReference: {fileID: 2017897638}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: honeycombIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7472098858523519226, guid: dc5039055191ff945b4ae3dcf678737c,
         type: 3}
       propertyPath: m_Range
@@ -3093,6 +3135,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HoneyComb (ConAxis)02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909668408146973306, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc5039055191ff945b4ae3dcf678737c, type: 3}
@@ -5238,7 +5285,7 @@ PrefabInstance:
     - target: {fileID: 2646214014166202506, guid: b3a895c4d52036e4a96580314012abba,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2876510400503255741, guid: b3a895c4d52036e4a96580314012abba,
         type: 3}
@@ -5944,6 +5991,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 582392945260698768, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: m_text
+      value: Tap to continue
       objectReference: {fileID: 0}
     - target: {fileID: 2389979667312375912, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
@@ -6760,6 +6812,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 650ef19d59bae8d41a1691cd30c39c1d, type: 3}
+--- !u!198 &796753444 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8459430827140768535, guid: d879933391199f544b1de58241d7d4ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1736146088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &800633391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7235,10 +7293,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3869059002370710208, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: grabHoney
+      value: 
+      objectReference: {fileID: 796753444}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: levelDataGm
+      value: 
+      objectReference: {fileID: 2017897638}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: honeycombIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8483566281489896099, guid: dc5039055191ff945b4ae3dcf678737c,
         type: 3}
       propertyPath: m_Name
       value: HoneyComb (ConAxis)01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909668408146973306, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc5039055191ff945b4ae3dcf678737c, type: 3}
@@ -8932,6 +9015,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GamePollen (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
@@ -11354,6 +11442,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePollen (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
 --- !u!4 &1313734391 stripped
@@ -12840,6 +12933,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GamePollen (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
@@ -14818,6 +14916,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePollen (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
 --- !u!4 &1754447201 stripped
@@ -16008,6 +16111,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePollen (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
 --- !u!4 &1907188535 stripped
@@ -16082,6 +16190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GamePollen (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5849861635342033260, guid: 5d2634c569a802c45a9f72d9f5deebf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2634c569a802c45a9f72d9f5deebf4, type: 3}
@@ -18725,6 +18838,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3869059002370710208, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: grabHoney
+      value: 
+      objectReference: {fileID: 796753444}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: levelDataGm
+      value: 
+      objectReference: {fileID: 2017897638}
     - target: {fileID: 7472098858523519226, guid: dc5039055191ff945b4ae3dcf678737c,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -18734,6 +18862,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HoneyComb (ConAxis)00
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909668408146973306, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc5039055191ff945b4ae3dcf678737c, type: 3}

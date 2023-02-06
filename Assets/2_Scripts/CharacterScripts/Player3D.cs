@@ -10,6 +10,8 @@ public class Player3D : MonoBehaviour
     public static bool inDialogue;
     WaitForSeconds waitGasWFS = new WaitForSeconds(.5f);
     WaitForSeconds waitHoneyWFS = new WaitForSeconds(.1f);
+    //This timer is to let the pater collect an item before ger affected by gas
+    WaitForSeconds beforeGasWFS = new WaitForSeconds(.3f);
 
     [SerializeField] ParticleSystem grabPollen, grabHC;
     [SerializeField] AudioClip pollenSound, honeyCombClip, greyHoneyCombClip, levelCompletedSound, dieSound, inGas,buzzing;
@@ -265,20 +267,10 @@ public class Player3D : MonoBehaviour
         //Here we invert the controls, set a timer in 5 and active the main character gas effect
         if (other.gameObject.CompareTag("Gas") && inverted == false)
         {
-            //Emparentamos temporalmente el objeto del reloj y las partículas de humo
-            gasClockCanvas.transform.SetParent(transform);
-            gasParticles.transform.SetParent(transform);
-            gasClockCanvas.transform.localPosition = new Vector3(0,.5f,0);
-            gasParticles.transform.localPosition = new Vector3(0,0,0);
-
-            //Invertimos los controles
-            inverted = true;
-            controlDirection = -1;
-
             //Desactivamos la trampa de humo
             other.gameObject.GetComponent<ParticleSystem>().Stop();
             other.gameObject.GetComponent<BoxCollider>().enabled = false;
-            StartCoroutine(WaitGas());
+            StartCoroutine(TimerBeforGasEffect());
         }
 
         if (other.gameObject.CompareTag("Pollen"))
@@ -363,6 +355,22 @@ public class Player3D : MonoBehaviour
     }
 
     //COROUTINES
+    IEnumerator TimerBeforGasEffect()
+    {
+        yield return beforeGasWFS;
+        //Emparentamos temporalmente el objeto del reloj y las partículas de humo
+        gasClockCanvas.transform.SetParent(transform);
+        gasParticles.transform.SetParent(transform);
+        gasClockCanvas.transform.localPosition = new Vector3(0,.5f,0);
+        gasParticles.transform.localPosition = new Vector3(0,0,0);
+
+        //Invertimos los controles
+        inverted = true;
+        controlDirection = -1;
+
+        
+            StartCoroutine(WaitGas());
+    }
     IEnumerator WaitGas()
     {
         AudioManager.audioManager.PlaySfxOnce(inGas);

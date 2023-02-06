@@ -6,7 +6,7 @@ public class Optimization : MonoBehaviour
 {
     //We are using a Huawei Y9 screen resolution as defoult
     [Tooltip("This is the defoult screen resolution")]
-    [SerializeField] private int defoultScreenWidth = 1080;
+    [SerializeField] private int defoultScreenWidth = 1920;
     [SerializeField] private int defoultScreenHeight =  2340;
 
     public static Optimization Instance;

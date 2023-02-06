@@ -50,6 +50,9 @@ public class LevelData : ScriptableObject
     //Level selector
     public int GetCurrentLevel() //saber cual es el nivel actual
     {
+        if(currentLevelGlobal >= levelInfo.Length - 1)
+        currentLevelGlobal = levelInfo.Length - 1;
+
         return currentLevelGlobal;
     }
 
@@ -70,17 +73,23 @@ public class LevelData : ScriptableObject
     public int GetHoneycombs(int index) 
     {
         int resultado = 0;
-        for (int x = 0; x < levelInfo[index].specificHoneycombs.Length; x++)
+        if (index <= levelInfo.Length -1)
         {
-            if (levelInfo[index].specificHoneycombs[x] == true) 
+            for (int x = 0; x < levelInfo[index].specificHoneycombs.Length; x++)
             {
-                resultado++;
+                if (levelInfo[index].specificHoneycombs[x] == true) 
+                {
+                    resultado++;
+                }
             }
         }
         return resultado;
     }
     public bool GetSpecificHoneycombs(int index, int honeycombIndex) //obtener especificamente cuales honeycombs se agarraron
     {
+        if(index > levelInfo.Length -1)
+        index = levelInfo.Length -1;
+        
         return levelInfo[index].specificHoneycombs[honeycombIndex];
     }
 

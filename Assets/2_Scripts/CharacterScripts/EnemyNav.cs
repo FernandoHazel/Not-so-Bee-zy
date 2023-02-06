@@ -20,9 +20,8 @@ public class EnemyNav : MonoBehaviour
     public int casos = 1;
     int waypointCercano = 0;
 
-    public Material enemyMaterial;
+    //public Material enemyMaterial;
     public Light visorLight;
-    public Light bodyLight;
     public Color startColor;
     public Color endColor;
 
@@ -43,17 +42,16 @@ public class EnemyNav : MonoBehaviour
     Vector3 posInicial;
 
     bool empezarLookForPlayer = false;
+    [SerializeField] private Renderer enemyCopRenderer;
+    Ray rayito;
+    RaycastHit infoDelRayito;
+
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        enemyMaterial = GetComponent<MeshRenderer>().material;
-        enemyMaterial.color = startColor;
         visorLight.color = startColor;
-        bodyLight.color = startColor;
         posInicial = transform.position;
-        //transform.position = waypoints[0].position; //Al iniciar, posicionarse en el primer waypoint
-
     }
 
     void MaquinaDeEstados(int casos)
@@ -187,12 +185,11 @@ public class EnemyNav : MonoBehaviour
 
         direccion = player.position - transform.position;
 
-        Ray rayito = new Ray(transform.position, direccion);
-        RaycastHit infoDelRayito;
-
+        rayito = new Ray(transform.position, direccion);
+        
         if (Physics.Raycast(rayito, out infoDelRayito))
         {
-            if ((infoDelRayito.collider.tag == "Player") && (enemyViewScript.enemySees == true) && (player3DScript.youWon == false))
+            if ((infoDelRayito.collider.CompareTag("Player")) && (enemyViewScript.enemySees == true) && (player3DScript.youWon == false))
             {
                 agent.speed = maxSpeed;
                 agent.destination = player.position;
@@ -200,9 +197,7 @@ public class EnemyNav : MonoBehaviour
 
                 RotarEnemigoPlayer();
 
-                enemyMaterial.color = endColor;
                 visorLight.color = endColor;
-                bodyLight.color = endColor;
                 check = false;
 
                 playerLastPlace.position = new Vector3(player.position.x+.2f,player.position.y,player.position.z+.2f);
@@ -235,9 +230,7 @@ public class EnemyNav : MonoBehaviour
                 if (check == false)
                 {
                     agent.speed = speed;
-                    enemyMaterial.color = startColor;
                     visorLight.color = startColor;
-                    bodyLight.color = startColor;
 
                     float distanciaW = 0;
                     for (int i = 0; i < waypoints.Length; i++)
@@ -276,8 +269,10 @@ public class EnemyNav : MonoBehaviour
 
         else
         {
-            Sight();
-            
+            if(enemyCopRenderer.isVisible)
+            {
+                Sight();
+            }
         }
 
     }

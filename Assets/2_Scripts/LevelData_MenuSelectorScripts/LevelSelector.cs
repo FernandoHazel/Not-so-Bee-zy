@@ -61,7 +61,10 @@ public class LevelSelector : MonoBehaviour
         {
             rightButton.interactable = true;
             levels[currentSelectedLevel].gameObject.SetActive(false);
+
+            if(currentSelectedLevel <= maxLevels)
             currentSelectedLevel++;
+            
             levels[currentSelectedLevel].gameObject.SetActive(true);
             levelModels[currentSelectedLevel - 1].gameObject.SetActive(false);
             levelModels[currentSelectedLevel].gameObject.SetActive(true);

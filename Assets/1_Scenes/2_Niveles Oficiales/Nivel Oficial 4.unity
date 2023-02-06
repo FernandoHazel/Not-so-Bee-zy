@@ -98,8 +98,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 14d4351412cbf414fa6ba90c3cc71d61,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 1bfb981ffa7cb56429e7d9457a13da26,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6754,6 +6756,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: grabHoney
+      value: 
+      objectReference: {fileID: 1488991095}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: levelDataGm
+      value: 
+      objectReference: {fileID: 1584867340}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: honeycombIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8483566281489896099, guid: dc5039055191ff945b4ae3dcf678737c,
         type: 3}
       propertyPath: m_Name
@@ -9022,6 +9039,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: grabHoney
+      value: 
+      objectReference: {fileID: 1488991095}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: levelDataGm
+      value: 
+      objectReference: {fileID: 1584867340}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: honeycombIndex
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8483566281489896099, guid: dc5039055191ff945b4ae3dcf678737c,
         type: 3}
@@ -19084,6 +19116,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d879933391199f544b1de58241d7d4ae, type: 3}
+--- !u!198 &1488991095 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8459430827140768535, guid: d879933391199f544b1de58241d7d4ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1488991094}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1494259410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21349,7 +21387,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578290894}
   m_LocalRotation: {x: 0.112866364, y: 0.50317746, z: -0.056810312, w: 0.85489553}
-  m_LocalPosition: {x: -30.875013, y: 26.169258, z: -51.72821}
+  m_LocalPosition: {x: -42.7, y: 30.1, z: -61.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1209303379}
@@ -28592,6 +28630,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: grabHoney
+      value: 
+      objectReference: {fileID: 1488991095}
+    - target: {fileID: 7052606100289181058, guid: dc5039055191ff945b4ae3dcf678737c,
+        type: 3}
+      propertyPath: levelDataGm
+      value: 
+      objectReference: {fileID: 1584867340}
     - target: {fileID: 8483566281489896099, guid: dc5039055191ff945b4ae3dcf678737c,
         type: 3}
       propertyPath: m_Name
