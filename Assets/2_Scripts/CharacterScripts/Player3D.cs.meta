@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: b12e944443e2b7e4e9429fdd3467bdd4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - honeyCombClip: {fileID: 8300000, guid: 84f3c85a61d583540a7d597cc7ac99cd, type: 3}
+  - greyHoneyCombClip: {fileID: 8300000, guid: 1e743081fc672e64abe5f86d641c089f, type: 3}
+  - levelCompletedSound: {fileID: 8300000, guid: 0f3e1009d3b7ef04e8a70f8219e32637,
+      type: 3}
+  - dieSound: {fileID: 8300000, guid: 96959796e4905e449a985a2497e6b9e7, type: 3}
+  - controller: {instanceID: 0}
+  - cam: {instanceID: 0}
+  - UserInterfaceScript: {instanceID: 0}
+  - cameraControl: {instanceID: 0}
+  - doorScript: {instanceID: 0}
+  - honeyParticles: {instanceID: 0}
+  - gasParticles: {instanceID: 0}
+  - gasClock: {instanceID: 0}
+  - levelData: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d736c7bf44e94774ebff14a4d4b5676f, type: 3}
+  m_Name: LevelData
+  m_EditorClassIdentifier: 
+  levelInfo:
+  - unlocked: 1
+    recordTime: 21.803553
+    specificHoneycombs: 
+  - unlocked: 1
+    recordTime: 80.91793
+    specificHoneycombs: 010101
+  - unlocked: 1
+    recordTime: 74.63945
+    specificHoneycombs: 010101
+  - unlocked: 1
+    recordTime: 106.71725
+    specificHoneycombs: 010001
+  - unlocked: 1
+    recordTime: 140.56877
+    specificHoneycombs: 000100
+  - unlocked: 1
+    recordTime: 165.09691
+    specificHoneycombs: 000101
+  currentLevelGlobal: 6
+  honeycombsGlobal: 11
+  skinInfo:
+  - skinUnlocked: 1
+  - skinUnlocked: 0
+  - skinUnlocked: 0
+  - skinUnlocked: 0
+  - skinUnlocked: 0
+  skinSelected: 0
