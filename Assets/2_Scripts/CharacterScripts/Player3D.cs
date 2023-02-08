@@ -52,6 +52,7 @@ public class Player3D : MonoBehaviour
     GameObject localSkin;
     
     private int controlDirection;
+    private int camCheckInterval = 15;
 
     private void Awake() 
     {
@@ -259,10 +260,7 @@ public class Player3D : MonoBehaviour
     //TRIGGERS
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Floor"))
-        {
-            cameraControl.currentView = cameraControl.views[(int)other.gameObject.GetComponent<FloorCam>().floorNumber];
-        }
+        
         
         //Here we invert the controls, set a timer in 5 and active the main character gas effect
         if (other.gameObject.CompareTag("Gas") && inverted == false)
@@ -342,6 +340,17 @@ public class Player3D : MonoBehaviour
             }
         }
 
+        //Como este es un proceso costoso lo hago en un intervalo de frames
+
+        if(Time.frameCount % camCheckInterval == 0)
+        {
+            if (other.gameObject.CompareTag("Floor"))
+            {
+                //Nos aseguramos que mientras el jugador esté en un collider la cámara se acomode
+                //para evitar que la cámara no lo siga
+                cameraControl.currentView = cameraControl.views[(int)other.gameObject.GetComponent<FloorCam>().floorNumber];
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
