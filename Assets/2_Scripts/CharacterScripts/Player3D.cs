@@ -210,7 +210,6 @@ public class Player3D : MonoBehaviour
 
         transform.parent = null;
         youLost = true;
-        cameraControl.currentView = cameraControl.views[0];
     }
 
     void GrabPollen(GameObject go) 
@@ -344,7 +343,7 @@ public class Player3D : MonoBehaviour
 
         if(Time.frameCount % camCheckInterval == 0)
         {
-            if (other.gameObject.CompareTag("Floor"))
+            if (other.gameObject.CompareTag("Floor") && !inDialogue)
             {
                 //Nos aseguramos que mientras el jugador esté en un collider la cámara se acomode
                 //para evitar que la cámara no lo siga
