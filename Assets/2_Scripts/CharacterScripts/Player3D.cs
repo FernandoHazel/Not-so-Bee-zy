@@ -13,24 +13,31 @@ public class Player3D : MonoBehaviour
     //This timer is to let the pater collect an item before ger affected by gas
     WaitForSeconds beforeGasWFS = new WaitForSeconds(.3f);
 
+    [HideInInspector] public int maxPollen = 10;
+    [Header("Pollen and HoneyComb")]
     [SerializeField] ParticleSystem grabPollen, grabHC;
-    [SerializeField] AudioClip pollenSound, honeyCombClip, greyHoneyCombClip, levelCompletedSound, dieSound, inGas,buzzing;
-    [SerializeField] AudioSource trapedInHoney;
+    public static int pollen = 0;
+    [HideInInspector] public int honeyComb = 0;
+    List<GameObject> pollenList = new List<GameObject>(), honeyCombList = new List<GameObject>();
+    public GameObject honeyParticles;
 
-    public CharacterController controller;
+    [Header("Sound")]
+    [SerializeField] AudioSource trapedInHoney;
+    [SerializeField] AudioClip pollenSound, honeyCombClip, greyHoneyCombClip, levelCompletedSound, dieSound, inGas,buzzing;
+    
+
+    [HideInInspector] public CharacterController controller;
     [SerializeField] private GameObject playerPrefab;
     private InputMaster inputMaster;
+    [Header("Movement variables")]
     public float speed = 3, gravity = 1f, rotationSpeed = 5;
     public float speedInicial, rotationSpeedInicial;
     public Transform cam;
     Vector3 movement, posInicial;
-    public bool move = false;
-
-    public int pollen = 0, honeyComb = 0, maxPollen = 10;
-    List<GameObject> pollenList = new List<GameObject>(), honeyCombList = new List<GameObject>();
+    private bool move = false;
 
     public UserInterface UserInterfaceScript;
-    public bool youLost = false, youWon = false;
+    [HideInInspector] public bool youLost = false, youWon = false;
     bool inverted = false;
 
     public CameraControl cameraControl;
@@ -40,8 +47,6 @@ public class Player3D : MonoBehaviour
     [SerializeField] float honeyTime = 3;
 
     bool slowHoney = false;
-
-    public GameObject honeyParticles;   
     public GameObject gasParticles;
     [SerializeField] Image gasClock = default;
     [SerializeField] Image gasGoldBg;
@@ -61,7 +66,7 @@ public class Player3D : MonoBehaviour
     }
     void Start()
     {
-        
+        pollen = 0;
         if (levelData.GetSkinSelected() != 2) 
         {
             AudioManager.audioManager.PlaySfxLoop3D(buzzing, transform);
@@ -214,13 +219,16 @@ public class Player3D : MonoBehaviour
 
     void GrabPollen(GameObject go) 
     {
-        grabPollen.Play();
+        //Aumentamos la cantidad global de polen
         pollen++;
+
+        grabPollen.Play();
         go.SetActive(false);
         pollenList.Add(go);
         if (pollen == maxPollen)
         {
             doorScript.OpenDoor();
+            AudioManager.audioManager.PlaySfxOnce(levelCompletedSound);
         }
         AudioManager.audioManager.PlaySfxOnce(pollenSound);
     }
