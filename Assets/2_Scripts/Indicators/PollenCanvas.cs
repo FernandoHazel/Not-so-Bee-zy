@@ -8,7 +8,6 @@ public class PollensCanvas : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI text;
     [Tooltip("Set the desired fot size of the number")]
-    [SerializeField] float targetFontSize;
     Camera cam;
 
     private void Awake() 

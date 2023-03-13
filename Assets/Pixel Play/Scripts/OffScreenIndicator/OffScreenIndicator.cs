@@ -85,6 +85,7 @@ public class OffScreenIndicator : MonoBehaviour
         }
         else
         {
+            //In the moment the target is desactivated
             //After taken the pollen activate the pollen canvas
             pollensCanvas.transform.position = target.indicator.transform.position + new Vector3(0,1,0);
             pollensCanvas.SetActive(true);

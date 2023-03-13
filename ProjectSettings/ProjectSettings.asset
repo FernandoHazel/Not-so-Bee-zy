@@ -284,7 +284,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: cae8b51ad1b36ed4ba58c2e134be46c0, type: 3}
+      m_Icon: {fileID: 2800000, guid: 2128e00815db177469145930ee1a4644, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -816,8 +816,14 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
     Collab: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -837,10 +843,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 70c7c520-901b-48bf-b4be-91e14c23fd4e
+  cloudProjectId: 9e7f55a3-d846-4cf5-a1d1-27886ee816e2
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Not so bee-zy
+  projectName: Not so bee-zy (1)
   organizationId: not-so-bee-zy
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
