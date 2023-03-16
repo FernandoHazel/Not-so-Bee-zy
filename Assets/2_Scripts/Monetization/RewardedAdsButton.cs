@@ -11,23 +11,17 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
  
     void Awake()
     {   
-        // Get the Ad Unit ID for the current platform:
-#if UNITY_IOS
-        _adUnitId = _iOSAdUnitId;
-#elif UNITY_ANDROID
-        _adUnitId = _androidAdUnitId;
-#endif
-
-        //Disable the button until the ad is ready to show:
-        _showAdButton.interactable = false;
+        GetID();
     }
  
     // Load content to the Ad Unit:
     public void LoadAd()
     {
+        GetID();
         // IMPORTANT! Only load content AFTER initialization (in this example, initialization is handled in a different script).
         Debug.Log("Loading Ad: " + _adUnitId);
         Advertisement.Load(_adUnitId, this);
+        
     }
  
     // If the ad successfully loads, add a listener to the button and enable it:
@@ -86,5 +80,18 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     {
         // Clean up the button listeners:
         _showAdButton.onClick.RemoveAllListeners();
+    }
+
+    public void GetID()
+    {
+        // Get the Ad Unit ID for the current platform:
+        #if UNITY_IOS
+        _adUnitId = _iOSAdUnitId;
+        #elif UNITY_ANDROID
+        _adUnitId = _androidAdUnitId;
+        #endif
+
+        //Disable the button until the ad is ready to show:
+        _showAdButton.interactable = false;
     }
 }

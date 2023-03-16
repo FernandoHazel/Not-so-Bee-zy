@@ -16355,6 +16355,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Nivel Oficial 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5301252789031256198, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: _iOSAdUnitId
+      value: Rewarded_iOS
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301252789031256198, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: _androidAdUnitId
+      value: Rewarded_Android
+      objectReference: {fileID: 0}
     - target: {fileID: 5904655740035762481, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
       propertyPath: m_IsActive
