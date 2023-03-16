@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.Advertisements;
  
-/* public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
+public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
 {
     [SerializeField] string _androidGameId;
     [SerializeField] string _iOSGameId;
+    [SerializeField] RewardedAdsButton rewardedAdsButton;
     [SerializeField] bool _testMode = true;
     private string _gameId;
  
@@ -24,10 +25,11 @@ using UnityEngine.Advertisements;
     public void OnInitializationComplete()
     {
         Debug.Log("Unity Ads initialization complete.");
+        rewardedAdsButton.LoadAd();
     }
  
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
     {
         Debug.Log($"Unity Ads Initialization Failed: {error.ToString()} - {message}");
     }
-} */
+}
