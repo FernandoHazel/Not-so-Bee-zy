@@ -4,9 +4,10 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 
+[RequireComponent(typeof(TextMeshProUGUI))]
 public class PollensCanvas : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI text;
+    private TextMeshProUGUI text;
     [Tooltip("Set the desired fot size of the number")]
     Camera cam;
 
@@ -14,6 +15,7 @@ public class PollensCanvas : MonoBehaviour
     {
         //Cahe the camera
         cam = Camera.main;
+        text = GetComponent<TextMeshProUGUI>();
     }
     private void OnEnable() 
     {
@@ -39,4 +41,3 @@ public class PollensCanvas : MonoBehaviour
         gameObject.SetActive(false);
     }
 }
-

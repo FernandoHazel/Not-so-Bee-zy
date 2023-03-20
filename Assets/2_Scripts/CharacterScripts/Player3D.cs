@@ -177,18 +177,16 @@ public class Player3D : MonoBehaviour
 
     void Die() 
     {
-
-        //ESTO TIENE QUE SER EN ALGUN MOMENTO RESTART LA ESCENA, EN VEZ DE RESETEAR CADA ELEMENTO...TAL VEZ PRIMERO UN MENU DE PERDISTE, LUEGO RESTART ESCENA
-        gasParticles.GetComponent<ParticleSystem>().Stop();
+        //Stop the effects
+        /* gasParticles.GetComponent<ParticleSystem>().Stop();
         honeyParticles.GetComponent<ParticleSystem>().Stop();
         gasClock.fillAmount = 0;
-
         slowHoney = false;
         trapedInHoney.Stop();
+        speed = speedInicial; */
 
-        speed = speedInicial;
-
-        for (int i = 0; i < pollenList.Count; i++) 
+        //Clear the lists and take away the items obtained
+        /* for (int i = 0; i < pollenList.Count; i++) 
         {
             pollenList[i].SetActive(true);
         }
@@ -200,20 +198,18 @@ public class Player3D : MonoBehaviour
         }
         honeyCombList.Clear();
 
-
-        controller.enabled = false;
-        //transform.position = posInicial;
-        controller.enabled = true;
         pollen = 0;
         honeyComb = 0;
         UserInterfaceScript.UpdatePollen(pollen,maxPollen);
-        UserInterfaceScript.ResetHoneyComb();
+        UserInterfaceScript.ResetHoneyComb();*/
 
-        doorScript.CloseDoor();
+        /* controller.enabled = false;
+        controller.enabled = true; */
+
+        //doorScript.CloseDoor();
+        //transform.parent = null;
 
         GameEventBus.Publish(GameEventType.LOST);
-
-        transform.parent = null;
         youLost = true;
     }
 
