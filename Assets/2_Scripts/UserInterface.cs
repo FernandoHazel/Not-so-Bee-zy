@@ -38,6 +38,7 @@ public class UserInterface : MonoBehaviour
         GameEventBus.Subscribe(GameEventType.FINISHDIALOGUE, ShutDownText);
         GameEventBus.Subscribe(GameEventType.NORMALGAME, StartTimer);
         GameEventBus.Subscribe(GameEventType.DIALOGUE, DisableJoystick);
+        RewardedAdsButton.rewarded += SecondChance;
     }
     private void OnDisable() 
     {
@@ -47,6 +48,14 @@ public class UserInterface : MonoBehaviour
         GameEventBus.Unsubscribe(GameEventType.FINISHDIALOGUE, ShutDownText);
         GameEventBus.Unsubscribe(GameEventType.NORMALGAME, StartTimer);
         GameEventBus.Unsubscribe(GameEventType.DIALOGUE, DisableJoystick);
+        RewardedAdsButton.rewarded -= SecondChance;
+    }
+
+    private void SecondChance()
+    {
+        //Close the "you lost" panel and let continue playing
+        GameEventBus.Publish(GameEventType.FINISHDIALOGUE);
+        GameEventBus.Publish(GameEventType.NORMALGAME);
     }
     public void UpdatePollen(int num, int maxNum)
     {
@@ -124,6 +133,7 @@ public class UserInterface : MonoBehaviour
     }
     public void ShutDownText()
     {
+        youLost.SetActive(false);
         dialogeImage.SetActive(false);
         pauseButton.interactable = true;
         joystick.SetActive(true);

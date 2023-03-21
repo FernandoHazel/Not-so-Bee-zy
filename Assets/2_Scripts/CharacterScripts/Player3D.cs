@@ -95,6 +95,7 @@ public class Player3D : MonoBehaviour
         GameEventBus.Subscribe(GameEventType.LOST, FreezePlayer);
         GameEventBus.Subscribe(GameEventType.WIN, FreezePlayer);
         GameEventBus.Subscribe(GameEventType.NORMALGAME, ReturnToGame);
+        RewardedAdsButton.rewarded += SecondChance;
     }
     private void OnDisable() {
         inputMaster.Disable();
@@ -102,6 +103,12 @@ public class Player3D : MonoBehaviour
         GameEventBus.Unsubscribe(GameEventType.LOST, FreezePlayer);
         GameEventBus.Unsubscribe(GameEventType.WIN, FreezePlayer);
         GameEventBus.Unsubscribe(GameEventType.NORMALGAME, ReturnToGame);
+        RewardedAdsButton.rewarded -= SecondChance;
+    }
+
+    private void SecondChance () 
+    {
+        youLost = false;
     }
 
     void Movement()
@@ -144,6 +151,7 @@ public class Player3D : MonoBehaviour
 
     void ReturnToGame()
     {
+        inDialogue = false;
         move = true;
     }
 
@@ -177,40 +185,9 @@ public class Player3D : MonoBehaviour
 
     void Die() 
     {
-        //Stop the effects
-        /* gasParticles.GetComponent<ParticleSystem>().Stop();
-        honeyParticles.GetComponent<ParticleSystem>().Stop();
-        gasClock.fillAmount = 0;
-        slowHoney = false;
-        trapedInHoney.Stop();
-        speed = speedInicial; */
-
-        //Clear the lists and take away the items obtained
-        /* for (int i = 0; i < pollenList.Count; i++) 
-        {
-            pollenList[i].SetActive(true);
-        }
-        pollenList.Clear();
-
-        for (int i = 0; i < honeyCombList.Count; i++)
-        {
-            honeyCombList[i].SetActive(true);
-        }
-        honeyCombList.Clear();
-
-        pollen = 0;
-        honeyComb = 0;
-        UserInterfaceScript.UpdatePollen(pollen,maxPollen);
-        UserInterfaceScript.ResetHoneyComb();*/
-
-        /* controller.enabled = false;
-        controller.enabled = true; */
-
-        //doorScript.CloseDoor();
-        //transform.parent = null;
-
+        AudioManager.audioManager.PlaySfxOnce(dieSound);
         GameEventBus.Publish(GameEventType.LOST);
-        youLost = true;
+        GameEventBus.Publish(GameEventType.PAUSE);
     }
 
     void GrabPollen(GameObject go) 
@@ -308,8 +285,6 @@ public class Player3D : MonoBehaviour
         {
             if (youWon == false)
             {
-                AudioManager.audioManager.PlaySfxOnce(dieSound);
-                UserInterfaceScript.timer = 0;
                 Die();
             }
         }
@@ -409,12 +384,6 @@ public class Player3D : MonoBehaviour
     {
         if (youWon == true)
         {
-            return;
-        }
-
-        if (youLost == true)
-        {
-            
             return;
         }
     }

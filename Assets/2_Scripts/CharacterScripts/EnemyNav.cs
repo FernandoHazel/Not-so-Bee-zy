@@ -12,6 +12,8 @@ public class EnemyNav : MonoBehaviour
     public float speed = 2;
     public float maxSpeed = 2.5f;
     public float rotationSpeed = 5;
+    public float freezeTime = 5;
+    public static bool canMove = true;
 
 
     public Transform[] waypoints;
@@ -43,8 +45,19 @@ public class EnemyNav : MonoBehaviour
 
     bool empezarLookForPlayer = false;
     [SerializeField] private Renderer enemyCopRenderer;
+    [SerializeField] ParticleSystem stunned_PS;
     Ray rayito;
     RaycastHit infoDelRayito;
+
+    private void OnEnable() 
+    {
+        RewardedAdsButton.rewarded += MoveAgainVoid;
+    }
+
+    private void OnDisable() 
+    {
+        RewardedAdsButton.rewarded -= MoveAgainVoid;
+    }
 
 
     void Start()
@@ -52,6 +65,8 @@ public class EnemyNav : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         visorLight.color = startColor;
         posInicial = transform.position;
+        stunned_PS.Stop();
+        canMove = true;
     }
 
     void MaquinaDeEstados(int casos)
@@ -269,12 +284,26 @@ public class EnemyNav : MonoBehaviour
 
         else
         {
-            if(enemyCopRenderer.isVisible)
+            if(enemyCopRenderer.isVisible && canMove == true)
             {
                 Sight();
             }
         }
 
+    }
+
+    public void MoveAgainVoid() 
+    {
+        stunned_PS.Play();
+        StartCoroutine(MoveAgain());
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Player")
+        {
+            canMove = false;
+            
+        }
     }
 
 
@@ -285,6 +314,13 @@ public class EnemyNav : MonoBehaviour
         lastPlaceCheck = false; // en caso de que se quiera regresar al comportamiento donde gira a los lados, se debe comentar esta linea y descomentar la de abajo "maquinadeestados"
         //MaquinaDeEstados(4);
 
+    }
+
+    IEnumerator MoveAgain()
+    {
+        yield return new WaitForSeconds(freezeTime);
+        canMove = true;
+        stunned_PS.Stop();
     }
 
 }

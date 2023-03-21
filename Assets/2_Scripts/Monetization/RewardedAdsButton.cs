@@ -5,6 +5,7 @@ using EventBus;
  
 public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
+    [SerializeField] AudioClip rewardedSound;
     [SerializeField] Button _showAdButton;
     [SerializeField] string _androidAdUnitId = "Rewarded_Android";
     [SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
@@ -54,10 +55,11 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
             // Grant a reward.
-            /* if(rewarded != null)
-            rewarded(); */
-            GameEventBus.Publish(GameEventType.NORMALGAME);
-            
+            if(rewarded != null)
+            rewarded();
+
+            AudioManager.audioManager.PlaySfxOnce(rewardedSound);
+
             // Load another ad:
             Advertisement.Load(_adUnitId, this);
         }
