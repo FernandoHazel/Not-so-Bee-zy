@@ -40,4 +40,11 @@ public class PollensCanvas : MonoBehaviour
         yield return new WaitForSeconds(1);
         gameObject.SetActive(false);
     }
+
+    private void OnDestroy()
+    {
+        // Limpia los objetos generados por DOTween
+        DOTween.Clear(true);
+    }
+
 }

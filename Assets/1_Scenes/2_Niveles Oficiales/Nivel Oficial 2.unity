@@ -14882,7 +14882,6 @@ GameObject:
   - component: {fileID: 1251139722}
   - component: {fileID: 1251139720}
   - component: {fileID: 1251139719}
-  - component: {fileID: 1251139721}
   - component: {fileID: 1251139724}
   m_Layer: 0
   m_Name: Mushroom_Elevator
@@ -14917,8 +14916,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 1.53, z: 0}
+  m_Size: {x: 1.0005833, y: 0.9266548, z: 1.0255277}
+  m_Center: {x: 0.00682722, y: 1.8033254, z: 0.0029536483}
 --- !u!114 &1251139720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14941,20 +14940,6 @@ MonoBehaviour:
   tiempoDeEspera: 1
   tiempoDeEsperaInterno: 0
   woosh: {fileID: 8300000, guid: 68a42fae2bef96744ad67d0c8308eb3b, type: 3}
---- !u!64 &1251139721
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251139717}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6884345970863902747, guid: c2e15cfe9b6d05f45a376f4fadc04dcc, type: 3}
 --- !u!23 &1251139722
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15007,8 +14992,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251139717}
   m_Mesh: {fileID: -6884345970863902747, guid: c2e15cfe9b6d05f45a376f4fadc04dcc, type: 3}
---- !u!136 &1251139724
-CapsuleCollider:
+--- !u!65 &1251139724
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -15017,10 +15002,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.6961377
-  m_Height: 2.8932085
-  m_Direction: 1
-  m_Center: {x: 0.0000009536743, y: 0.000000059604645, z: 0.0000019073486}
+  serializedVersion: 2
+  m_Size: {x: 1.2027259, y: 2.8932085, z: 1.1268413}
+  m_Center: {x: 0.009208738, y: 0, z: 0.039454848}
 --- !u!1001 &1260807110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15606,7 +15590,7 @@ PrefabInstance:
     - target: {fileID: 6613392578109614029, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 428.67004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6758009390206060759, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
@@ -21413,7 +21397,6 @@ GameObject:
   - component: {fileID: 1723930676}
   - component: {fileID: 1723930674}
   - component: {fileID: 1723930673}
-  - component: {fileID: 1723930675}
   - component: {fileID: 1723930678}
   m_Layer: 0
   m_Name: Mushroom_Elevator
@@ -21448,8 +21431,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 1.53, z: 0}
+  m_Size: {x: 1.0507501, y: 0.9117372, z: 1.0541013}
+  m_Center: {x: -0.02909643, y: 1.7888473, z: -0.0009886057}
 --- !u!114 &1723930674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21472,20 +21455,6 @@ MonoBehaviour:
   tiempoDeEspera: 1
   tiempoDeEsperaInterno: 0
   woosh: {fileID: 8300000, guid: 68a42fae2bef96744ad67d0c8308eb3b, type: 3}
---- !u!64 &1723930675
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723930671}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6884345970863902747, guid: c2e15cfe9b6d05f45a376f4fadc04dcc, type: 3}
 --- !u!23 &1723930676
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21538,8 +21507,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723930671}
   m_Mesh: {fileID: -6884345970863902747, guid: c2e15cfe9b6d05f45a376f4fadc04dcc, type: 3}
---- !u!136 &1723930678
-CapsuleCollider:
+--- !u!65 &1723930678
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -21548,10 +21517,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.6961382
-  m_Height: 2.8932085
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.000000059604645, z: 0.0000009536743}
+  serializedVersion: 2
+  m_Size: {x: 1.1479963, y: 2.8932085, z: 1.0803467}
+  m_Center: {x: 0.0219064, y: 0, z: -0.0012813775}
 --- !u!1001 &1723978017
 PrefabInstance:
   m_ObjectHideFlags: 0

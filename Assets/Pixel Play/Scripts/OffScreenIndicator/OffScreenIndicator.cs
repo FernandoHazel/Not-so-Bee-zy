@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using DG.Tweening;
 
 /// <summary>
 /// Attach the script to the off screen indicator panel.
@@ -132,5 +133,8 @@ public class OffScreenIndicator : MonoBehaviour
     private void OnDestroy()
     {
         TargetStateChanged -= HandleTargetStateChanged;
+        
+        // Limpia los objetos generados por DOTween
+        DOTween.Clear(true);
     }
 }

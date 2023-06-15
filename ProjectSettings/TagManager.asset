@@ -16,6 +16,7 @@ TagManager:
   - Tutorial
   - CameraTrigger
   - Floor
+  - Precipice
   layers:
   - Default
   - TransparentFX

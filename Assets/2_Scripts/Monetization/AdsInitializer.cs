@@ -8,9 +8,19 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
     [SerializeField] RewardedAdsButton rewardedAdsButton;
     [SerializeField] bool _testMode = true;
     private string _gameId;
+    public static bool AdReady;
  
     void Awake()
     {
+        #if UNITY_IOS
+            _testMode = false;
+        #endif
+
+        #if UNITY_ANDROID
+            _testMode = false;
+        #endif
+
+        AdReady = false;
         InitializeAds();
     }
  
@@ -25,6 +35,7 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
     public void OnInitializationComplete()
     {
         Debug.Log("Unity Ads initialization complete.");
+        AdReady = true;
         rewardedAdsButton.LoadAd();
     }
  

@@ -285,10 +285,21 @@ public class Player3D : MonoBehaviour
         {
             if (youWon == false)
             {
+                //Informamos al botón de anuncio que el jugador no murión cayendo al precipicio
+                RAB_Behavior.playerFell = false;
                 Die();
             }
         }
 
+        if (other.gameObject.CompareTag("Precipice"))
+        {
+            if (youWon == false)
+            {
+                //Informamos al botón de anuncio que el jugador murión cayendo al precipicio
+                RAB_Behavior.playerFell = true;
+                Die();
+            }
+        }
 
     }
 
