@@ -13,6 +13,28 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     string _adUnitId = null; // This will remain null for unsupported platforms
     public delegate void ActionReward();
     public static event ActionReward rewarded;
+    public static bool adLoaded;
+    public static bool playerFell;
+
+    private void Awake() {
+        if (AdsInitializer.initialized)
+        {
+            LoadAd();
+        }
+    }
+
+    private void OnEnable() {
+        CheckEnable();
+    }
+
+    private void CheckEnable() {
+        //Si el jugador se cayó al precipicio el jugador no verá el botón en la pantalla
+        //Igualmente si no se cargó ningún anuncio no aparecemos el botón
+        if(playerFell || !adLoaded)
+        {
+            gameObject.SetActive(false);
+        }
+    }
 
  
     // Load content to the Ad Unit:
@@ -38,6 +60,8 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
             // Enable the button for users to click:
             _showAdButton.interactable = true;
         }
+
+        adLoaded = true;
     }
  
     // Implement a method to execute when the user clicks the button:
@@ -71,6 +95,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     {
         Debug.Log($"Error loading Ad Unit {adUnitId}: {error.ToString()} - {message}");
         // Use the error details to determine whether to try to load another ad.
+        adLoaded = false;
     }
  
     public void OnUnityAdsShowFailure(string adUnitId, UnityAdsShowError error, string message)

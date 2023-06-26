@@ -286,7 +286,7 @@ public class Player3D : MonoBehaviour
             if (youWon == false)
             {
                 //Informamos al botón de anuncio que el jugador no murión cayendo al precipicio
-                RAB_Behavior.playerFell = false;
+                RewardedAdsButton.playerFell = false;
                 Die();
             }
         }
@@ -296,7 +296,7 @@ public class Player3D : MonoBehaviour
             if (youWon == false)
             {
                 //Informamos al botón de anuncio que el jugador murión cayendo al precipicio
-                RAB_Behavior.playerFell = true;
+                RewardedAdsButton.playerFell = true;
                 Die();
             }
         }

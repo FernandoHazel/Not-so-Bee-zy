@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Advertisements;
+using UnityEngine.SceneManagement;
  
 public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
 {
@@ -8,7 +9,7 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
     [SerializeField] RewardedAdsButton rewardedAdsButton;
     [SerializeField] bool _testMode = true;
     private string _gameId;
-    public static bool AdReady;
+    public static bool initialized = false;
  
     void Awake()
     {
@@ -20,7 +21,6 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
             _testMode = false;
         #endif
 
-        AdReady = false;
         InitializeAds();
     }
  
@@ -30,17 +30,19 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
             ? _iOSGameId
             : _androidGameId;
         Advertisement.Initialize(_gameId, _testMode, this);
+        Debug.Log("Initializing ad");
     }
  
     public void OnInitializationComplete()
     {
         Debug.Log("Unity Ads initialization complete.");
-        AdReady = true;
         rewardedAdsButton.LoadAd();
+        initialized = true;
     }
  
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
     {
+        initialized = false;
         Debug.Log($"Unity Ads Initialization Failed: {error.ToString()} - {message}");
     }
 }
