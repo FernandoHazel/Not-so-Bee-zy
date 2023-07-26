@@ -15,6 +15,7 @@ public class LevelSelector : MonoBehaviour
     TMPro.TextMeshProUGUI timerText;
     [SerializeField] LevelData levelData; //el scriptableobject que guarda la info
     [SerializeField] GameObject[] levelModels;
+    public string privacyPolicyLink = "https://fhazel.com.mx/Resources/Fhazel-Politica-de-Privacidad.pdf";
 
 
     void Start()
@@ -156,5 +157,10 @@ public class LevelSelector : MonoBehaviour
             SceneManager.LoadScene(SceneToLoad);
         }
         
+    }
+
+    public void GoToPrivacyPolicy()
+    {
+        Application.OpenURL(privacyPolicyLink);
     }
 }

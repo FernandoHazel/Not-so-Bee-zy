@@ -26,7 +26,7 @@ public class RateApp : MonoBehaviour
     {
         //When the player wins we add 1
         LevelData.levelsCompleted += 1;
-        Debug.Log("level complete added");
+        Debug.Log("level complete added"+ LevelData.levelsCompleted);
 
         //If the player have won 3 levels a message to rate the app will pop up
         if (LevelData.levelsCompleted % 3 == 0)
