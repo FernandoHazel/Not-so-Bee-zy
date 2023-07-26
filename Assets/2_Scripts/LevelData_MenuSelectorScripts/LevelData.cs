@@ -8,6 +8,7 @@ using System;
 
 public class LevelData : ScriptableObject
 {
+    public static int levelsCompleted = 0;
     public LevelInfo[] levelInfo;
     public int currentLevelGlobal;
     public int honeycombsGlobal;
@@ -118,6 +119,9 @@ public class LevelData : ScriptableObject
 
     public void SaveData() 
     {
+        //Guardamos los niveles que se han ganado
+        PlayerPrefs.SetInt("LevelsCompleted", levelsCompleted);
+
         for (int i = 0; i < levelInfo.Length; i ++) //para guardar unlocked
         {
             PlayerPrefs.SetInt("LevelUnlocked"+i, levelInfo[i].unlocked ? 1 : 0);
@@ -149,6 +153,9 @@ public class LevelData : ScriptableObject
 
     public void LoadData() 
     {
+        //Leemos los niveles que se han ganado
+        levelsCompleted = PlayerPrefs.GetInt("LevelsCompleted", levelsCompleted);
+
         for (int i = 0; i < levelInfo.Length; i++) //para cargar unlocked
         {
             levelInfo[i].unlocked = PlayerPrefs.GetInt("LevelUnlocked" + i) > 0 ? true : false;
