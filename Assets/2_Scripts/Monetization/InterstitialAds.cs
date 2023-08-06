@@ -28,6 +28,9 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
     {
         // Note that if the ad content wasn't previously loaded, this method will fail
         Debug.Log("Showing Ad: " + _adUnitId);
+
+        //Only show ads if the user has not bought the no-ads package
+        if(IAPs.ads)
         Advertisement.Show(_adUnitId, this);
     }
  

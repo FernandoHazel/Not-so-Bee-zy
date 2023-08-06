@@ -6509,7 +6509,7 @@ PrefabInstance:
     - target: {fileID: 6558522400043640550, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
       propertyPath: dialogues.Array.data[0].messageText
-      value: Hey look! What's that?
+      value: Hey look!
       objectReference: {fileID: 0}
     - target: {fileID: 6558522400043640550, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
@@ -6519,7 +6519,7 @@ PrefabInstance:
     - target: {fileID: 6558522400043640550, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
       propertyPath: dialogues.Array.data[1].messageText
-      value: It's a coin shaped like a honeycomb!
+      value: What's that? It's a coin shaped like a honeycomb!
       objectReference: {fileID: 0}
     - target: {fileID: 6558522400043640550, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}

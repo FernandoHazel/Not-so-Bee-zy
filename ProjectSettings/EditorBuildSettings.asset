@@ -33,5 +33,15 @@ EditorBuildSettings:
     path: Assets/1_Scenes/2_Niveles Oficiales/Nivel Oficial 7.unity
     guid: 43e2b205fdbdab645a5cd6d1f34e6400
   m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 4ae8ee04e9c31104bade7dac2f7a3cbd,
+      type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: dceea4b4127d31d42852828ce3383caa,
+      type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 4331adbf6782a544d937b11ef2560b0c,
+      type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 404a7accb6ad3014e92ba5d2d8326713,
+      type: 2}
+    com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: b899b92be307ca64ea4dd1f8e5ef5848,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 373f63fad682cc64ba623478e7da8166,
       type: 2}
