@@ -46,10 +46,30 @@ public class IAPs : MonoBehaviour, IStoreListener
     }
 
     //This happens when the user buy the no ads package
-    public void RemoveAds()
+    public void BuyRemoveAds()
     {
         Debug.Log("removing ads");
         storeController.InitiatePurchase(ncItem.id);
+    }
+
+    //Check if the user already consumed an item
+    public void CheckNonConsumable (string id) 
+    {
+        if(storeController != null)
+        {
+            var product = storeController.products.WithID(id);
+            if(product != null)
+            {
+                if(product.hasReceipt)//purchased
+                {
+                    RemoveAds();
+                }
+                else
+                {
+                    ShowIntAds();
+                }
+            }
+        }
     }
 
     /// <summary>
@@ -98,6 +118,16 @@ public class IAPs : MonoBehaviour, IStoreListener
     {
         print("initialization failed "+ product + " " + failureReason);
         throw new System.NotImplementedException();
+    }
+
+    //Remove or show ads
+    public void RemoveAds()
+    {
+        ads = false;
+    }
+    public void ShowIntAds()
+    {
+        ads = true;
     }
 }
 
