@@ -125,9 +125,6 @@ public class GameManager : MonoBehaviour
         //Without this, if we retry from a win or lost menu the game will pause the next time the scene loads
         if(gameIsPaused)
             ChangePause();
-
-            //show an ad
-        interstitialAds.ShowAd();
             
         StartCoroutine(DelayedLoad(SceneManager.GetActiveScene().name));
     }

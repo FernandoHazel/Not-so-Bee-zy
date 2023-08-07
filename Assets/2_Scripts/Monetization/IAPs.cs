@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Purchasing;
+using UnityEngine.Purchasing.Extension;
 
-public class IAPs : MonoBehaviour, IStoreListener
+public class IAPs : MonoBehaviour, IDetailedStoreListener //IStoreListener
 {
-    IStoreController storeController;
+    public static IStoreController storeController;
     private IStoreController controller;
     private IExtensionProvider extensions;
 
@@ -22,11 +23,7 @@ public class IAPs : MonoBehaviour, IStoreListener
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
 
         builder.AddProduct(ncItem.id, ProductType.NonConsumable); 
-        //new IDs
-        /* {
-            {"no_ads_google", GooglePlay.Name},
-            {"no_ads_mac", MacAppStore.Name}
-        }); */
+        
 
         UnityPurchasing.Initialize (this, builder);
     }
@@ -128,6 +125,11 @@ public class IAPs : MonoBehaviour, IStoreListener
     public void ShowIntAds()
     {
         ads = true;
+    }
+
+    public void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)
+    {
+        throw new System.NotImplementedException();
     }
 }
 
