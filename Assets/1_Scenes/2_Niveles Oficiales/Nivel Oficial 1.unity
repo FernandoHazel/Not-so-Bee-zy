@@ -15026,7 +15026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1671868269
 Transform:
   m_ObjectHideFlags: 0
@@ -16648,7 +16648,7 @@ PrefabInstance:
     - target: {fileID: 5443619228267953960, guid: f21f9806f03632842a15e0763b1ea5ae,
         type: 3}
       propertyPath: m_Intensity
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5519468283031709411, guid: f21f9806f03632842a15e0763b1ea5ae,
         type: 3}
@@ -20529,9 +20529,9 @@ SceneRoots:
   - {fileID: 1354553214}
   - {fileID: 1674455218}
   - {fileID: 436748567}
+  - {fileID: 1828630158}
   - {fileID: 1736146088}
   - {fileID: 1446934464}
-  - {fileID: 1828630158}
   - {fileID: 302645771}
   - {fileID: 7735811000963205643}
   - {fileID: 2070066157}
