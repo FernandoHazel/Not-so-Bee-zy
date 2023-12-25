@@ -2784,6 +2784,11 @@ PrefabInstance:
       propertyPath: onPurchaseComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2269907427706998468, guid: 5ab88da3666f35946a08c068ae6d38b9,
+        type: 3}
+      propertyPath: addProbability
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2389979667312375912, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
       propertyPath: m_IsActive
