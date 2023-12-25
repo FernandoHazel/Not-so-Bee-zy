@@ -5,6 +5,9 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
 {
     [SerializeField] string _androidAdUnitId = "Interstitial_Android";
     [SerializeField] string _iOsAdUnitId = "Interstitial_iOS";
+    [Tooltip("Probability x/100")]
+    [Range(0, 100)]
+    [SerializeField] int addProbability = 33;
     string _adUnitId;
  
     void Awake()
@@ -29,8 +32,10 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
         // Note that if the ad content wasn't previously loaded, this method will fail
         Debug.Log("Showing Ad: " + _adUnitId);
 
-        //Only show ads if the user has not bought the no-ads package
-        if(IAPs.ads)
+        // Only show ads if the user has not bought the no-ads package
+        // And is inside the probability
+        int randNum = Random.Range(1, 100);
+        if(IAPs.ads && randNum <= addProbability)
         Advertisement.Show(_adUnitId, this);
     }
  
