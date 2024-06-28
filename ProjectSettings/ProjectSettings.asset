@@ -145,6 +145,7 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 11400000, guid: 4331adbf6782a544d937b11ef2560b0c, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -267,7 +268,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: E:/Marca_personal/MyGames/NSB/NSB_Builds/NSB_Android/NSB_Key.keystore
+  AndroidKeystoreName: D:/FHAZEL/MyGames/NSB/NSB_Builds/NSB_Android/NSB_Key.keystore
   AndroidKeyaliasName: fhazel
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidBuildApkPerCpuArchitecture: 0
@@ -987,7 +988,7 @@ PlayerSettings:
     Purchasing: 1
     UDP: 0
     UNet: 1
-    Unity Ads: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
