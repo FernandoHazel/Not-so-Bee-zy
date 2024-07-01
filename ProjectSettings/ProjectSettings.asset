@@ -145,7 +145,6 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: 4331adbf6782a544d937b11ef2560b0c, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -985,7 +984,7 @@ PlayerSettings:
     Collab: 0
     Game Performance: 0
     Legacy Analytics: 0
-    Purchasing: 1
+    Purchasing: 0
     UDP: 0
     UNet: 1
     Unity Ads: 0
