@@ -8,6 +8,9 @@ public class NoAdsButton : MonoBehaviour
         if(IAPs.ads == false)
         {
             gameObject.SetActive(false);
+        } else
+        {
+            gameObject.SetActive(true);
         }
     }
 }

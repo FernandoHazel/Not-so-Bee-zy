@@ -13,10 +13,14 @@ public class IAPs : MonoBehaviour, IDetailedStoreListener //IStoreListener
     [SerializeField] GameObject noAdsButton;
     public NcItem ncItem;
 
-    public static bool ads = true; //This bool will allow or block the ads
+    public static bool ads = false; //This bool will allow or block the ads
 
-    private void Start() {
-        setupBilder ();
+    private void Awake()
+    {
+        setupBilder();
+
+        //Ad a check for the user purchase and modify ads variable
+        CheckNonConsumable(ncItem.id);
     }
 
     void setupBilder () {
@@ -45,7 +49,7 @@ public class IAPs : MonoBehaviour, IDetailedStoreListener //IStoreListener
     //This happens when the user buy the no ads package
     public void BuyRemoveAds()
     {
-        Debug.Log("removing ads");
+        Debug.Log("Buying no ads package");
         storeController.InitiatePurchase(ncItem.id);
     }
 
@@ -59,10 +63,12 @@ public class IAPs : MonoBehaviour, IDetailedStoreListener //IStoreListener
             {
                 if(product.hasReceipt)//purchased
                 {
+                    Debug.Log("Player has a receip");
                     RemoveAds();
                 }
                 else
                 {
+                    Debug.Log("Player has a NO receip");
                     ShowIntAds();
                 }
             }
@@ -79,11 +85,13 @@ public class IAPs : MonoBehaviour, IDetailedStoreListener //IStoreListener
         //Retrieve the purchased product
         var product = e.purchasedProduct;
 
-        //Remove the ads and the ad button
-        ads = false;
+        //Hide No ads button
         noAdsButton.SetActive(false);
 
         Debug.Log(product.definition.id + " purchased");
+
+        //Remove ads
+        RemoveAds();
 
         return PurchaseProcessingResult.Complete;
     }
@@ -121,10 +129,12 @@ public class IAPs : MonoBehaviour, IDetailedStoreListener //IStoreListener
     public void RemoveAds()
     {
         ads = false;
+        Debug.Log("Ads removed");
     }
     public void ShowIntAds()
     {
         ads = true;
+        Debug.Log("Ads activated");
     }
 
     public void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)
