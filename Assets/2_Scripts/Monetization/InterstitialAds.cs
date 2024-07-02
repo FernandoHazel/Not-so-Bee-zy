@@ -35,6 +35,7 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
         // Only show ads if the user has not bought the no-ads package
         // And is inside the probability
         int randNum = Random.Range(1, 100);
+        Debug.Log("probability ad random number: "+ randNum);
         if(IAPs.ads && randNum <= addProbability)
         Advertisement.Show(_adUnitId, this);
     }
