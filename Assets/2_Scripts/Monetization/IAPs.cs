@@ -68,7 +68,7 @@ public class IAPs : MonoBehaviour, IDetailedStoreListener //IStoreListener
                 }
                 else
                 {
-                    Debug.Log("Player has a NO receip");
+                    Debug.Log("Player has NO receip");
                     ShowIntAds();
                 }
             }
