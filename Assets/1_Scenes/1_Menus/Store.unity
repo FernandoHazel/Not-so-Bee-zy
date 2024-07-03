@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5887,7 +5887,7 @@ MonoBehaviour:
   _iOSGameId: 5208246
   rewardedAdsButton: {fileID: 1670540754}
   interstitialAds: {fileID: 2077098067}
-  _testMode: 0
+  _testMode: 1
 --- !u!224 &1703473095
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6677,7 +6677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _androidAdUnitId: Interstitial_Android
   _iOsAdUnitId: Interstitial_iOS
-  addProbability: 10
+  addProbability: 33
 --- !u!224 &2077098068
 RectTransform:
   m_ObjectHideFlags: 0

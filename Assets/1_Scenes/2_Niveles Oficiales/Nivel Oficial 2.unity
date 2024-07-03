@@ -16007,7 +16007,7 @@ PrefabInstance:
     - target: {fileID: 2269907427706998468, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
       propertyPath: addProbability
-      value: 20
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2868041098758814338, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
