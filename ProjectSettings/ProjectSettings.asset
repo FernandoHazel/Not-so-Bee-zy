@@ -9,7 +9,7 @@ PlayerSettings:
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
   defaultScreenOrientation: 0
-  targetDevice: 2
+  targetDevice: 0
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Fhazel
@@ -151,7 +151,6 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 11400000, guid: 4331adbf6782a544d937b11ef2560b0c, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -197,7 +196,7 @@ PlayerSettings:
   StripUnusedMeshComponents: 1
   strictShaderVariantMatching: 0
   VertexChannelCompressionMask: 4054
-  iPhoneSdkVersion: 989
+  iPhoneSdkVersion: 988
   iOSTargetOSVersionString: 12.0
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
@@ -896,7 +895,7 @@ PlayerSettings:
     WebGL: UNITY_POST_PROCESSING_STACK_V2;SUBSTANCE_PLUGIN_ENABLED
     Windows Store Apps: UNITY_POST_PROCESSING_STACK_V2;SUBSTANCE_PLUGIN_ENABLED
     XboxOne: UNITY_POST_PROCESSING_STACK_V2
-    iPhone: SUBSTANCE_PLUGIN_ENABLED
+    iPhone: 
     tvOS: UNITY_POST_PROCESSING_STACK_V2
   additionalCompilerArguments: {}
   platformArchitecture: {}
