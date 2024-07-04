@@ -6677,7 +6677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _androidAdUnitId: Interstitial_Android
   _iOsAdUnitId: Interstitial_iOS
-  addProbability: 33
+  addProbability: 50
 --- !u!224 &2077098068
 RectTransform:
   m_ObjectHideFlags: 0

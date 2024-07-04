@@ -6,6 +6,7 @@ using EventBus;
 
 public class LevelSelector : MonoBehaviour
 {
+    [SerializeField] private InterstitialAds interstitialAds;
     [SerializeField] AudioClip selectSound, nextSound, previousSound;
     int currentSelectedLevel, maxLevels, honeycombCounter;
     [SerializeField] Button startButton, rightButton, leftButton;
@@ -99,6 +100,7 @@ public class LevelSelector : MonoBehaviour
 
     public void StartButton(string SceneToLoad) 
     {
+        interstitialAds.ShowAd();
         StartCoroutine(DelayedLoad(SceneToLoad));
     }
 
