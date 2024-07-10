@@ -16,6 +16,15 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
         _adUnitId = (Application.platform == RuntimePlatform.IPhonePlayer)
             ? _iOsAdUnitId
             : _androidAdUnitId;
+
+        #if UNITY_IOS
+                _adUnitId = _iOsAdUnitId;
+        #endif
+
+        #if UNITY_ANDROID
+                     _adUnitId = _androidAdUnitId;
+        #endif
+
     }
 
     // Load content to the Ad Unit:
