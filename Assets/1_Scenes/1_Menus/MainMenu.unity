@@ -20161,7 +20161,7 @@ MonoBehaviour:
   noAdsButton: {fileID: 1202315484}
   ncItem:
     name: Remove ads
-    id: Remove_Ads
+    id: remove_ads
     description: Remove ads
     price: 1.99
 --- !u!1001 &1648285515
