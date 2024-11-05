@@ -17,10 +17,11 @@ public class IAPs : MonoBehaviour, IDetailedStoreListener //IStoreListener
 
     private void Awake()
     {
-        setupBilder();
+        // DESACTIVATED IAP AND INTESTITIALS
+        //setupBilder();
 
         //Ad a check for the user purchase and modify ads variable
-        CheckNonConsumable(ncItem.id);
+        //CheckNonConsumable(ncItem.id);
     }
 
     void setupBilder () {
