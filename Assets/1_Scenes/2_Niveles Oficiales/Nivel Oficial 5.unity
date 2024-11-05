@@ -1722,7 +1722,7 @@ PrefabInstance:
     - target: {fileID: 2269907427706998468, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
       propertyPath: addProbability
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 2389979667312375912, guid: 5ab88da3666f35946a08c068ae6d38b9,
         type: 3}
@@ -3880,7 +3880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 414312005}
   m_Layer: 0
-  m_Name: CameraStandardLevel (1)
+  m_Name: 'CameraStandardLevel '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

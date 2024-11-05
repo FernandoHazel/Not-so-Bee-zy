@@ -29,10 +29,22 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 
     private void CheckEnable() {
         //Si el jugador se cayó al precipicio el jugador no verá el botón en la pantalla
-        //Igualmente si no se cargó ningún anuncio no aparecemos el botón
-        if(playerFell || !adLoaded)
+        
+        if(playerFell)
         {
-            gameObject.SetActive(false);
+            _showAdButton.interactable = false;
+            Debug.Log("Player fell so there is not rewarded ad");
+        }
+
+        //Igualmente si no se cargó ningún anuncio no aparecemos el botón
+        if (!adLoaded)
+        {
+            _showAdButton.interactable = false;
+            Debug.Log("Ad is not loaded, trying to load ad again");
+        } else
+        {
+            _showAdButton.interactable = true;
+            Debug.Log("Ready to show rewareded ad");
         }
     }
 
@@ -43,8 +55,16 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         GetID();
         // IMPORTANT! Only load content AFTER initialization (in this example, initialization is handled in a different script).
         Debug.Log("Loading Ad: " + _adUnitId);
-        Advertisement.Load(_adUnitId, this);
-        OnUnityAdsAdLoaded(_adUnitId);
+
+        if(_adUnitId != "")
+        {
+            Advertisement.Load(_adUnitId, this);
+            OnUnityAdsAdLoaded(_adUnitId);
+        } else
+        {
+            Debug.Log("Couldn't get _adUnitId");
+        }
+        
     }
  
     // If the ad successfully loads, add a listener to the button and enable it:
@@ -121,10 +141,12 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     {
         // Get the Ad Unit ID for the current platform:
         #if UNITY_IOS
-        _adUnitId = _iOSAdUnitId;
+                _adUnitId = _iOSAdUnitId;
         #elif UNITY_ANDROID
-        _adUnitId = _androidAdUnitId;
+                _adUnitId = _androidAdUnitId;
         #endif
+
+        Debug.Log("_adUnitId: " + _adUnitId);
 
         //Disable the button until the ad is ready to show:
         _showAdButton.interactable = false;
