@@ -13,7 +13,7 @@ public class IAPs : MonoBehaviour, IDetailedStoreListener //IStoreListener
     [SerializeField] GameObject noAdsButton;
     public NcItem ncItem;
 
-    public static bool ads = false; //This bool will allow or block the ads
+    public static bool ads = true; //This bool will allow or block the ads
 
     private void Awake()
     {
