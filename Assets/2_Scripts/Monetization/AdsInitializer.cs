@@ -14,11 +14,7 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
  
     void Awake()
     {
-        #if UNITY_IOS
-            _testMode = false;
-        #endif
-
-        #if UNITY_ANDROID
+        #if UNITY_IOS || UNITY_ANDROID
             _testMode = false;
         #endif
 
