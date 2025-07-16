@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
             ChangePause();
 
             //show an ad
-        interstitialAds.ShowAd();
+        //interstitialAds.ShowAd();
 
         StartCoroutine(DelayedLoad(SceneToLoad));
     }

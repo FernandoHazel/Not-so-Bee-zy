@@ -276,7 +276,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: /Users/mx49983/Desktop/NSB/Keys/NSB_Key.keystore
+  AndroidKeystoreName: E:/Marca_personal/Keys/NSB_Key.keystore
   AndroidKeyaliasName: fhazel
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidBuildApkPerCpuArchitecture: 0

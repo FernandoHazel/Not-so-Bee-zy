@@ -71,8 +71,8 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     // If the ad successfully loads, add a listener to the button and enable it:
     public void OnUnityAdsAdLoaded(string adUnitId)
     {
-        //Debug.Log("Ad Loaded: " + adUnitId);
-        //Debug.Log(adUnitId.Equals(_adUnitId));
+        Debug.Log("Ad Loaded: " + adUnitId);
+        Debug.Log(adUnitId.Equals(_adUnitId));
  
         if (adUnitId.Equals(_adUnitId))
         {
