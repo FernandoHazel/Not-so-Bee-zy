@@ -6,6 +6,7 @@ using DG.Tweening;
  
 public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
+
     [SerializeField] AudioClip rewardedSound;
     [SerializeField] Button _showAdButton;
     [SerializeField] string _androidAdUnitId = "Rewarded_Android";

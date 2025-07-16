@@ -7,17 +7,20 @@ public class RateApp : MonoBehaviour
 {
     [SerializeField] GameObject rateTheApp;
 
-    public string reviewURL = "";
-    private void Awake() {
-        #if UNITY_ANDROID
-        reviewURL = "https://play.google.com/store/apps/details?id=com.Fhazel.Notsobeezy&reviewId=0";
-        #endif
+    [SerializeField] string appStoreLink;
+    [SerializeField] string googlePlayLink;
 
-        #if UNITY_IOS
-        reviewURL = "https://apps.apple.com/us/app/not-so-bee-zy/id6511219393";
-        #endif
+    private string reviewURL = "";
+    private void Awake() {
+#if UNITY_ANDROID
+        reviewURL = googlePlayLink;
+#endif
+
+#if UNITY_IOS
+        reviewURL = appStoreLink;
+#endif
     }
-    
+
 
     //Subscribe when the player wins a level
     private void OnEnable() 

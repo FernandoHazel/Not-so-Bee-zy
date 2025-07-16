@@ -1,11 +1,13 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Purchasing;
-using UnityEngine.Purchasing.Extension;
+//using UnityEngine.Purchasing.Extension;
 
-public class IAPs : MonoBehaviour, IDetailedStoreListener //IStoreListener
+public class IAPs : MonoBehaviour //IDetailedStoreListener //IStoreListener
 {
+    /*
     public static IStoreController storeController;
     private IStoreController controller;
     private IExtensionProvider extensions;
@@ -142,6 +144,7 @@ public class IAPs : MonoBehaviour, IDetailedStoreListener //IStoreListener
     {
         throw new System.NotImplementedException();
     }
+    */
 }
 
 [System.Serializable]

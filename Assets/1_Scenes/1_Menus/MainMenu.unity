@@ -14838,12 +14838,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2836c0c08c750348b34191d958b5a63, type: 3}
---- !u!1 &1202315484 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2494607268079223998, guid: 2c3bf1938b7df5f4fb8c94ec87bd2cf8,
-    type: 3}
-  m_PrefabInstance: {fileID: 3362330916599705785}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1202315485 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2324574675391608763, guid: 2c3bf1938b7df5f4fb8c94ec87bd2cf8,
@@ -15081,7 +15075,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289950291}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9da9a071e624fa34ea8316d0a561bbe3, type: 3}
   m_Name: 
@@ -20158,12 +20152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0e036fb6002a464fa9edce50db70198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noAdsButton: {fileID: 1202315484}
-  ncItem:
-    name: Remove ads
-    id: remove_ads
-    description: Remove ads
-    price: 1.99
 --- !u!1001 &1648285515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27582,6 +27570,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: No Ads Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 2494607268079223998, guid: 2c3bf1938b7df5f4fb8c94ec87bd2cf8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2664383389499755283, guid: 2c3bf1938b7df5f4fb8c94ec87bd2cf8,
         type: 3}

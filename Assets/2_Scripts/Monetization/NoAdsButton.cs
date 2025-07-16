@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NoAdsButton : MonoBehaviour
 {
-    private void Start() {
+    /*private void Start() {
         
         if(IAPs.ads == false)
         {
@@ -14,5 +14,5 @@ public class NoAdsButton : MonoBehaviour
             gameObject.SetActive(true);
         }
         
-    }
+    }*/
 }
