@@ -1,3 +1,4 @@
+/*
 using System;
 using UnityEngine;
 using UnityEngine.Purchasing;
@@ -122,3 +123,4 @@ namespace Samples.Purchasing.Core.BuyingConsumables
         }
     }
 }
+*/

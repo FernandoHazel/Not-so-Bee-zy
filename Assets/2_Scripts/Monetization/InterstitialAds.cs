@@ -45,7 +45,7 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
         // And is inside the probability
         int randNum = Random.Range(1, 100);
         Debug.Log("probability ad random number: "+ randNum);
-        if(IAPs.ads && randNum <= addProbability)
+        //if(IAPs.ads && randNum <= addProbability)
         Advertisement.Show(_adUnitId, this);
     }
  

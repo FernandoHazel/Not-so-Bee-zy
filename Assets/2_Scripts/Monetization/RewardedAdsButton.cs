@@ -6,6 +6,7 @@ using DG.Tweening;
  
 public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
+
     [SerializeField] AudioClip rewardedSound;
     [SerializeField] Button _showAdButton;
     [SerializeField] string _androidAdUnitId = "Rewarded_Android";
@@ -70,8 +71,8 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     // If the ad successfully loads, add a listener to the button and enable it:
     public void OnUnityAdsAdLoaded(string adUnitId)
     {
-        //Debug.Log("Ad Loaded: " + adUnitId);
-        //Debug.Log(adUnitId.Equals(_adUnitId));
+        Debug.Log("Ad Loaded: " + adUnitId);
+        Debug.Log(adUnitId.Equals(_adUnitId));
  
         if (adUnitId.Equals(_adUnitId))
         {

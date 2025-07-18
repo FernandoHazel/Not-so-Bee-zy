@@ -100,7 +100,7 @@ public class LevelSelector : MonoBehaviour
 
     public void StartButton(string SceneToLoad) 
     {
-        interstitialAds.ShowAd();
+        //interstitialAds.ShowAd();
         StartCoroutine(DelayedLoad(SceneToLoad));
     }
 

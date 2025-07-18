@@ -1429,11 +1429,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectSound: {fileID: 8300000, guid: bd703219eeac9bb40b18fd4bfc539580, type: 3}
-  gameMusic: {fileID: 0}
-  pauseMusic: {fileID: 0}
+  gameMusic: {fileID: 8300000, guid: 730b5a22edd04fe4c859eac811336716, type: 3}
+  pauseMusic: {fileID: 8300000, guid: f1c35abfe2de5f542ac517a292020827, type: 3}
   interstitialAds: {fileID: 2269907427706998468}
   currentScene: 
-  needFade: 0
+  needFade: 1
 --- !u!114 &6758009390206060759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1769,7 +1769,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rateTheApp: {fileID: 5407237173667331219}
-  reviewURL: https://play.google.com/store/apps/details?id=com.Fhazel.Notsobeezy&reviewId=0
+  appStoreLink: https://apps.apple.com/us/app/not-so-bee-zy/id6511219393
+  googlePlayLink: https://play.google.com/store/apps/details?id=com.Fhazel.Notsobeezy&reviewId=0
 --- !u!1 &2130997109797764449
 GameObject:
   m_ObjectHideFlags: 0
@@ -4683,7 +4684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8186017297281534312
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4715,12 +4716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0e036fb6002a464fa9edce50db70198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noAdsButton: {fileID: 2800365734008646846}
-  ncItem:
-    name: Remove ads
-    id: remove_ads
-    description: Remove the ads
-    price: 1.99
 --- !u!1 &7177749193041048602
 GameObject:
   m_ObjectHideFlags: 0
@@ -5029,7 +5024,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7217945644978437448
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5039,7 +5034,7 @@ RectTransform:
   m_GameObject: {fileID: 7217945644978437298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8049898, y: 2.6783571, z: 3.5213277}
+  m_LocalScale: {x: 2.8049898, y: 2.6783571, z: 3.521328}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7217945643649105788}
@@ -5050,7 +5045,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.544189, y: 43.270508}
+  m_AnchoredPosition: {x: 15.544088, y: 43.27037}
   m_SizeDelta: {x: 359.8833, y: 333.27588}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7217945644978437303
@@ -6288,7 +6283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5581237482307851355
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6789,6 +6784,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: No Ads Button
       objectReference: {fileID: 0}
+    - target: {fileID: 2494607268079223998, guid: 2c3bf1938b7df5f4fb8c94ec87bd2cf8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2664383389499755283, guid: 2c3bf1938b7df5f4fb8c94ec87bd2cf8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6799,7 +6799,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: BuyRemoveAds
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 121489995828092616, guid: 2c3bf1938b7df5f4fb8c94ec87bd2cf8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6807,12 +6809,6 @@ PrefabInstance:
 --- !u!224 &2594294947019448251 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2324574675391608763, guid: 2c3bf1938b7df5f4fb8c94ec87bd2cf8,
-    type: 3}
-  m_PrefabInstance: {fileID: 306884534521735168}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2800365734008646846 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2494607268079223998, guid: 2c3bf1938b7df5f4fb8c94ec87bd2cf8,
     type: 3}
   m_PrefabInstance: {fileID: 306884534521735168}
   m_PrefabAsset: {fileID: 0}
